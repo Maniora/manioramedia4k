@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
     url: "https://4kmedia.in",
     siteName: "4KMEDIA",
     title: "Digital Marketing Agency in Hyderabad | SEO, Social Media, Website Development - 4KMEDIA",
@@ -87,11 +88,42 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "4KMEDIA",
+    "url": "https://4kmedia.in",
+    "logo": "https://4kmedia.in/assets/logo2.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/4kmedia-in",
+      "https://instagram.com/4kmediax",
+      "https://youtube.com/@4kmediax"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+919989958238",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": "English"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "addressCountry": "IN"
+    }
+  };
+
   return (
     <html lang="en" className="h-full">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#11181f] text-white min-h-full flex flex-col`}
       >
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         <main className="flex-1 pt-16 lg:pt-20 overflow-x-hidden overflow-y-clip">{children}</main>
         <Footer />

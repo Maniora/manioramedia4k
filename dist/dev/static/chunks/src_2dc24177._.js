@@ -17,11 +17,11 @@ var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.sign
 const useCountUp = (to, t0)=>{
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(5);
-    if ($[0] !== "6fb39ae924ab1c9e09adb96fd76ba773f9b637e340c617433f3b6b78238aa596") {
+    if ($[0] !== "d753f1000e6016379e5855e977c9255402f0f64692c21e0f931413593d60a256") {
         for(let $i = 0; $i < 5; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "6fb39ae924ab1c9e09adb96fd76ba773f9b637e340c617433f3b6b78238aa596";
+        $[0] = "d753f1000e6016379e5855e977c9255402f0f64692c21e0f931413593d60a256";
     }
     const duration = t0 === undefined ? 1500 : t0;
     const [value, setValue] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
@@ -70,11 +70,11 @@ _s(useCountUp, "QEMGEmq5Rfwf2KLuWFF3dZYTA2c=");
 const useTypewriter = (texts, t0, t1)=>{
     _s1();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(8);
-    if ($[0] !== "6fb39ae924ab1c9e09adb96fd76ba773f9b637e340c617433f3b6b78238aa596") {
+    if ($[0] !== "d753f1000e6016379e5855e977c9255402f0f64692c21e0f931413593d60a256") {
         for(let $i = 0; $i < 8; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "6fb39ae924ab1c9e09adb96fd76ba773f9b637e340c617433f3b6b78238aa596";
+        $[0] = "d753f1000e6016379e5855e977c9255402f0f64692c21e0f931413593d60a256";
     }
     const speed = t0 === undefined ? 100 : t0;
     const delay = t1 === undefined ? 2000 : t1;
@@ -128,11 +128,11 @@ _s1(useTypewriter, "RgwkxOomYimh0SxjKmSK6aS6Jfk=");
 const Hero = ()=>{
     _s2();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(57);
-    if ($[0] !== "6fb39ae924ab1c9e09adb96fd76ba773f9b637e340c617433f3b6b78238aa596") {
+    if ($[0] !== "d753f1000e6016379e5855e977c9255402f0f64692c21e0f931413593d60a256") {
         for(let $i = 0; $i < 57; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "6fb39ae924ab1c9e09adb96fd76ba773f9b637e340c617433f3b6b78238aa596";
+        $[0] = "d753f1000e6016379e5855e977c9255402f0f64692c21e0f931413593d60a256";
     }
     const projects = useCountUp(40, 2200);
     const roi = useCountUp(12, 2200);
@@ -379,7 +379,7 @@ const Hero = ()=>{
         t11 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
             className: "text-5xl font-bold text-white leading-tight mb-4 drop-shadow-2xl",
             children: [
-                "Strategic Digital",
+                "Strategic Digital Marketing Agency",
                 t9,
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                     className: "text-[#f7e839] relative min-h-[1.2em] inline-block text-3xl mt-2",
@@ -392,12 +392,12 @@ const Hero = ()=>{
                     }, void 0, true, {
                         fileName: "[project]/src/components/Hero.jsx",
                         lineNumber: 203,
-                        columnNumber: 196
+                        columnNumber: 213
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/components/Hero.jsx",
                     lineNumber: 203,
-                    columnNumber: 113
+                    columnNumber: 130
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {

@@ -41,7 +41,7 @@ const StatCard = ({ number, label }) => (
 const Careers = () => {
 
   return (
-    <main className="relative min-h-screen" style={{ background: 'linear-gradient(135deg, #11181f 0%, #0d1117 100%)' }}>
+    <div className="relative" style={{ background: 'linear-gradient(135deg, #11181f 0%, #0d1117 100%)' }}>
       <AnimatedIllustrations />
 
       {/* Hero Section */}
@@ -411,7 +411,7 @@ const Careers = () => {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8">
               <Reveal>
-                <h3 className="text-4xl font-bold text-white mb-4">Start Your <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Journey</span> With Us</h3>
+                <h3 className="text-4xl font-bold text-white mb-4">Start Your <span className="text-[#f7e839]">Journey</span> With Us</h3>
               </Reveal>
               <Reveal>
                 <p className="text-white/70 text-lg">
@@ -453,7 +453,7 @@ const Careers = () => {
             <Reveal>
               <div className="text-center mb-8">
                 <h3 className="text-4xl font-bold text-white mb-4">
-                  Don't See the <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Perfect Role?</span>
+                  Don't See the <span className="text-[#f7e839]">Perfect Role?</span>
                 </h3>
                 <p className="text-white/80 text-lg">
                   We're always interested in connecting with exceptional talent. If you don't see a current opening that matches your skills, we'd still like to hear from you.
@@ -487,15 +487,17 @@ const Careers = () => {
                 <div className="p-4 bg-white/5 rounded-lg border border-white/10 mb-6">
                   <p className="text-sm font-medium text-[#f7e839]">Note: We review serious applications only.</p>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-                  <a href="mailto:hr@4kmedia.in?subject=Speculative%20Application&body=Hi%204KMEDIA%20Team%2C%0D%0A%0D%0APlease%20find%20my%20resume%2C%20portfolio%20and%20a%20short%20note%20attached.%0D%0A%0D%0A" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-[#f7e839] text-[#11181f] font-bold hover:shadow-[0_0_16px_rgba(247,232,57,0.35)] hover:bg-[#f5d428] transition-all duration-200">
-                    Email Portfolio
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                      <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                <div className="flex justify-center mt-6">
+                  <a
+                    href="mailto:hr@4kmedia.in?subject=Speculative%20Application&body=Hi%204KMEDIA%20Team%2C%0D%0A%0D%0APlease%20find%20my%20resume%2C%20portfolio%20and%20a%20short%20note%20attached.%0D%0A%0D%0A"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f7e839] text-[#11181f] font-bold text-base hover:shadow-[0_0_24px_rgba(247,232,57,0.4)] hover:bg-[#f5d428] hover:scale-105 transition-all duration-200 whitespace-nowrap"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+                      <path d="M4 4h16v12H4z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+                      <path d="M4 8l8 5 8-5" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
                     </svg>
-                  </a>
-                  <a href="mailto:hr@4kmedia.in" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/10 transition-all duration-200">
-                    📩 hr@4kmedia.in
+                    <span className="sm:hidden">Email Your Portfolio →</span>
+                    <span className="hidden sm:inline">Send Portfolio to hr@4kmedia.in</span>
                   </a>
                 </div>
               </div>
@@ -515,7 +517,7 @@ const Careers = () => {
                 </span>
               </Reveal>
               <Reveal>
-                <h3 className="text-4xl font-bold text-white mb-4">Our <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Hiring Process</span></h3>
+                <h3 className="text-4xl font-bold text-white mb-4">Our <span className="text-[#f7e839]">Hiring Process</span></h3>
               </Reveal>
               <Reveal>
                 <p className="text-white/70 text-lg max-w-2xl mx-auto">
@@ -624,7 +626,7 @@ const Careers = () => {
         </div>
       </section>
 
-    </main>
+    </div>
   );
 };
 

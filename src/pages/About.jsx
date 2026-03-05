@@ -68,7 +68,7 @@ const StatsSection = () => {
 };
 
 const About = () => (
-  <main className="relative min-h-screen" style={{ background: 'linear-gradient(135deg, #11181f 0%, #0d1117 100%)' }}>
+  <div className="relative" style={{ background: 'linear-gradient(135deg, #11181f 0%, #0d1117 100%)' }}>
     <AnimatedIllustrations />
     {/* Hero Section */}
     <section className="relative py-15 bg-[#0a0f15]">
@@ -100,7 +100,7 @@ const About = () => (
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-8">
           <Reveal>
-            <h2 className="text-4xl font-bold text-center text-white mb-8">By the <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Numbers</span></h2>
+            <h2 className="text-4xl font-bold text-center text-white mb-8">By the <span className="text-[#f7e839]">Numbers</span></h2>
           </Reveal>
           <Reveal>
             <p className="text-white/70 text-lg">Our track record speaks to our commitment to delivering exceptional results for our clients.</p>
@@ -126,7 +126,7 @@ const About = () => (
 
           {/* Heading */}
           <Reveal>
-            <h2 className="text-4xl font-bold text-center text-white mb-8">Built From a Real Problem, <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Not a Business Plan.</span></h2>
+            <h2 className="text-4xl font-bold text-center text-white mb-8">Built From a Real Problem, <span className="text-[#f7e839]">Not a Business Plan.</span></h2>
           </Reveal>
 
           {/* Two columns */}
@@ -237,7 +237,7 @@ const About = () => (
             </div>
           </Reveal>
           <Reveal>
-            <h2 className="text-4xl font-bold text-center text-white mb-8">Driven by Purpose, <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Defined by Results.</span></h2>
+            <h2 className="text-4xl font-bold text-center text-white mb-8">Driven by Purpose, <span className="text-[#f7e839]">Defined by Results.</span></h2>
           </Reveal>
           <div className="grid md:grid-cols-2 gap-6">
             <Reveal>
@@ -281,7 +281,7 @@ const About = () => (
             Brand Partners
           </span>
           <h2 className="text-4xl font-bold text-white mb-6">
-            Our <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Brand Partners</span>
+            Our <span className="text-[#f7e839]">Brand Partners</span>
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
             We collaborate with top brands to deliver innovative solutions and measurable growth.
@@ -388,7 +388,7 @@ const About = () => (
           </Reveal>
           <Reveal>
             <h2 className="text-4xl font-bold text-center text-white mb-6">
-              What We <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Stand For</span>
+              What We <span className="text-[#f7e839]">Stand For</span>
             </h2>
           </Reveal>
           <p className="text-white/55 text-[17px] mb-12 max-w-xl mx-auto text-center leading-relaxed">
@@ -484,7 +484,7 @@ const About = () => (
                 FAQ
               </span>
               <h2 className="text-4xl font-bold text-white mb-4">
-                Questions <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">People Actually Ask</span>
+                Questions <span className="text-[#f7e839]">People Actually Ask</span>
               </h2>
               <p className="text-white/55 text-[16px] leading-relaxed">
                 Honest answers, no sales jargon.
@@ -557,7 +557,7 @@ const About = () => (
       <div className="container mx-auto px-4">
         <Reveal>
           <div className="bg-gradient-to-r from-[#1a1f26] to-[#2d3748] rounded-2xl p-12 text-center border border-white/10 shadow-2xl">
-            <h3 className="text-4xl font-bold text-white mb-4">Ready to <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Transform Your Digital </span>Presence?</h3>
+            <h3 className="text-4xl font-bold text-white mb-4">Ready to <span className="text-[#f7e839]">Transform Your Digital </span>Presence?</h3>
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
               Let's discuss your goals and create a tailored strategy that drives measurable results for your business.
             </p>
@@ -576,7 +576,7 @@ const About = () => (
         </Reveal>
       </div>
     </section>
-  </main>
+  </div>
 );
 
 export default About;

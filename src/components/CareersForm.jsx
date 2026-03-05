@@ -5,8 +5,8 @@ import emailjs from '@emailjs/browser'
 const ROLES = [
   "Social Media Manager",
   "Graphic Designer",
-  "Video Editor",
   "Content Writer",
+  "Video Editor",
   "Business Development Executive",
   "SEO Analyst",
   "Performance Marketing Executive",
@@ -147,6 +147,7 @@ const CareersForm = () => {
     <form ref={formRef} onSubmit={handleSubmit} className="space-y-5" noValidate>
       {/* Recipient for EmailJS pulled from env */}
       <input type="hidden" name="to_email" value={process.env.NEXT_PUBLIC_CAREERS_EMAIL || 'team@4kmedia.in'} />
+      <input type="hidden" name="time" value={new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' })} />
       <label className="space-y-1 block w-full">
         <span className="text-xs text-white/80 tracking-wide">
           FULL NAME <span className="text-[#f7e839]">*</span>

@@ -1,30 +1,22 @@
-[00:00:01.965] Server  LOG     ✓ Ready in 1427ms
-[00:00:05.027] Server  LOG     ○ Compiling /careers ...
-[00:00:09.061] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:21.412] Server  LOG     ✓ Compiled in 5.2s
-[00:02:44.960] Server  LOG     ✓ Compiled in 3.9s
-[00:04:08.959] Server  LOG     ✓ Compiled in 723ms
-[00:04:14.385] Server  LOG     ✓ Compiled in 1843ms
-[00:04:26.227] Server  LOG     ✓ Compiled in 1262ms
-[00:06:15.190] Server  LOG     ✓ Compiled in 596ms
-[00:06:16.873] Server  LOG     ✓ Compiled in 638ms
-[00:06:22.594] Server  LOG     ✓ Compiled in 546ms
-[00:06:29.876] Server  LOG     ✓ Compiled in 562ms
-[00:06:32.265] Server  LOG     ✓ Compiled in 545ms
-[00:07:00.058] Server  LOG     ✓ Compiled in 493ms
-[00:07:08.233] Server  LOG     ✓ Compiled in 713ms
-[00:07:11.665] Server  LOG     ✓ Compiled in 1189ms
-[00:08:54.042] Server  LOG     ✓ Compiled in 2.1s
-[00:09:04.501] Server  LOG     ✓ Compiled in 779ms
-[00:09:50.320] Server  LOG     ✓ Compiled in 430ms
-[00:11:54.983] Server  LOG     ✓ Compiled in 635ms
-[00:17:13.721] Server  LOG     ✓ Compiled in 1722ms
-[00:19:09.424] Server  LOG     ✓ Compiled in 1106ms
-[00:22:57.108] Server  LOG     ✓ Compiled in 1301ms
-[00:24:38.796] Browser ERROR   unhandledRejection: TypeError: Cannot read properties of undefined (reading 'VITE_EMAILJS_SERVICE_ID')
-[00:26:08.110] Server  LOG     ✓ Compiled in 875ms
-[00:32:32.745] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:46:26.763] Server  LOG     ✓ Compiled in 500ms
-[00:47:22.735] Server  LOG     ✓ Compiled in 941ms
-[00:51:49.974] Server  LOG     ✓ Compiled in 620ms
-[00:56:40.862] Server  LOG     ✓ Compiled in 888ms
+[00:00:02.045] Server  LOG     ✓ Ready in 1371ms
+[00:00:15.907] Server  LOG     ○ Compiling / ...
+[00:00:22.263] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:33.027] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:02.942] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:55.310] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:35.115] Server  LOG     ✓ Compiled in 85ms
+[00:10:38.814] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:39.179] Server  LOG     ✓ Compiled in 333ms
+[00:13:49.538] Server  LOG     ✓ Compiled in 610ms
+[00:15:14.695] Server  LOG     ✓ Compiled in 741ms
+[00:16:45.444] Server  LOG     ✓ Compiled in 621ms
+[00:20:00.211] Server  LOG     ✓ Compiled in 730ms
+[00:20:23.951] Server  LOG     ✓ Compiled in 718ms
+[00:21:53.876] Server  LOG     ✓ Compiled in 342ms
+[00:24:11.113] Server  LOG     ✓ Compiled in 864ms
+[00:25:55.132] Server  LOG     ✓ Compiled in 442ms
+[00:32:01.110] Server  LOG     ✓ Compiled in 535ms
+[00:32:56.945] Server  LOG     ✓ Compiled in 1318ms
+[00:35:21.845] Server  LOG     ✓ Compiled in 302ms
+[00:38:51.522] Server  LOG     ✓ Compiled in 191ms
+[00:40:23.892] Server  LOG     ✓ Compiled in 130ms

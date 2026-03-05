@@ -145,7 +145,7 @@ const ComingSoonAnimation = () => {
 
 const Services = () => {
   return (
-    <main className="relative min-h-screen" style={{ background: 'linear-gradient(135deg, #11181f 0%, #0d1117 100%)' }}>
+    <div className="relative" style={{ background: 'linear-gradient(135deg, #11181f 0%, #0d1117 100%)' }}>
       <AnimatedIllustrations />
 
       {/* Hero Section */}
@@ -163,7 +163,7 @@ const Services = () => {
                 <span className="text-[#f7e839]">Digital Solutions</span>
               </h1>
             </Reveal>
-            
+
             <Reveal>
               <p className="text-xl text-white/80 leading-relaxed max-w-3xl mx-auto">
                 End-to-end digital marketing services designed to drive growth, enhance visibility,
@@ -233,28 +233,82 @@ const Services = () => {
         </div>
       </section>
 
-      {/* More Services Coming Soon */}
+      {/* Customised Services */}
       <section className="py-15 bg-[#0a0f15]">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <Reveal>
-              <h2 className="text-4xl font-bold text-white mb-4">
-                More <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Services</span> Coming Soon...
-              </h2>
-            </Reveal>
-            <Reveal>
-              <p className="text-white/70 text-lg">
-                We're working on expanding our offerings. Stay tuned for new specialized solutions to help your business grow!
-              </p>
-            </Reveal>
-          </div>
-          <div className="flex justify-center mt-10">
-            <div className="max-w-md w-full flex flex-col items-center">
-              <div className="w-64 h-64 mb-6">
-                <ComingSoonAnimation />
+              <div className="text-center mb-12">
+                <span className="inline-block text-sm uppercase tracking-wider bg-white/10 border border-white/20 px-4 py-2 rounded-full mb-6">
+                  Made Just for You
+                </span>
+                <h2 className="text-4xl font-bold text-white mb-4">
+                  <span className="text-[#f7e839]">Customised</span> Services
+                </h2>
+                <p className="text-white/70 text-lg max-w-2xl mx-auto">
+                  We get it - your business isn't like everyone else's. So why settle for a cookie-cutter plan? Tell us what you need, and we'll build something that actually fits.
+                </p>
               </div>
-              <span className="text-white/70 text-lg font-medium">Exciting new services are on the way!</span>
+            </Reveal>
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              {[
+                {
+                  icon: (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <circle cx="12" cy="12" r="6" />
+                      <circle cx="12" cy="12" r="2" />
+                    </svg>
+                  ),
+                  title: "We start with your goals",
+                  desc: "We listen first — your goals shape everything we do."
+                },
+                {
+                  icon: (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                    </svg>
+                  ),
+                  title: "You pick what works for you",
+                  desc: "Pick only what you need — no forced bundles, no wasted spend."
+                },
+                {
+                  icon: (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="18" y1="20" x2="18" y2="10" />
+                      <line x1="12" y1="20" x2="12" y2="4" />
+                      <line x1="6" y1="20" x2="6" y2="14" />
+                    </svg>
+                  ),
+                  title: "You see real progress",
+                  desc: "Clear reports, plain language, numbers that actually mean something."
+                },
+              ].map((item) => (
+                <Reveal key={item.title} as="div" className="h-full">
+                  <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-6 text-center hover:border-[#f7e839]/40 hover:bg-white/10 transition-all duration-300">
+                    <div className="w-14 h-14 rounded-full bg-[#f7e839]/10 border border-[#f7e839]/20 flex items-center justify-center mx-auto mb-4 text-[#f7e839]">
+                      {item.icon}
+                    </div>
+                    <h3 className="text-white font-semibold text-lg mb-2">{item.title}</h3>
+                    <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
             </div>
+            <Reveal>
+              <div className="text-center">
+                <p className="text-white/50 text-sm mb-5">Have something specific in mind? Let's have a conversation.</p>
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-gradient-to-r from-[#f7e839] to-[#f5d428] text-[#11181f] font-semibold hover:shadow-[0_0_20px_rgba(247,232,57,0.4)] transition-all duration-300"
+                >
+                  Let's Talk
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                </a>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -264,7 +318,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <Reveal>
             <div className="bg-gradient-to-r from-[#1a1f26] to-[#2d3748] rounded-2xl p-12 text-center border border-white/10 shadow-2xl max-w-4xl mx-auto">
-              <h3 className="text-4xl font-bold text-white mb-4">Ready to <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Accelerate Your Growth?</span></h3>
+              <h3 className="text-4xl font-bold text-white mb-4">Ready to <span className="text-[#f7e839]">Accelerate Your Growth?</span></h3>
               <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
                 Let's discuss your objectives and create a customized strategy that aligns with your business goals and delivers tangible results.
               </p>
@@ -280,9 +334,8 @@ const Services = () => {
           </Reveal>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
-
 export default Services
 

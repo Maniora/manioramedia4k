@@ -8,7 +8,7 @@ import Reveal from '../components/Reveal'
 import Methodology from '../components/Methodology'
 
 const Home = () => (
-  <main className="overflow-hidden">
+  <div className="overflow-hidden">
     <Hero />
 
     {/* About Section */}
@@ -19,7 +19,7 @@ const Home = () => (
             Who We Are
           </span>
           <h2 className="text-4xl font-bold text-white mb-6 leading-tight">
-            Strategic Digital <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Growth Partners</span>
+            Strategic Digital <span className="text-[#f7e839]">Growth Partners</span>
           </h2>
           <p className="text-xl text-white/70 mb-4 font-light">Zero to viral, we make it happen.</p>
           <p className="text-lg text-white/70 max-w-4xl mx-auto leading-relaxed mb-8">
@@ -42,7 +42,7 @@ const Home = () => (
             Our Expertise
           </span>
           <h2 className="text-4xl font-bold text-white mb-6">
-            Comprehensive <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Digital Solutions</span>
+            Comprehensive <span className="text-[#f7e839]">Digital Solutions</span>
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
             End-to-end services designed to elevate your digital presence and drive measurable business growth
@@ -137,7 +137,7 @@ const Home = () => (
     <div className="bg-[#06060a] relative py-15 mt-12">
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-bold text-center text-white mb-6">
-          Our <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Brand Partners</span>
+          Our <span className="text-[#f7e839]">Brand Partners</span>
         </h2>
         <div className="text-center mb-6 text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
           We collaborate with top brands to deliver innovative solutions and measurable growth.
@@ -225,7 +225,7 @@ const Home = () => (
       <Reveal as="div" className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 text-center relative overflow-hidden">
           <h3 className="text-4xl font-bold text-white mb-6 leading-tight">
-            Ready to <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Accelerate</span> Your Growth?
+            Ready to <span className="text-[#f7e839]">Accelerate</span> Your Growth?
           </h3>
           <p className="text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">
             Schedule a complimentary strategy session with our experts. We'll analyze your current
@@ -249,7 +249,6 @@ const Home = () => (
         </div>
       </Reveal>
     </section>
-  </main>
+  </div>
 )
-
 export default Home

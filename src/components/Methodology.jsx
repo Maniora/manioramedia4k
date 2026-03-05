@@ -24,11 +24,11 @@ const Methodology = () => {
             title: 'Strategy &\nRoadmap',
             desc: 'Custom growth roadmap with clear KPIs, timelines and spend plans. You approve everything — zero surprises.',
             svg: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',
-            color: '#22d3ee',
-            colorClass: 'text-[#22d3ee]',
-            bgClass: 'bg-[#22d3ee]/10',
-            borderClass: 'border-[#22d3ee]/30',
-            gradient: 'from-[#22d3ee]',
+            color: '#f7e839',
+            colorClass: 'text-[#f7e839]',
+            bgClass: 'bg-[#f7e839]/10',
+            borderClass: 'border-[#f7e839]/30',
+            gradient: 'from-[#f7e839]',
             deliverables: ['30/60/90 day growth plan', 'Content & channel calendar', 'Ad budget allocation', 'Milestone targets', 'Zoho project setup']
         },
         {
@@ -50,11 +50,11 @@ const Methodology = () => {
             title: 'Optimise &\nScale',
             desc: "We don't stop at launch. Weekly data review, monthly strategy calls, continuous improvement — your growth compounds.",
             svg: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
-            color: '#22d3ee',
-            colorClass: 'text-[#22d3ee]',
-            bgClass: 'bg-[#22d3ee]/10',
-            borderClass: 'border-[#22d3ee]/30',
-            gradient: 'from-[#22d3ee]',
+            color: '#f7e839',
+            colorClass: 'text-[#f7e839]',
+            bgClass: 'bg-[#f7e839]/10',
+            borderClass: 'border-[#f7e839]/30',
+            gradient: 'from-[#f7e839]',
             deliverables: ['Weekly performance report', 'A/B testing & iteration', 'Monthly strategy call', 'Scaling winning campaigns', 'Quarterly growth review']
         }
     ];
@@ -63,12 +63,11 @@ const Methodology = () => {
         <section className="py-20 relative overflow-hidden bg-[#0f141a]">
             <Reveal as="div" className="container mx-auto px-4 relative z-10 max-w-7xl">
                 <div className="text-center mb-20 relative z-20">
-                    <span className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider bg-white/5 border border-white/10 px-6 py-3 rounded-full mb-6 shadow-lg text-[#f7e839]">
-                        <span className="w-1.5 h-1.5 bg-[#22d3ee] rounded-full animate-pulse"></span>
+                    <span className="inline-block text-sm uppercase tracking-wider bg-white/10 border border-white/20 px-4 py-2 rounded-full mb-6">
                         Our Methodology
                     </span>
                     <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
-                        How We Turn Your Vision<br className="hidden md:block" />Into <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Measurable Growth</span>
+                        How We Turn Your Vision<br className="hidden md:block" />Into <span className="text-[#f7e839]">Measurable Growth</span>
                     </h2>
                     <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed font-light">
                         A structured 4-step system built for transparency, accountability, and results — so you always know exactly where your project stands and what's coming next.
@@ -78,17 +77,16 @@ const Methodology = () => {
                 {/* Timeline Container */}
                 <div className="relative mb-20">
                     {/* Connector line between cards */}
-                    <div className="hidden lg:block absolute top-[52px] left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[#f7e839]/30 via-[#22d3ee]/50 via-[#f7e839]/30 to-transparent z-0"></div>
+                    <div className="hidden lg:block absolute top-[52px] left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[#f7e839]/30 via-[#f7e839]/50 via-[#f7e839]/30 to-transparent z-0"></div>
 
                     {/* Moving dot on connector */}
-                    <div className="hidden lg:block absolute top-[46px] left-[12.5%] w-[13px] h-[13px] rounded-full shadow-[0_0_12px_rgba(247,232,57,0.8),0_0_24px_rgba(247,232,57,0.4)] z-10 
-            animate-[travel_4s_ease-in-out_infinite]"></div>
+                    <div className="hidden lg:block absolute top-[46px] left-[12.5%] w-[13px] h-[13px] rounded-full shadow-[0_0_12px_rgba(247,232,57,0.8),0_0_24px_rgba(247,232,57,0.4)] z-10 animate-[travel_4s_ease-in-out_infinite]"></div>
 
                     <style dangerouslySetInnerHTML={{
                         __html: `
             @keyframes travel {
               0% { left: 12.5%; background: #f7e839; box-shadow: 0 0 12px rgba(247,232,57,0.8); }
-              50% { left: calc(87.5% - 14px); background: #22d3ee; box-shadow: 0 0 12px rgba(34,211,238,0.8); }
+              50% { left: calc(87.5% - 14px); background: #f7e839; box-shadow: 0 0 12px rgba(247,232,57,0.8); }
               100% { left: 12.5%; background: #f7e839; box-shadow: 0 0 12px rgba(247,232,57,0.8); }
             }
             @keyframes rot { to { transform: rotate(360deg); } }

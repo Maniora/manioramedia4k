@@ -20,11 +20,11 @@ var _s = __turbopack_context__.k.signature();
 const Reveal = (t0)=>{
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(19);
-    if ($[0] !== "933f409e3d15b9fffcb6cfa3eb52ce52766aeed66c0bb4596b4667fc1cdbe4a0") {
+    if ($[0] !== "bee722d821dea764bd78397e30fc5f4bbf4abd8c359344ae0fcdb66007a34848") {
         for(let $i = 0; $i < 19; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "933f409e3d15b9fffcb6cfa3eb52ce52766aeed66c0bb4596b4667fc1cdbe4a0";
+        $[0] = "bee722d821dea764bd78397e30fc5f4bbf4abd8c359344ae0fcdb66007a34848";
     }
     let children;
     let props;
@@ -62,7 +62,7 @@ const Reveal = (t0)=>{
     if ($[7] === Symbol.for("react.memo_cache_sentinel")) {
         t4 = {
             opacity: 0,
-            y: 50
+            y: 20
         };
         $[7] = t4;
     } else {
@@ -75,7 +75,7 @@ const Reveal = (t0)=>{
             y: 0
         } : {
             opacity: 0,
-            y: 50
+            y: 20
         };
         $[8] = isInView;
         $[9] = t5;
@@ -457,8 +457,8 @@ var _s = __turbopack_context__.k.signature();
 const ROLES = [
     "Social Media Manager",
     "Graphic Designer",
-    "Video Editor",
     "Content Writer",
+    "Video Editor",
     "Business Development Executive",
     "SEO Analyst",
     "Performance Marketing Executive",
@@ -592,6 +592,19 @@ const CareersForm = ()=>{
                 lineNumber: 141,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                type: "hidden",
+                name: "time",
+                value: new Date().toLocaleString('en-IN', {
+                    timeZone: 'Asia/Kolkata',
+                    dateStyle: 'medium',
+                    timeStyle: 'short'
+                })
+            }, void 0, false, {
+                fileName: "[project]/src/components/CareersForm.jsx",
+                lineNumber: 142,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                 className: "space-y-1 block w-full",
                 children: [
@@ -604,13 +617,13 @@ const CareersForm = ()=>{
                                 children: "*"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CareersForm.jsx",
-                                lineNumber: 144,
+                                lineNumber: 149,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CareersForm.jsx",
-                        lineNumber: 143,
+                        lineNumber: 148,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -621,7 +634,7 @@ const CareersForm = ()=>{
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/src/components/CareersForm.jsx",
-                        lineNumber: 146,
+                        lineNumber: 151,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     fieldErrors.full_name && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -629,13 +642,13 @@ const CareersForm = ()=>{
                         children: fieldErrors.full_name
                     }, void 0, false, {
                         fileName: "[project]/src/components/CareersForm.jsx",
-                        lineNumber: 147,
+                        lineNumber: 152,
                         columnNumber: 35
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/CareersForm.jsx",
-                lineNumber: 142,
+                lineNumber: 147,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -653,13 +666,13 @@ const CareersForm = ()=>{
                                         children: "*"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CareersForm.jsx",
-                                        lineNumber: 152,
+                                        lineNumber: 157,
                                         columnNumber: 27
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CareersForm.jsx",
-                                lineNumber: 151,
+                                lineNumber: 156,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -671,7 +684,7 @@ const CareersForm = ()=>{
                                 autoComplete: "email"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CareersForm.jsx",
-                                lineNumber: 154,
+                                lineNumber: 159,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             fieldErrors.email && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -679,13 +692,13 @@ const CareersForm = ()=>{
                                 children: fieldErrors.email
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CareersForm.jsx",
-                                lineNumber: 155,
+                                lineNumber: 160,
                                 columnNumber: 33
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CareersForm.jsx",
-                        lineNumber: 150,
+                        lineNumber: 155,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -700,13 +713,13 @@ const CareersForm = ()=>{
                                         children: "*"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CareersForm.jsx",
-                                        lineNumber: 159,
+                                        lineNumber: 164,
                                         columnNumber: 26
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CareersForm.jsx",
-                                lineNumber: 158,
+                                lineNumber: 163,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -723,7 +736,7 @@ const CareersForm = ()=>{
                                 required: true
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CareersForm.jsx",
-                                lineNumber: 161,
+                                lineNumber: 166,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             fieldErrors.phone && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -731,19 +744,19 @@ const CareersForm = ()=>{
                                 children: fieldErrors.phone
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CareersForm.jsx",
-                                lineNumber: 162,
+                                lineNumber: 167,
                                 columnNumber: 33
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CareersForm.jsx",
-                        lineNumber: 157,
+                        lineNumber: 162,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/CareersForm.jsx",
-                lineNumber: 149,
+                lineNumber: 154,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -758,13 +771,13 @@ const CareersForm = ()=>{
                                 children: "*"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CareersForm.jsx",
-                                lineNumber: 167,
+                                lineNumber: 172,
                                 columnNumber: 26
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CareersForm.jsx",
-                        lineNumber: 166,
+                        lineNumber: 171,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -775,7 +788,7 @@ const CareersForm = ()=>{
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/src/components/CareersForm.jsx",
-                        lineNumber: 169,
+                        lineNumber: 174,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     fieldErrors.portfolio && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -783,13 +796,13 @@ const CareersForm = ()=>{
                         children: fieldErrors.portfolio
                     }, void 0, false, {
                         fileName: "[project]/src/components/CareersForm.jsx",
-                        lineNumber: 170,
+                        lineNumber: 175,
                         columnNumber: 35
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/CareersForm.jsx",
-                lineNumber: 165,
+                lineNumber: 170,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -804,13 +817,13 @@ const CareersForm = ()=>{
                                 children: "*"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CareersForm.jsx",
-                                lineNumber: 174,
+                                lineNumber: 179,
                                 columnNumber: 29
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CareersForm.jsx",
-                        lineNumber: 173,
+                        lineNumber: 178,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -826,7 +839,7 @@ const CareersForm = ()=>{
                                 children: "Select a role"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CareersForm.jsx",
-                                lineNumber: 177,
+                                lineNumber: 182,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             ROLES.map((role_0)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -835,13 +848,13 @@ const CareersForm = ()=>{
                                     children: role_0
                                 }, role_0, false, {
                                     fileName: "[project]/src/components/CareersForm.jsx",
-                                    lineNumber: 180,
+                                    lineNumber: 185,
                                     columnNumber: 32
                                 }, ("TURBOPACK compile-time value", void 0)))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CareersForm.jsx",
-                        lineNumber: 176,
+                        lineNumber: 181,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     fieldErrors.role && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -849,13 +862,13 @@ const CareersForm = ()=>{
                         children: fieldErrors.role
                     }, void 0, false, {
                         fileName: "[project]/src/components/CareersForm.jsx",
-                        lineNumber: 184,
+                        lineNumber: 189,
                         columnNumber: 30
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/CareersForm.jsx",
-                lineNumber: 172,
+                lineNumber: 177,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -870,13 +883,13 @@ const CareersForm = ()=>{
                                 children: "*"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/CareersForm.jsx",
-                                lineNumber: 188,
+                                lineNumber: 193,
                                 columnNumber: 46
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/CareersForm.jsx",
-                        lineNumber: 187,
+                        lineNumber: 192,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -887,7 +900,7 @@ const CareersForm = ()=>{
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/src/components/CareersForm.jsx",
-                        lineNumber: 190,
+                        lineNumber: 195,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     fieldErrors.resume && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -895,13 +908,13 @@ const CareersForm = ()=>{
                         children: fieldErrors.resume
                     }, void 0, false, {
                         fileName: "[project]/src/components/CareersForm.jsx",
-                        lineNumber: 191,
+                        lineNumber: 196,
                         columnNumber: 32
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/CareersForm.jsx",
-                lineNumber: 186,
+                lineNumber: 191,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -926,7 +939,7 @@ const CareersForm = ()=>{
                                         fill: "none"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CareersForm.jsx",
-                                        lineNumber: 197,
+                                        lineNumber: 202,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -935,13 +948,13 @@ const CareersForm = ()=>{
                                         d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/CareersForm.jsx",
-                                        lineNumber: 198,
+                                        lineNumber: 203,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/CareersForm.jsx",
-                                lineNumber: 196,
+                                lineNumber: 201,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             "Submitting..."
@@ -949,12 +962,12 @@ const CareersForm = ()=>{
                     }, void 0, true) : 'Submit Application'
                 }, void 0, false, {
                     fileName: "[project]/src/components/CareersForm.jsx",
-                    lineNumber: 194,
+                    lineNumber: 199,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/CareersForm.jsx",
-                lineNumber: 193,
+                lineNumber: 198,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Toast$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -967,7 +980,7 @@ const CareersForm = ()=>{
                 variant: toast.variant
             }, void 0, false, {
                 fileName: "[project]/src/components/CareersForm.jsx",
-                lineNumber: 205,
+                lineNumber: 210,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -3457,11 +3470,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$constants$2f$jobsData
 ;
 const BenefitCard = (t0)=>{
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(13);
-    if ($[0] !== "abd256f11cdf5f829cc0bd21e6593cd36c7fae0279fca497d99c48aa6cc50e48") {
+    if ($[0] !== "fa7809cda5a6501cff1079bdb73fd6c2b7d53b5cab451d617a673338f2d152d2") {
         for(let $i = 0; $i < 13; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "abd256f11cdf5f829cc0bd21e6593cd36c7fae0279fca497d99c48aa6cc50e48";
+        $[0] = "fa7809cda5a6501cff1079bdb73fd6c2b7d53b5cab451d617a673338f2d152d2";
     }
     const { title, children, icon } = t0;
     let t1;
@@ -3553,11 +3566,11 @@ const BenefitCard = (t0)=>{
 _c = BenefitCard;
 const StatCard = (t0)=>{
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(8);
-    if ($[0] !== "abd256f11cdf5f829cc0bd21e6593cd36c7fae0279fca497d99c48aa6cc50e48") {
+    if ($[0] !== "fa7809cda5a6501cff1079bdb73fd6c2b7d53b5cab451d617a673338f2d152d2") {
         for(let $i = 0; $i < 8; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "abd256f11cdf5f829cc0bd21e6593cd36c7fae0279fca497d99c48aa6cc50e48";
+        $[0] = "fa7809cda5a6501cff1079bdb73fd6c2b7d53b5cab451d617a673338f2d152d2";
     }
     const { number, label } = t0;
     let t1;
@@ -3615,11 +3628,11 @@ const StatCard = (t0)=>{
 _c1 = StatCard;
 const Careers = ()=>{
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(57);
-    if ($[0] !== "abd256f11cdf5f829cc0bd21e6593cd36c7fae0279fca497d99c48aa6cc50e48") {
+    if ($[0] !== "fa7809cda5a6501cff1079bdb73fd6c2b7d53b5cab451d617a673338f2d152d2") {
         for(let $i = 0; $i < 57; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "abd256f11cdf5f829cc0bd21e6593cd36c7fae0279fca497d99c48aa6cc50e48";
+        $[0] = "fa7809cda5a6501cff1079bdb73fd6c2b7d53b5cab451d617a673338f2d152d2";
     }
     let t0;
     let t1;
@@ -5152,7 +5165,7 @@ const Careers = ()=>{
                 children: [
                     "Start Your ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                        className: "text-[#f7e839]",
                         children: "Journey"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Careers.jsx",
@@ -5333,7 +5346,7 @@ const Careers = ()=>{
                         children: [
                             "Don't See the ",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                                className: "text-[#f7e839]",
                                 children: "Perfect Role?"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/Careers.jsx",
@@ -5352,7 +5365,7 @@ const Careers = ()=>{
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Careers.jsx",
                         lineNumber: 363,
-                        columnNumber: 236
+                        columnNumber: 176
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
@@ -5559,50 +5572,67 @@ const Careers = ()=>{
                                     t38,
                                     t39,
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex flex-col sm:flex-row gap-4 justify-center mt-6",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                href: "mailto:hr@4kmedia.in?subject=Speculative%20Application&body=Hi%204KMEDIA%20Team%2C%0D%0A%0D%0APlease%20find%20my%20resume%2C%20portfolio%20and%20a%20short%20note%20attached.%0D%0A%0D%0A",
-                                                className: "inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-[#f7e839] text-[#11181f] font-bold hover:shadow-[0_0_16px_rgba(247,232,57,0.35)] hover:bg-[#f5d428] transition-all duration-200",
-                                                children: [
-                                                    "Email Portfolio",
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                        width: "18",
-                                                        height: "18",
-                                                        viewBox: "0 0 24 24",
-                                                        fill: "none",
-                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                            d: "M5 12h14m-7-7l7 7-7 7",
+                                        className: "flex justify-center mt-6",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: "mailto:hr@4kmedia.in?subject=Speculative%20Application&body=Hi%204KMEDIA%20Team%2C%0D%0A%0D%0APlease%20find%20my%20resume%2C%20portfolio%20and%20a%20short%20note%20attached.%0D%0A%0D%0A",
+                                            className: "w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#f7e839] text-[#11181f] font-bold text-base hover:shadow-[0_0_24px_rgba(247,232,57,0.4)] hover:bg-[#f5d428] hover:scale-105 transition-all duration-200 whitespace-nowrap",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                                    width: "18",
+                                                    height: "18",
+                                                    viewBox: "0 0 24 24",
+                                                    fill: "none",
+                                                    className: "flex-shrink-0",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                            d: "M4 4h16v12H4z",
                                                             stroke: "currentColor",
                                                             strokeWidth: "2",
-                                                            strokeLinecap: "round"
+                                                            strokeLinejoin: "round"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/Careers.jsx",
                                                             lineNumber: 405,
-                                                            columnNumber: 780
+                                                            columnNumber: 822
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                            d: "M4 8l8 5 8-5",
+                                                            stroke: "currentColor",
+                                                            strokeWidth: "2",
+                                                            strokeLinejoin: "round"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/pages/Careers.jsx",
+                                                            lineNumber: 405,
+                                                            columnNumber: 909
                                                         }, ("TURBOPACK compile-time value", void 0))
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/pages/Careers.jsx",
-                                                        lineNumber: 405,
-                                                        columnNumber: 720
-                                                    }, ("TURBOPACK compile-time value", void 0))
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/src/pages/Careers.jsx",
-                                                lineNumber: 405,
-                                                columnNumber: 297
-                                            }, ("TURBOPACK compile-time value", void 0)),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                href: "mailto:hr@4kmedia.in",
-                                                className: "inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/10 transition-all duration-200",
-                                                children: "📩 hr@4kmedia.in"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/pages/Careers.jsx",
-                                                lineNumber: 405,
-                                                columnNumber: 884
-                                            }, ("TURBOPACK compile-time value", void 0))
-                                        ]
-                                    }, void 0, true, {
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/pages/Careers.jsx",
+                                                    lineNumber: 405,
+                                                    columnNumber: 736
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "sm:hidden",
+                                                    children: "Email Your Portfolio →"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/pages/Careers.jsx",
+                                                    lineNumber: 405,
+                                                    columnNumber: 1001
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    className: "hidden sm:inline",
+                                                    children: "Send Portfolio to hr@4kmedia.in"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/pages/Careers.jsx",
+                                                    lineNumber: 405,
+                                                    columnNumber: 1058
+                                                }, ("TURBOPACK compile-time value", void 0))
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/pages/Careers.jsx",
+                                            lineNumber: 405,
+                                            columnNumber: 270
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    }, void 0, false, {
                                         fileName: "[project]/src/pages/Careers.jsx",
                                         lineNumber: 405,
                                         columnNumber: 228
@@ -5666,7 +5696,7 @@ const Careers = ()=>{
                 children: [
                     "Our ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                        className: "text-[#f7e839]",
                         children: "Hiring Process"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Careers.jsx",
@@ -6047,8 +6077,8 @@ const Careers = ()=>{
     }
     let t55;
     if ($[56] === Symbol.for("react.memo_cache_sentinel")) {
-        t55 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-            className: "relative min-h-screen",
+        t55 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "relative",
             style: t0,
             children: [
                 t1,
@@ -6105,29 +6135,29 @@ const Careers = ()=>{
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/Careers.jsx",
                                             lineNumber: 546,
-                                            columnNumber: 288
+                                            columnNumber: 274
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/Careers.jsx",
                                     lineNumber: 546,
-                                    columnNumber: 215
+                                    columnNumber: 201
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/Careers.jsx",
                             lineNumber: 546,
-                            columnNumber: 170
+                            columnNumber: 156
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Careers.jsx",
                         lineNumber: 546,
-                        columnNumber: 130
+                        columnNumber: 116
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/pages/Careers.jsx",
                     lineNumber: 546,
-                    columnNumber: 90
+                    columnNumber: 76
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {

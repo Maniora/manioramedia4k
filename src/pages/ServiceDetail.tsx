@@ -48,7 +48,7 @@ const ServiceDetail = ({ service }: { service: Service }) => {
     const icon = ServiceIcons[service.id];
 
     return (
-        <main className="relative min-h-screen" style={{ background: 'linear-gradient(160deg, #0a0d12 0%, #0f1520 50%, #0a0d12 100%)' }}>
+        <div className="relative" style={{ background: 'linear-gradient(160deg, #0a0d12 0%, #0f1520 50%, #0a0d12 100%)' }}>
             <AnimatedIllustrations />
 
             {/* Full-bleed Hero with image overlay */}
@@ -248,7 +248,7 @@ const ServiceDetail = ({ service }: { service: Service }) => {
                     </Reveal>
                 </div>
             </section>
-        </main>
+        </div>
     );
 };
 

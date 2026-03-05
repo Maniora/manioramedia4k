@@ -17,11 +17,11 @@ var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.sign
 const useCountUp = (to, t0)=>{
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(5);
-    if ($[0] !== "2ee20314bda117b81ff97513032bd262a12a973e5fb0dbf8bd68bfab097ced45") {
+    if ($[0] !== "6fb39ae924ab1c9e09adb96fd76ba773f9b637e340c617433f3b6b78238aa596") {
         for(let $i = 0; $i < 5; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "2ee20314bda117b81ff97513032bd262a12a973e5fb0dbf8bd68bfab097ced45";
+        $[0] = "6fb39ae924ab1c9e09adb96fd76ba773f9b637e340c617433f3b6b78238aa596";
     }
     const duration = t0 === undefined ? 1500 : t0;
     const [value, setValue] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
@@ -70,11 +70,11 @@ _s(useCountUp, "QEMGEmq5Rfwf2KLuWFF3dZYTA2c=");
 const useTypewriter = (texts, t0, t1)=>{
     _s1();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(8);
-    if ($[0] !== "2ee20314bda117b81ff97513032bd262a12a973e5fb0dbf8bd68bfab097ced45") {
+    if ($[0] !== "6fb39ae924ab1c9e09adb96fd76ba773f9b637e340c617433f3b6b78238aa596") {
         for(let $i = 0; $i < 8; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "2ee20314bda117b81ff97513032bd262a12a973e5fb0dbf8bd68bfab097ced45";
+        $[0] = "6fb39ae924ab1c9e09adb96fd76ba773f9b637e340c617433f3b6b78238aa596";
     }
     const speed = t0 === undefined ? 100 : t0;
     const delay = t1 === undefined ? 2000 : t1;
@@ -128,11 +128,11 @@ _s1(useTypewriter, "RgwkxOomYimh0SxjKmSK6aS6Jfk=");
 const Hero = ()=>{
     _s2();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(57);
-    if ($[0] !== "2ee20314bda117b81ff97513032bd262a12a973e5fb0dbf8bd68bfab097ced45") {
+    if ($[0] !== "6fb39ae924ab1c9e09adb96fd76ba773f9b637e340c617433f3b6b78238aa596") {
         for(let $i = 0; $i < 57; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "2ee20314bda117b81ff97513032bd262a12a973e5fb0dbf8bd68bfab097ced45";
+        $[0] = "6fb39ae924ab1c9e09adb96fd76ba773f9b637e340c617433f3b6b78238aa596";
     }
     const projects = useCountUp(40, 2200);
     const roi = useCountUp(12, 2200);
@@ -945,34 +945,16 @@ const Hero = ()=>{
                     className: "group w-full sm:w-auto px-6 py-4 rounded-xl border border-[#25D366]/30 bg-[#25D366]/10 backdrop-blur-sm text-white font-semibold text-lg flex items-center justify-center gap-3 hover:bg-[#25D366]/20 hover:border-[#25D366] transition-all duration-300 hover:-translate-y-1",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 32 32",
+                            viewBox: "0 0 24 24",
                             className: "w-6 h-6 transform group-hover:scale-110 transition-transform",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
-                                        cx: "16",
-                                        cy: "16",
-                                        r: "16",
-                                        fill: "#25D366"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Hero.jsx",
-                                        lineNumber: 382,
-                                        columnNumber: 626
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                        d: "M24.5 9.5A8.94 8.94 0 0016 6.5c-4.97 0-9 4.03-9 9 0 1.59.42 3.14 1.22 4.51L7 25l5.13-1.34A8.97 8.97 0 0016 25c4.97 0 9-4.03 9-9 0-2.39-.95-4.64-2.5-6.5zm-8.5 13c-1.44 0-2.85-.39-4.07-1.13l-.29-.17-3.04.8.8-2.97-.19-.3A7.01 7.01 0 019 15.5c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7zm3.62-5.01c-.21.6-1.23 1.16-1.7 1.23-.44.07-1 .11-1.61-.11-.37-.13-.85-.28-1.46-.57-2.57-1.12-4.25-3.67-4.38-3.86-.13-.19-1.04-1.4-1.04-2.68 0-1.28.66-1.91.9-2.17.24-.26.52-.32.7-.32.18 0 .36.01.51.01.16 0 .38-.06.6.45.22.51.72 1.77.78 1.9.06.13.1.29.02.47-.09.18-.13.28-.25.44-.12.16-.26.34-.38.45-.12.12-.25.24-.1.47.15.23.62.99 1.33 1.61.91.8 1.68 1.05 1.93 1.17.25.12.39.1.53-.06.14-.16.6-.7.76-.94.16-.24.32-.19.53-.11.21.08 1.36.64 1.6.76.24.12.4.18.46.28.06.1.06.56-.15 1.16z",
-                                        fill: "#fff"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Hero.jsx",
-                                        lineNumber: 382,
-                                        columnNumber: 674
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                ]
-                            }, void 0, true, {
+                            fill: "#25D366",
+                            xmlns: "http://www.w3.org/2000/svg",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                            }, void 0, false, {
                                 fileName: "[project]/src/components/Hero.jsx",
                                 lineNumber: 382,
-                                columnNumber: 623
+                                columnNumber: 638
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/Hero.jsx",
@@ -1281,11 +1263,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 const Testimonial = (t0)=>{
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(21);
-    if ($[0] !== "7b55296f8d647e66bc16b0a9f90771b9255e13f6cbac621067c87a067a2608ab") {
+    if ($[0] !== "476d99e59dcf30f5f46b8baf23ccbb6f75e1bacf0ee1a0c000f5ed3c90a89ef8") {
         for(let $i = 0; $i < 21; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "7b55296f8d647e66bc16b0a9f90771b9255e13f6cbac621067c87a067a2608ab";
+        $[0] = "476d99e59dcf30f5f46b8baf23ccbb6f75e1bacf0ee1a0c000f5ed3c90a89ef8";
     }
     const { name, role: t1, company: t2, quote, avatarUrl } = t0;
     const role = t1 === undefined ? "" : t1;
@@ -1729,11 +1711,11 @@ var _s = __turbopack_context__.k.signature();
 const Reveal = (t0)=>{
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(19);
-    if ($[0] !== "933f409e3d15b9fffcb6cfa3eb52ce52766aeed66c0bb4596b4667fc1cdbe4a0") {
+    if ($[0] !== "bee722d821dea764bd78397e30fc5f4bbf4abd8c359344ae0fcdb66007a34848") {
         for(let $i = 0; $i < 19; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "933f409e3d15b9fffcb6cfa3eb52ce52766aeed66c0bb4596b4667fc1cdbe4a0";
+        $[0] = "bee722d821dea764bd78397e30fc5f4bbf4abd8c359344ae0fcdb66007a34848";
     }
     let children;
     let props;
@@ -1771,7 +1753,7 @@ const Reveal = (t0)=>{
     if ($[7] === Symbol.for("react.memo_cache_sentinel")) {
         t4 = {
             opacity: 0,
-            y: 50
+            y: 20
         };
         $[7] = t4;
     } else {
@@ -1784,7 +1766,7 @@ const Reveal = (t0)=>{
             y: 0
         } : {
             opacity: 0,
-            y: 50
+            y: 20
         };
         $[8] = isInView;
         $[9] = t5;
@@ -1872,11 +1854,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Reveal$
 ;
 const Methodology = ()=>{
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(8);
-    if ($[0] !== "4025b2c75ff422436e09300dd833bdc37a22aff4520d26cce4ff8c15c2f65ec9") {
+    if ($[0] !== "d371a78018bc3aa2aad1ba9b63d3f23626670694c8665f58aca8ec6de6083ed8") {
         for(let $i = 0; $i < 8; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "4025b2c75ff422436e09300dd833bdc37a22aff4520d26cce4ff8c15c2f65ec9";
+        $[0] = "d371a78018bc3aa2aad1ba9b63d3f23626670694c8665f58aca8ec6de6083ed8";
     }
     let T0;
     let t0;
@@ -1911,11 +1893,11 @@ const Methodology = ()=>{
                 title: "Strategy &\nRoadmap",
                 desc: "Custom growth roadmap with clear KPIs, timelines and spend plans. You approve everything \u2014 zero surprises.",
                 svg: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2",
-                color: "#22d3ee",
-                colorClass: "text-[#22d3ee]",
-                bgClass: "bg-[#22d3ee]/10",
-                borderClass: "border-[#22d3ee]/30",
-                gradient: "from-[#22d3ee]",
+                color: "#f7e839",
+                colorClass: "text-[#f7e839]",
+                bgClass: "bg-[#f7e839]/10",
+                borderClass: "border-[#f7e839]/30",
+                gradient: "from-[#f7e839]",
                 deliverables: [
                     "30/60/90 day growth plan",
                     "Content & channel calendar",
@@ -1949,11 +1931,11 @@ const Methodology = ()=>{
                 title: "Optimise &\nScale",
                 desc: "We don't stop at launch. Weekly data review, monthly strategy calls, continuous improvement \u2014 your growth compounds.",
                 svg: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
-                color: "#22d3ee",
-                colorClass: "text-[#22d3ee]",
-                bgClass: "bg-[#22d3ee]/10",
-                borderClass: "border-[#22d3ee]/30",
-                gradient: "from-[#22d3ee]",
+                color: "#f7e839",
+                colorClass: "text-[#f7e839]",
+                bgClass: "bg-[#f7e839]/10",
+                borderClass: "border-[#f7e839]/30",
+                gradient: "from-[#f7e839]",
                 deliverables: [
                     "Weekly performance report",
                     "A/B testing & iteration",
@@ -1971,18 +1953,9 @@ const Methodology = ()=>{
             className: "text-center mb-20 relative z-20",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: "inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider bg-white/5 border border-white/10 px-6 py-3 rounded-full mb-6 shadow-lg text-[#f7e839]",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "w-1.5 h-1.5 bg-[#22d3ee] rounded-full animate-pulse"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/Methodology.jsx",
-                            lineNumber: 74,
-                            columnNumber: 240
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        "Our Methodology"
-                    ]
-                }, void 0, true, {
+                    className: "inline-block text-sm uppercase tracking-wider bg-white/10 border border-white/20 px-4 py-2 rounded-full mb-6",
+                    children: "Our Methodology"
+                }, void 0, false, {
                     fileName: "[project]/src/components/Methodology.jsx",
                     lineNumber: 74,
                     columnNumber: 59
@@ -1996,22 +1969,22 @@ const Methodology = ()=>{
                         }, void 0, false, {
                             fileName: "[project]/src/components/Methodology.jsx",
                             lineNumber: 74,
-                            columnNumber: 435
+                            columnNumber: 309
                         }, ("TURBOPACK compile-time value", void 0)),
                         "Into ",
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                            className: "text-[#f7e839]",
                             children: "Measurable Growth"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Methodology.jsx",
                             lineNumber: 74,
-                            columnNumber: 474
+                            columnNumber: 348
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Methodology.jsx",
                     lineNumber: 74,
-                    columnNumber: 334
+                    columnNumber: 208
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     className: "text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed font-light",
@@ -2019,7 +1992,7 @@ const Methodology = ()=>{
                 }, void 0, false, {
                     fileName: "[project]/src/components/Methodology.jsx",
                     lineNumber: 74,
-                    columnNumber: 596
+                    columnNumber: 410
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
@@ -2031,14 +2004,14 @@ const Methodology = ()=>{
             className: "relative mb-20",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "hidden lg:block absolute top-[52px] left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[#f7e839]/30 via-[#22d3ee]/50 via-[#f7e839]/30 to-transparent z-0"
+                    className: "hidden lg:block absolute top-[52px] left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-[#f7e839]/30 via-[#f7e839]/50 via-[#f7e839]/30 to-transparent z-0"
                 }, void 0, false, {
                     fileName: "[project]/src/components/Methodology.jsx",
                     lineNumber: 75,
                     columnNumber: 42
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "hidden lg:block absolute top-[46px] left-[12.5%] w-[13px] h-[13px] rounded-full shadow-[0_0_12px_rgba(247,232,57,0.8),0_0_24px_rgba(247,232,57,0.4)] z-10 \r\n            animate-[travel_4s_ease-in-out_infinite]"
+                    className: "hidden lg:block absolute top-[46px] left-[12.5%] w-[13px] h-[13px] rounded-full shadow-[0_0_12px_rgba(247,232,57,0.8),0_0_24px_rgba(247,232,57,0.4)] z-10 animate-[travel_4s_ease-in-out_infinite]"
                 }, void 0, false, {
                     fileName: "[project]/src/components/Methodology.jsx",
                     lineNumber: 75,
@@ -2046,12 +2019,12 @@ const Methodology = ()=>{
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
                     dangerouslySetInnerHTML: {
-                        __html: "\n            @keyframes travel {\n              0% { left: 12.5%; background: #f7e839; box-shadow: 0 0 12px rgba(247,232,57,0.8); }\n              50% { left: calc(87.5% - 14px); background: #22d3ee; box-shadow: 0 0 12px rgba(34,211,238,0.8); }\n              100% { left: 12.5%; background: #f7e839; box-shadow: 0 0 12px rgba(247,232,57,0.8); }\n            }\n            @keyframes rot { to { transform: rotate(360deg); } }\n            @keyframes rotReverse { to { transform: rotate(-360deg); } }\n          "
+                        __html: "\n            @keyframes travel {\n              0% { left: 12.5%; background: #f7e839; box-shadow: 0 0 12px rgba(247,232,57,0.8); }\n              50% { left: calc(87.5% - 14px); background: #f7e839; box-shadow: 0 0 12px rgba(247,232,57,0.8); }\n              100% { left: 12.5%; background: #f7e839; box-shadow: 0 0 12px rgba(247,232,57,0.8); }\n            }\n            @keyframes rot { to { transform: rotate(360deg); } }\n            @keyframes rotReverse { to { transform: rotate(-360deg); } }\n          "
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/components/Methodology.jsx",
                     lineNumber: 75,
-                    columnNumber: 465
+                    columnNumber: 447
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 relative",
@@ -2410,11 +2383,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Methodo
 ;
 const Home = ()=>{
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(16);
-    if ($[0] !== "8271c714964deeb40f08815837b4e06ac2f2116c79af6652c27f3784e7cb0e66") {
+    if ($[0] !== "ea16bbe90282609984ca51bf6ffb97645b65a6a94865a58c9e9eadcdaa8efed5") {
         for(let $i = 0; $i < 16; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "8271c714964deeb40f08815837b4e06ac2f2116c79af6652c27f3784e7cb0e66";
+        $[0] = "ea16bbe90282609984ca51bf6ffb97645b65a6a94865a58c9e9eadcdaa8efed5";
     }
     let t0;
     if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
@@ -2457,7 +2430,7 @@ const Home = ()=>{
                             children: [
                                 "Strategic Digital ",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                                    className: "text-[#f7e839]",
                                     children: "Growth Partners"
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/Home.jsx",
@@ -2476,7 +2449,7 @@ const Home = ()=>{
                         }, void 0, false, {
                             fileName: "[project]/src/pages/Home.jsx",
                             lineNumber: 34,
-                            columnNumber: 366
+                            columnNumber: 306
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-lg text-white/70 max-w-4xl mx-auto leading-relaxed mb-8",
@@ -2484,7 +2457,7 @@ const Home = ()=>{
                         }, void 0, false, {
                             fileName: "[project]/src/pages/Home.jsx",
                             lineNumber: 34,
-                            columnNumber: 456
+                            columnNumber: 396
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                             href: "/about",
@@ -2493,7 +2466,7 @@ const Home = ()=>{
                         }, void 0, false, {
                             fileName: "[project]/src/pages/Home.jsx",
                             lineNumber: 34,
-                            columnNumber: 815
+                            columnNumber: 755
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
@@ -2540,7 +2513,7 @@ const Home = ()=>{
                     children: [
                         "Comprehensive ",
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                            className: "text-[#f7e839]",
                             children: "Digital Solutions"
                         }, void 0, false, {
                             fileName: "[project]/src/pages/Home.jsx",
@@ -2559,7 +2532,7 @@ const Home = ()=>{
                 }, void 0, false, {
                     fileName: "[project]/src/pages/Home.jsx",
                     lineNumber: 48,
-                    columnNumber: 235
+                    columnNumber: 175
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
@@ -2716,7 +2689,7 @@ const Home = ()=>{
             children: [
                 "Our ",
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                    className: "text-[#f7e839]",
                     children: "Brand Partners"
                 }, void 0, false, {
                     fileName: "[project]/src/pages/Home.jsx",
@@ -2838,7 +2811,7 @@ const Home = ()=>{
             children: [
                 "Ready to ",
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                    className: "text-[#f7e839]",
                     children: "Accelerate"
                 }, void 0, false, {
                     fileName: "[project]/src/pages/Home.jsx",
@@ -2868,7 +2841,7 @@ const Home = ()=>{
     }
     let t14;
     if ($[15] === Symbol.for("react.memo_cache_sentinel")) {
-        t14 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
+        t14 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "overflow-hidden",
             children: [
                 t0,
@@ -2896,7 +2869,7 @@ const Home = ()=>{
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/Home.jsx",
                                             lineNumber: 161,
-                                            columnNumber: 407
+                                            columnNumber: 406
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                             href: "/services",
@@ -2905,13 +2878,13 @@ const Home = ()=>{
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/Home.jsx",
                                             lineNumber: 161,
-                                            columnNumber: 679
+                                            columnNumber: 678
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/pages/Home.jsx",
                                     lineNumber: 161,
-                                    columnNumber: 330
+                                    columnNumber: 329
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-white/50 text-sm mt-6",
@@ -2919,23 +2892,23 @@ const Home = ()=>{
                                 }, void 0, false, {
                                     fileName: "[project]/src/pages/Home.jsx",
                                     lineNumber: 161,
-                                    columnNumber: 904
+                                    columnNumber: 903
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/pages/Home.jsx",
                             lineNumber: 161,
-                            columnNumber: 181
+                            columnNumber: 180
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Home.jsx",
                         lineNumber: 161,
-                        columnNumber: 115
+                        columnNumber: 114
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/pages/Home.jsx",
                     lineNumber: 161,
-                    columnNumber: 66
+                    columnNumber: 65
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {

@@ -28,14 +28,14 @@ const Reveal = ({ children, as = 'div', className = '', ...props })=>{
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
             initial: {
                 opacity: 0,
-                y: 50
+                y: 20
             },
             animate: isInView ? {
                 opacity: 1,
                 y: 0
             } : {
                 opacity: 0,
-                y: 50
+                y: 20
             },
             transition: {
                 duration: 0.6,
@@ -448,8 +448,8 @@ const StatsSection = ()=>{
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-const About = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-        className: "relative min-h-screen",
+const About = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "relative",
         style: {
             background: 'linear-gradient(135deg, #11181f 0%, #0d1117 100%)'
         },
@@ -574,7 +574,7 @@ const About = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5
                                         children: [
                                             "By the ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                                                className: "text-[#f7e839]",
                                                 children: "Numbers"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/pages/About.jsx",
@@ -663,7 +663,7 @@ const About = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5
                                         children: [
                                             "Built From a Real Problem, ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                                                className: "text-[#f7e839]",
                                                 children: "Not a Business Plan."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/pages/About.jsx",
@@ -929,7 +929,7 @@ const About = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5
                                     children: [
                                         "Driven by Purpose, ",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                                            className: "text-[#f7e839]",
                                             children: "Defined by Results."
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/About.jsx",
@@ -1120,7 +1120,7 @@ const About = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5
                                         children: [
                                             "Our ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                                                className: "text-[#f7e839]",
                                                 children: "Brand Partners"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/pages/About.jsx",
@@ -1294,7 +1294,7 @@ const About = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5
                                     children: [
                                         "What We ",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                                            className: "text-[#f7e839]",
                                             children: "Stand For"
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/About.jsx",
@@ -1639,7 +1639,7 @@ const About = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5
                                             children: [
                                                 "Questions ",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                                                    className: "text-[#f7e839]",
                                                     children: "People Actually Ask"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/pages/About.jsx",
@@ -1801,7 +1801,7 @@ const About = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5
                                     children: [
                                         "Ready to ",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                                            className: "text-[#f7e839]",
                                             children: "Transform Your Digital "
                                         }, void 0, false, {
                                             fileName: "[project]/src/pages/About.jsx",

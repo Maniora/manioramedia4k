@@ -20,11 +20,11 @@ var _s = __turbopack_context__.k.signature();
 const Reveal = (t0)=>{
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(19);
-    if ($[0] !== "933f409e3d15b9fffcb6cfa3eb52ce52766aeed66c0bb4596b4667fc1cdbe4a0") {
+    if ($[0] !== "bee722d821dea764bd78397e30fc5f4bbf4abd8c359344ae0fcdb66007a34848") {
         for(let $i = 0; $i < 19; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "933f409e3d15b9fffcb6cfa3eb52ce52766aeed66c0bb4596b4667fc1cdbe4a0";
+        $[0] = "bee722d821dea764bd78397e30fc5f4bbf4abd8c359344ae0fcdb66007a34848";
     }
     let children;
     let props;
@@ -62,7 +62,7 @@ const Reveal = (t0)=>{
     if ($[7] === Symbol.for("react.memo_cache_sentinel")) {
         t4 = {
             opacity: 0,
-            y: 50
+            y: 20
         };
         $[7] = t4;
     } else {
@@ -75,7 +75,7 @@ const Reveal = (t0)=>{
             y: 0
         } : {
             opacity: 0,
-            y: 50
+            y: 20
         };
         $[8] = isInView;
         $[9] = t5;
@@ -623,11 +623,11 @@ var _s = __turbopack_context__.k.signature();
 function useCountUp(to, t0) {
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(5);
-    if ($[0] !== "d17efea0c40f4e6703240c42088b73f2880e96500caf6be0d2b4eb828f9929a8") {
+    if ($[0] !== "93c4c8e7d9167dd8405a039af78ef23483e0b8b081551487ceac12bed77ae601") {
         for(let $i = 0; $i < 5; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "d17efea0c40f4e6703240c42088b73f2880e96500caf6be0d2b4eb828f9929a8";
+        $[0] = "93c4c8e7d9167dd8405a039af78ef23483e0b8b081551487ceac12bed77ae601";
     }
     const duration = t0 === undefined ? 1500 : t0;
     const [value, setValue] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
@@ -775,11 +775,11 @@ const StatsSection = ()=>{
 _c = StatsSection;
 const About = ()=>{
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(42);
-    if ($[0] !== "d17efea0c40f4e6703240c42088b73f2880e96500caf6be0d2b4eb828f9929a8") {
+    if ($[0] !== "93c4c8e7d9167dd8405a039af78ef23483e0b8b081551487ceac12bed77ae601") {
         for(let $i = 0; $i < 42; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "d17efea0c40f4e6703240c42088b73f2880e96500caf6be0d2b4eb828f9929a8";
+        $[0] = "93c4c8e7d9167dd8405a039af78ef23483e0b8b081551487ceac12bed77ae601";
     }
     let t0;
     let t1;
@@ -934,7 +934,7 @@ const About = ()=>{
                 children: [
                     "By the ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                        className: "text-[#f7e839]",
                         children: "Numbers"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/About.jsx",
@@ -1042,7 +1042,7 @@ const About = ()=>{
                 children: [
                     "Built From a Real Problem, ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                        className: "text-[#f7e839]",
                         children: "Not a Business Plan."
                     }, void 0, false, {
                         fileName: "[project]/src/pages/About.jsx",
@@ -1297,7 +1297,7 @@ const About = ()=>{
                 children: [
                     "Driven by Purpose, ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                        className: "text-[#f7e839]",
                         children: "Defined by Results."
                     }, void 0, false, {
                         fileName: "[project]/src/pages/About.jsx",
@@ -1531,7 +1531,7 @@ const About = ()=>{
                     children: [
                         "Our ",
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                            className: "text-[#f7e839]",
                             children: "Brand Partners"
                         }, void 0, false, {
                             fileName: "[project]/src/pages/About.jsx",
@@ -1550,7 +1550,7 @@ const About = ()=>{
                 }, void 0, false, {
                     fileName: "[project]/src/pages/About.jsx",
                     lineNumber: 297,
-                    columnNumber: 224
+                    columnNumber: 164
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
@@ -1693,7 +1693,7 @@ const About = ()=>{
                 children: [
                     "What We ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                        className: "text-[#f7e839]",
                         children: "Stand For"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/About.jsx",
@@ -2064,7 +2064,7 @@ const About = ()=>{
                         children: [
                             "Questions ",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                                className: "text-[#f7e839]",
                                 children: "People Actually Ask"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/About.jsx",
@@ -2083,7 +2083,7 @@ const About = ()=>{
                     }, void 0, false, {
                         fileName: "[project]/src/pages/About.jsx",
                         lineNumber: 430,
-                        columnNumber: 244
+                        columnNumber: 184
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
@@ -2244,7 +2244,7 @@ const About = ()=>{
             children: [
                 "Ready to ",
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: "bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent",
+                    className: "text-[#f7e839]",
                     children: "Transform Your Digital "
                 }, void 0, false, {
                     fileName: "[project]/src/pages/About.jsx",
@@ -2274,8 +2274,8 @@ const About = ()=>{
     }
     let t40;
     if ($[41] === Symbol.for("react.memo_cache_sentinel")) {
-        t40 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-            className: "relative min-h-screen",
+        t40 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "relative",
             style: t0,
             children: [
                 t1,
@@ -2317,18 +2317,18 @@ const About = ()=>{
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/pages/About.jsx",
                                                             lineNumber: 487,
-                                                            columnNumber: 682
+                                                            columnNumber: 668
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/pages/About.jsx",
                                                         lineNumber: 487,
-                                                        columnNumber: 622
+                                                        columnNumber: 608
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/pages/About.jsx",
                                                 lineNumber: 487,
-                                                columnNumber: 386
+                                                columnNumber: 372
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "/careers",
@@ -2337,34 +2337,34 @@ const About = ()=>{
                                             }, void 0, false, {
                                                 fileName: "[project]/src/pages/About.jsx",
                                                 lineNumber: 487,
-                                                columnNumber: 786
+                                                columnNumber: 772
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/pages/About.jsx",
                                         lineNumber: 487,
-                                        columnNumber: 322
+                                        columnNumber: 308
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/pages/About.jsx",
                                 lineNumber: 487,
-                                columnNumber: 187
+                                columnNumber: 173
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/pages/About.jsx",
                             lineNumber: 487,
-                            columnNumber: 179
+                            columnNumber: 165
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/pages/About.jsx",
                         lineNumber: 487,
-                        columnNumber: 139
+                        columnNumber: 125
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/pages/About.jsx",
                     lineNumber: 487,
-                    columnNumber: 99
+                    columnNumber: 85
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {

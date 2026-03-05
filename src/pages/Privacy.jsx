@@ -1,239 +1,414 @@
 'use client'
 
-import Reveal from '../components/Reveal'
-import AnimatedIllustrations from '../components/AnimatedIllustrations'
+import { useState, useEffect } from 'react'
+import Reveal from '@/components/Reveal'
 
-const PrivacySection = ({ number, title, children, delay = 0 }) => (
-  <Reveal as="section" className="bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-2xl p-8 mb-6" delay={delay}>
-    <div className="flex items-start gap-4 mb-4">
-      <div className="h-8 w-8 grid place-items-center rounded-lg bg-gradient-to-br from-[#f7e839] to-[#f5d428] text-[#11181f] font-bold text-sm flex-shrink-0">
-        {number}
-      </div>
-      <h2 className="text-xl font-bold text-white">{title}</h2>
-    </div>
-    <div className="text-white/80 leading-relaxed space-y-3">
-      {children}
-    </div>
-  </Reveal>
+/* ─── Shared UI Primitives ─── */
+
+const SectionLabel = ({ n }) => (
+  <span className="font-mono text-[10px] text-brand uppercase tracking-[0.12em] block mb-2.5">
+    SECTION {n}
+  </span>
 )
 
-const PrivacyList = ({ items }) => (
-  <ul className="space-y-2">
-    {items.map((item, index) => (
-      <li key={index} className="flex items-start gap-3">
-        <div className="h-1.5 w-1.5 rounded-full bg-[#f7e839] mt-2 flex-shrink-0"></div>
+const H2 = ({ children }) => (
+  <h2 className="font-syne text-2xl lg:text-3xl font-extrabold text-white mb-4 leading-tight">
+    {children}
+  </h2>
+)
+
+const H3 = ({ children }) => (
+  <h3 className="font-syne text-lg font-bold text-white/90 mt-6 mb-2.5">
+    {children}
+  </h3>
+)
+
+const P = ({ children }) => (
+  <p className="text-[15px] text-white/60 leading-relaxed mb-4">
+    {children}
+  </p>
+)
+
+const DocList = ({ items }) => (
+  <ul className="space-y-4 my-4">
+    {items.map((item, i) => (
+      <li key={i} className="flex gap-4 text-sm text-white/60 leading-relaxed">
+        <span className="text-brand shrink-0 mt-1">→</span>
         <span>{item}</span>
       </li>
     ))}
   </ul>
 )
 
-const Privacy = () => (
-  <main className="relative min-h-screen" style={{ background: 'linear-gradient(135deg, #11181f 0%, #0d1117 100%)' }}>
-    <AnimatedIllustrations />
-    {/* Hero Section */}
-    <section className="relative py-20 lg:py-28">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-4xl mx-auto">
-          <Reveal>
-            <span className="inline-block text-sm uppercase tracking-wider bg-white/10 border border-white/20 px-4 py-2 rounded-full mb-6">
-              Privacy & Data Protection
-            </span>
+const Box = ({ variant = 'yellow', children }) => {
+  const styles = {
+    yellow: "bg-brand/5 border-brand/20 border-l-brand text-white/80",
+    red: "bg-red-500/5 border-red-500/20 border-l-red-500 text-red-300",
+    cyan: "bg-cyan-500/5 border-cyan-500/20 border-l-cyan-500 text-cyan-300",
+  }
+  return (
+    <div className={`border-l-4 rounded-r-xl p-5 my-6 text-sm leading-relaxed ${styles[variant]}`}>
+      {children}
+    </div>
+  )
+}
+
+const DocTable = ({ headers, rows }) => (
+  <div className="overflow-x-auto my-6 border border-white/10 rounded-xl bg-white/5">
+    <table className="w-full text-left text-sm border-collapse">
+      <thead>
+        <tr className="border-b border-white/10 bg-white/5">
+          {headers.map((h, i) => (
+            <th key={i} className="p-4 font-mono text-[10px] uppercase tracking-wider text-brand">
+              {h}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody className="divide-y divide-white/5">
+        {rows.map((row, ri) => (
+          <tr key={ri} className="hover:bg-white/5 transition-colors">
+            {row.map((cell, ci) => (
+              <td key={ci} className="p-4 text-white/60 align-top" dangerouslySetInnerHTML={{ __html: cell }} />
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+)
+
+/* ─── Icons ─── */
+const IconEmail = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+)
+const IconPhone = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+)
+const IconLocation = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+)
+const IconGlobe = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>
+)
+const IconUser = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+)
+const IconSuitcase = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg>
+)
+const IconClock = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+)
+
+const ContactCard = ({ title, rows }) => (
+  <div className="bg-[#111118] border border-white/10 rounded-2xl p-8 mt-8 shadow-2xl">
+    <h4 className="font-syne text-lg font-extrabold text-white mb-6 uppercase tracking-tight">{title}</h4>
+    <div className="space-y-4">
+      {rows.map((row, i) => (
+        <div key={i} className="flex items-start gap-4 text-sm border-b border-white/5 pb-4 last:border-0 last:pb-0">
+          <span className="text-brand w-6 shrink-0 pt-0.5">{row[0]}</span>
+          <div className="flex flex-col">
+            <span className="text-white/40 text-[10px] uppercase tracking-widest mb-1">{row[1]}</span>
+            {row[2] ? (
+              <a href={row[2]} target={row[2].startsWith('http') ? '_blank' : undefined}
+                className="text-brand hover:underline transition-all font-medium">
+                {row[3] || row[1]}
+              </a>
+            ) : (
+              <span className="text-white/80 font-medium">{row[1]}</span>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)
+
+const DocSection = ({ id, num, title, children }) => (
+  <Reveal as="section" id={id} className="mb-16 pb-16 border-b border-white/5 last:border-0 last:mb-0 last:pb-0">
+    <SectionLabel n={num} />
+    <H2>{title}</H2>
+    {children}
+  </Reveal>
+)
+
+/* ═══════════════════════════════════════════
+   PRIVACY POLICY CONTENT
+═══════════════════════════════════════════ */
+
+export default function Privacy() {
+  const [activeHash, setActiveHash] = useState('')
+
+  const PP_LINKS = [
+    { href: '#pp-intro', label: '1. Introduction' },
+    { href: '#pp-collect', label: '2. Data We Collect' },
+    { href: '#pp-how', label: '3. How We Collect' },
+    { href: '#pp-purpose', label: '4. Purpose of Use' },
+    { href: '#pp-share', label: '5. Data Sharing' },
+    { href: '#pp-retention', label: '6. Data Retention' },
+    { href: '#pp-rights', label: '7. Your Rights (DPDP Act)' },
+    { href: '#pp-security', label: '8. Data Security' },
+    { href: '#pp-cookies', label: '9. Cookies' },
+    { href: '#pp-third', label: '10. Third-Party Links' },
+    { href: '#pp-children', label: '11. Children\'s Privacy' },
+    { href: '#pp-grievance', label: '12. Grievance Officer' },
+    { href: '#pp-changes', label: '13. Policy Changes' },
+    { href: '#pp-contact', label: '14. Contact Us' },
+  ]
+
+  useEffect(() => {
+    const handler = () => {
+      const sections = document.querySelectorAll('section[id]')
+      let current = ''
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 150) current = sec.id
+      })
+      setActiveHash(current)
+    }
+    window.addEventListener('scroll', handler)
+    return () => window.removeEventListener('scroll', handler)
+  }, [])
+
+  return (
+    <div className="bg-[#0f141a] text-white/90 selection:bg-brand selection:text-ink">
+      {/* Background Decorative Element */}
+      <div className="fixed inset-0 pointer-events-none opacity-20">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-brand/5 blur-[120px]" />
+        <div className="absolute inset-0 bg-grid bg-[size:40px_40px]" />
+      </div>
+
+      {/* ── HERO ── */}
+      <section className="relative pt-32 pb-20 border-b border-white/5 overflow-hidden">
+        <div className="container mx-auto px-6 text-center">
+          <Reveal className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 border border-brand/20 mb-8 backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
+            <span className="font-mono text-[10px] tracking-[0.2em] text-brand uppercase font-bold">Privacy Matters</span>
           </Reveal>
+
           <Reveal>
-            <h1 className="font-extrabold tracking-tight text-5xl md:text-6xl lg:text-7xl mb-6">
-              <span className="text-white">Privacy </span>
-              <span className="text-[#f7e839]">Policy</span>
+            <h1 className="font-syne text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[0.9]">
+              Privacy <span className="text-brand">Policy</span>
             </h1>
           </Reveal>
-        </div>
-      </div>
-    </section>
 
-    {/* Content Section */}
-    <section className="py-10 lg:pt-0 lg:pb-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          {/* Introduction */}
-          <Reveal as="div" className="bg-gradient-to-br from-[#11181f] to-[#1a222c] rounded-2xl p-8 border border-white/10 shadow-2xl mb-8">
-            <p className="text-white/80 text-lg leading-relaxed">
-              At 4KMEDIA, we are committed to protecting your privacy and safeguarding your personal information. 
-              This Privacy Policy explains how we collect, use, disclose, and protect your data when you interact 
-              with our website and services. By using our services, you consent to the practices described in this policy.
+          <Reveal>
+            <p className="max-w-2xl mx-auto text-white/50 text-lg leading-relaxed">
+              Your trust is our most valuable asset. This policy outlines how 4KMedia LLP safeguards your digital identity and personal data.
             </p>
           </Reveal>
 
-          {/* Privacy Sections */}
-          <div className="space-y-6">
-            <PrivacySection number="01" title="Information We Collect" delay={30}>
-              <p className="font-semibold text-white mb-2">Personal Information:</p>
-              <PrivacyList items={[
-                "Contact details: Name, email address, phone number, and business information",
-                "Payment information: Billing details and transaction history",
-                "Communication data: Messages, inquiries, and feedback provided through our channels",
-                "Account information: Usernames, passwords, and preferences for service access"
-              ]} />
-              
-              <p className="font-semibold text-white mt-4 mb-2">Non-Personal Information:</p>
-              <PrivacyList items={[
-                "Technical data: IP address, browser type, device information, and operating system",
-                "Usage data: Pages visited, time spent, click patterns, and referral sources",
-                "Analytics data: Website performance metrics and user behavior patterns",
-                "Cookies and tracking data: Information collected through cookies and similar technologies"
-              ]} />
-            </PrivacySection>
-
-            <PrivacySection number="02" title="How We Use Your Information" delay={60}>
-              <PrivacyList items={[
-                "Service delivery: Providing and maintaining our digital marketing services",
-                "Client communication: Responding to inquiries, sending updates, and providing support",
-                "Business operations: Processing payments, managing accounts, and improving services",
-                "Marketing and analytics: Sending promotional materials and analyzing service usage",
-                "Legal compliance: Meeting regulatory requirements and preventing fraudulent activities",
-                "Service improvement: Enhancing user experience and developing new features"
-              ]} />
-            </PrivacySection>
-
-            <PrivacySection number="03" title="Data Sharing and Disclosure" delay={90}>
-              <PrivacyList items={[
-                "We do not sell, trade, or rent your personal information to third parties",
-                "Trusted service providers: Data processors who assist in service delivery under strict confidentiality",
-                "Legal requirements: When required by law, court order, or governmental authorities",
-                "Business transfers: In connection with mergers, acquisitions, or business transfers",
-                "With your consent: When you explicitly authorize specific data sharing arrangements"
-              ]} />
-            </PrivacySection>
-
-            <PrivacySection number="04" title="Data Security Measures" delay={120}>
-              <PrivacyList items={[
-                "Encryption technologies: Protecting data in transit and at rest using industry standards",
-                "Access controls: Limiting data access to authorized personnel on a need-to-know basis",
-                "Regular security assessments: Continuous monitoring and vulnerability testing",
-                "Employee training: Ensuring staff understand and adhere to data protection protocols",
-                "Incident response: Established procedures for addressing data security breaches"
-              ]} />
-            </PrivacySection>
-
-            <PrivacySection number="05" title="Your Data Protection Rights" delay={150}>
-              <PrivacyList items={[
-                "Right to access: Request copies of your personal information we hold",
-                "Right to rectification: Correct inaccurate or incomplete personal data",
-                "Right to erasure: Request deletion of your personal information under certain conditions",
-                "Right to restrict processing: Limit how we use your data in specific circumstances",
-                "Right to data portability: Receive your data in a structured, machine-readable format",
-                "Right to object: Opt-out of certain data processing activities, including marketing"
-              ]} />
-            </PrivacySection>
-
-            <PrivacySection number="06" title="Cookies and Tracking Technologies" delay={180}>
-              <PrivacyList items={[
-                "Essential cookies: Required for basic website functionality and security",
-                "Analytics cookies: Helping us understand how visitors interact with our website",
-                "Marketing cookies: Used to deliver relevant advertisements and track campaign performance",
-                "Preferences cookies: Remembering your settings and preferences for enhanced experience",
-                "You can manage cookie preferences through your browser settings or our consent manager"
-              ]} />
-            </PrivacySection>
-
-            <PrivacySection number="07" title="Data Retention Periods" delay={210}>
-              <PrivacyList items={[
-                "Client data: Retained for the duration of our business relationship and as required by law",
-                "Marketing data: Kept until you unsubscribe or request deletion",
-                "Analytics data: Anonymous data may be retained indefinitely for statistical purposes",
-                "Legal requirements: Certain data may be retained to comply with regulatory obligations",
-                "We regularly review retention periods and delete unnecessary data securely"
-              ]} />
-            </PrivacySection>
-
-            <PrivacySection number="08" title="International Data Transfers" delay={240}>
-              <PrivacyList items={[
-                "We primarily store and process data within India",
-                "When international transfers occur, we ensure adequate protection measures are in place",
-                "We use standard contractual clauses and other approved mechanisms for cross-border transfers",
-                "Third-party service providers are vetted for compliance with international data protection standards"
-              ]} />
-            </PrivacySection>
-
-            <PrivacySection number="09" title="Third-Party Websites and Services" delay={270}>
-              <p>
-                Our website may contain links to third-party websites and services. This Privacy Policy 
-                does not apply to those third-party sites. We encourage you to review the privacy policies 
-                of any third-party sites you visit.
-              </p>
-            </PrivacySection>
-
-            <PrivacySection number="10" title="Children's Privacy" delay={300}>
-              <p>
-                Our services are not directed to individuals under the age of 18. We do not knowingly 
-                collect personal information from children. If we become aware that we have collected 
-                personal data from a child without parental consent, we will take steps to delete that information.
-              </p>
-            </PrivacySection>
-
-            <PrivacySection number="11" title="Policy Updates and Changes" delay={330}>
-              <PrivacyList items={[
-                "We may update this Privacy Policy to reflect changes in our practices or legal requirements",
-                "Significant changes will be communicated through our website or direct notifications",
-                "Continued use of our services after changes constitutes acceptance of the updated policy",
-                "We encourage regular review of this policy to stay informed about how we protect your data"
-              ]} />
-            </PrivacySection>
-
-            <PrivacySection number="12" title="User-Generated Content" delay={360}>
-              <PrivacyList items={[
-                "Users are solely responsible for content they submit through our platforms",
-                "We reserve the right to moderate, edit, or remove content that violates our guidelines",
-                "Prohibited content includes hate speech, harassment, illegal activities, and misinformation",
-                "By submitting content, users grant 4KMEDIA a license to use, modify, and display it as necessary"
-              ]} />
-            </PrivacySection>
-
-            <PrivacySection number="13" title="Data Protection Officer" delay={390}>
-              <p>
-                We have designated a Data Protection Officer to oversee compliance with data protection laws. 
-                For any privacy-related concerns or requests, please contact our DPO at the information provided below.
-              </p>
-            </PrivacySection>
-          </div>
-
-          {/* Contact Section */}
-          <Reveal as="div" className="bg-gradient-to-r from-[#1a1f26] to-[#2d3748] rounded-2xl p-8 text-center border border-white/10 shadow-2xl mt-12">
-            <h3 className="text-2xl font-bold text-white mb-4">Privacy Concerns or Questions?</h3>
-            <p className="text-white/80 mb-6">
-              If you have any questions about this Privacy Policy, wish to exercise your data protection rights, 
-              or have concerns about how we handle your personal information, please contact our Data Protection Officer.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="mailto:team@4kmedia.in" 
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-[#f7e839] to-[#f5d428] text-[#11181f] font-semibold hover:shadow-lg transition-all duration-200"
-              >
-                Contact DPO
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-              </a>
-              <a 
-                href="mailto:team@4kmedia.in" 
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/10 transition-all duration-200"
-              >
-                General Inquiries
-              </a>
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#f7e839] text-[#f7e839] font-semibold hover:bg-[#f7e839]/10 transition-all duration-200"
-              >
-                Contact Us
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-              </a>
+          <Reveal className="mt-10 flex flex-center gap-2 justify-center">
+            <div className="font-mono text-[11px] text-white/30 tracking-widest uppercase flex items-center gap-3 bg-white/5 px-6 py-2.5 rounded-xl border border-white/10">
+              Last Updated: Feb 25, 2026
             </div>
           </Reveal>
         </div>
-      </div>
-    </section>
-  </main>
-)
+      </section>
 
-export default Privacy
+      {/* ── CONTENT GRID ── */}
+      <div className="container mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-12 lg:gap-20 relative">
+
+          {/* SIDEBAR */}
+          <aside className="lg:sticky lg:top-32 h-fit space-y-8 z-20">
+            {/* Navigation Links */}
+            <nav className="hidden lg:block">
+              <h5 className="font-mono text-[9px] text-white/30 uppercase tracking-[0.2em] mb-6 px-4">Sections</h5>
+              <ul className="space-y-1">
+                {PP_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className={`block px-4 py-2.5 rounded-xl text-xs font-medium transition-all ${activeHash === link.href.slice(1)
+                        ? 'bg-brand/10 text-brand border-l-2 border-brand'
+                        : 'text-white/40 hover:bg-white/5 hover:text-white'
+                        }`}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            {/* Help Callout */}
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-brand/20 to-brand/5 border border-brand/20 text-center">
+              <p className="text-xs text-white/80 font-medium mb-4 italic">Questions about your data?</p>
+              <a href="mailto:team@4kmedia.in" className="inline-block text-[10px] font-bold uppercase tracking-widest text-ink bg-brand px-6 py-2.5 rounded-lg hover:scale-105 transition-transform">
+                Email DPO
+              </a>
+            </div>
+          </aside>
+
+          {/* DOCUMENT BODY */}
+          <main className="relative min-w-0">
+
+            <DocSection id="pp-intro" num="01" title="Introduction">
+              <P>This Privacy Policy ("Policy") describes how <strong className="text-white">4KMedia LLP</strong> ("4KMedia," "we," "us," or "our"), registered at 3-13-745, Bharath Nagar, Mansoorabad, LB Nagar, Hyderabad, Telangana – 500074, India, collects, uses, processes, stores, and protects your personal data when you visit <strong className="text-white">www.4kmedia.in</strong> or engage with our services.</P>
+              <P>This Policy is published in compliance with:</P>
+              <DocList items={[
+                'The Digital Personal Data Protection Act, 2023 (DPDP Act)',
+                'The Information Technology Act, 2000 and IT (Amendment) Act, 2008',
+                'The Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011',
+                'The Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021',
+              ]} />
+              <Box variant="yellow">By using our Platform or engaging our services, you acknowledge that you have read and understood this Policy and consent to the collection and use of your data as described herein. If you do not agree, please do not use our Platform or services.</Box>
+            </DocSection>
+
+            <DocSection id="pp-collect" num="02" title="Personal Data We Collect">
+              <H3>2.1 Data You Provide Directly</H3>
+              <DocTable
+                headers={['Category', 'Examples', 'When Collected']}
+                rows={[
+                  ['Identity Data', 'Full name, business name', 'Contact forms, service onboarding'],
+                  ['Contact Data', 'Email address, mobile number, WhatsApp number', 'Enquiry forms, service agreements'],
+                  ['Business Data', 'Company name, GSTIN, business type, industry', 'Client onboarding, invoicing'],
+                  ['Financial Data', 'Bank account details, UPI ID (for payment processing only)', 'Invoice and payment processing'],
+                  ['Content Data', 'Images, videos, brand assets, copy provided by you', 'Project delivery'],
+                  ['Communication Data', 'Emails, WhatsApp messages, call records', 'Ongoing client communication'],
+                ]}
+              />
+              <H3>2.2 Data Collected Automatically</H3>
+              <DocList items={[
+                'IP address and approximate geographic location',
+                'Browser type, version, and device information',
+                'Pages visited, time spent, links clicked, and referral source',
+                'Cookie identifiers and session data',
+              ]} />
+              <H3>2.3 Sensitive Personal Data</H3>
+              <P>Under the IT Rules 2011, Sensitive Personal Data or Information (SPDI) includes financial information, biometric data, passwords, and health data. 4KMedia does not intentionally collect SPDI beyond what is strictly necessary for service delivery. Where SPDI is collected, explicit consent is obtained.</P>
+            </DocSection>
+
+            <DocSection id="pp-how" num="03" title="How We Collect Your Data">
+              <DocList items={[
+                'Directly from you — when you fill a contact form, send us an email or WhatsApp message, book a consultation, or enter a service agreement',
+                'Automatically — via cookies, Google Analytics, and similar tracking technologies',
+                'From third parties — Meta Business Suite, Google Ads Manager, LinkedIn Campaign Manager',
+                'Social media platforms — when you interact with our accounts or pages',
+              ]} />
+            </DocSection>
+
+            <DocSection id="pp-purpose" num="04" title="Purpose & Legal Basis">
+              <DocTable
+                headers={['Purpose', 'Legal Basis']}
+                rows={[
+                  ['Providing and delivering our services', 'Contractual necessity / Consent'],
+                  ['Sending invoices and processing payments', 'Contractual necessity / Legal obligation'],
+                  ['Responding to your enquiries and communications', 'Legitimate interest / Consent'],
+                  ['Analysing website usage to improve our Platform', 'Legitimate interest'],
+                  ['Complying with legal and regulatory obligations', 'Legal obligation'],
+                  ['Portfolio and case study usage (with consent)', 'Consent'],
+                ]}
+              />
+              <Box variant="cyan">Under the DPDP Act 2023, we process your personal data only for purposes that are necessary, specific, and for which your consent has been obtained.</Box>
+            </DocSection>
+
+            <DocSection id="pp-share" num="05" title="Data Sharing & Disclosure">
+              <P>4KMedia does not sell, rent, or trade your personal data to any third party. We may share your data in limited circumstances:</P>
+              <H3>5.1 Service Providers (Data Processors)</H3>
+              <DocList items={[
+                'Zoho Corporation — CRM, project management, email campaigns',
+                'Google LLC — Analytics, Google Ads, Gmail',
+                'Meta Platforms Inc. — Ad management',
+                'Payment Processors — RBI-regulated payment gateways',
+              ]} />
+              <H3>5.2 Legal Disclosure</H3>
+              <P>We may disclose your data if required by law, court order, or government authority under the IT Act 2000 or any other applicable Indian law.</P>
+              <Box variant="red">Where your data is processed outside India, we ensure appropriate safeguards are in place as required under the DPDP Act, 2023.</Box>
+            </DocSection>
+
+            <DocSection id="pp-retention" num="06" title="Data Retention">
+              <DocTable
+                headers={['Data Type', 'Retention Period']}
+                rows={[
+                  ['Client service and project data', '7 years (GST/tax compliance)'],
+                  ['Financial records and invoices', '8 years (Income Tax Act, 1961)'],
+                  ['Communication records', '3 years from last interaction'],
+                  ['Website analytics data', '26 months'],
+                ]}
+              />
+            </DocSection>
+
+            <DocSection id="pp-rights" num="07" title="Your Rights (DPDP Act 2023)">
+              <DocList items={[
+                'Right to Information — Know what data we hold and how it is processed',
+                'Right to Correction — Request correction of inaccurate data',
+                'Right to Erasure — Request deletion of data no longer necessary',
+                'Right to Withdraw Consent — Withdraw processing consent at any time',
+                'Right to Grievance Redressal — Raise concerns with our Grievance Officer',
+              ]} />
+              <P>To exercise these rights, send a request to <strong className="text-white">team@4kmedia.in</strong>. We will respond within <strong className="text-white">30 days</strong>.</P>
+            </DocSection>
+
+            <DocSection id="pp-security" num="08" title="Data Security">
+              <P>4KMedia implements reasonable technical and organisational security measures in accordance with the IT Rules, 2011.</P>
+              <DocList items={[
+                'SSL/TLS encryption for all data transmitted',
+                'Access controls limiting data to authorised team members only',
+                'Secure password policies and two-factor authentication',
+              ]} />
+              <Box variant="red">No method of transmission over the internet is 100% secure. In the event of a breach, we will notify affected individuals and authorities as required by law.</Box>
+            </DocSection>
+
+            <DocSection id="pp-cookies" num="09" title="Cookies & Tracking">
+              <DocTable
+                headers={['Cookie Type', 'Purpose', 'Duration']}
+                rows={[
+                  ['Essential Cookies', 'Platform functionality', 'Session'],
+                  ['Analytics Cookies', 'Google Analytics', 'Up to 2 years'],
+                  ['Marketing Cookies', 'Meta Pixel, Google Ads', 'Up to 90 days'],
+                ]}
+              />
+            </DocSection>
+
+            <DocSection id="pp-third" num="10" title="Third-Party Links">
+              <P>Our Platform may contain links to third-party sites. 4KMedia accepts no responsibility or liability for their privacy policies. We encourage you to review their policies.</P>
+            </DocSection>
+
+            <DocSection id="pp-children" num="11" title="Children's Privacy">
+              <P>Our services are not directed at individuals under 18 years. If we become aware that a minor has provided data without consent, we will delete it promptly.</P>
+            </DocSection>
+
+            <DocSection id="pp-grievance" num="12" title="Grievance Officer">
+              <ContactCard
+                title="Grievance Officer — 4KMedia LLP"
+                rows={[
+                  [<IconUser />, 'Contact Name', null, 'Dabbikar Krishnakanth'],
+                  [<IconSuitcase />, 'Designation', null, 'Director & Grievance Officer'],
+                  [<IconEmail />, 'Privacy Desk', 'mailto:team@4kmedia.in', 'team@4kmedia.in'],
+                  [<IconPhone />, 'Phone Support', null, '+91 99899 58238'],
+                  [<IconLocation />, 'Registered Office', null, '3-13-745, Mansoorabad, Hyderabad'],
+                ]}
+              />
+            </DocSection>
+
+            <DocSection id="pp-changes" num="13" title="Policy Changes">
+              <P>We may update this Policy periodically. Material changes will be notified via email or a prominent notice on our Platform at least 14 days before taking effect.</P>
+            </DocSection>
+
+            <DocSection id="pp-contact" num="14" title="Contact Us">
+              <ContactCard
+                title="4KMedia LLP — Privacy Contact"
+                rows={[
+                  [<IconEmail />, 'Direct Email', 'mailto:team@4kmedia.in', 'team@4kmedia.in'],
+                  [<IconPhone />, 'Phone', null, '+91 99899 58238'],
+                  [<IconGlobe />, 'Agency Website', 'https://www.4kmedia.in', 'www.4kmedia.in'],
+                ]}
+              />
+            </DocSection>
+
+            {/* Back to top */}
+            <div className="mt-20 pt-10 border-t border-white/5 text-center">
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="group flex items-center gap-3 mx-auto text-white/40 hover:text-brand transition-colors font-mono text-xs uppercase tracking-widest"
+              >
+                <span className="group-hover:-translate-y-1 transition-transform">↑</span> Back to the top
+              </button>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  )
+}

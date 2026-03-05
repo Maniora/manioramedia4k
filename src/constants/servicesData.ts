@@ -14,10 +14,10 @@ export interface Service {
 export const servicesData: Service[] = [
     {
         id: 'digital-marketing',
-        t: 'Digital Marketing & SMM',
+        t: 'Digital Marketing',
         d: 'Comprehensive performance-driven digital marketing solutions to rapidly accelerate your brand growth, visibility, and acquisition.',
         img: '/assets/images/smm.jpg',
-        pts: ['Search Engine Optimization (SEO)', 'Performance Marketing & SMM', 'Email & WhatsApp Automation'],
+        pts: ['Search Engine Optimization (SEO)', 'Performance Marketing', 'Email & WhatsApp Automation'],
         subServices: [
             {
                 title: 'Search Engine Optimisation (SEO)',
@@ -103,15 +103,43 @@ export const servicesData: Service[] = [
     {
         id: 'ui-ux',
         t: 'UI/UX Design',
-        d: 'Human-centered product design—research, prototypes, and design systems that convert.',
+        d: 'User-focused, visually engaging, and conversion-driven digital experiences designed to improve usability, increase engagement, and help businesses achieve measurable growth across web and mobile platforms.',
         img: '/assets/images/uiux.jpg',
-        pts: ['User research & flows', 'High-fidelity designs', 'Design systems & handoff']
+        pts: ['User Research & UI Design', 'Interactive Prototyping', 'Design Systems & Testing'],
+        subServices: [
+            {
+                title: 'User Research & Strategy',
+                description: 'User behaviour analysis, competitor research, persona development, customer journey mapping, usability insights, and UX strategy planning to ensure every design decision is backed by data and user needs.',
+            },
+            {
+                title: 'Wireframing & Information Architecture',
+                description: 'Low-fidelity wireframes, user flow mapping, sitemap creation, content hierarchy planning, interaction flow design, and layout structuring to create a strong foundation before visual design.',
+            },
+            {
+                title: 'UI Design & Visual Design',
+                description: 'Modern and visually appealing user interface design, color system development, typography selection, iconography design, micro-interactions, component design, and responsive layouts for desktop, tablet, and mobile devices.',
+                subItems: 'Figma, Design Systems, UI Components, Responsive Layouts'
+            },
+            {
+                title: 'Interactive Prototyping',
+                description: 'Clickable prototypes, user interaction simulations, animation previews, product walkthrough prototypes, and stakeholder validation using realistic design flows.',
+            },
+            {
+                title: 'Design Systems & Component Libraries',
+                description: 'Scalable design systems, reusable UI components, typography and color guidelines, design tokens, documentation, and component libraries to ensure design consistency across products.',
+                subItems: 'Figma Design Systems, UI Libraries, Component Documentation'
+            },
+            {
+                title: 'UX Testing & Optimization',
+                description: 'Usability testing, user feedback analysis, A/B testing insights, accessibility improvements, conversion rate optimization (CRO), and continuous design improvements based on real user behaviour.',
+            }
+        ]
     },
     {
         id: 'video-production',
         t: 'Video Production',
         d: 'End-to-end video production — from concept and scripting to professional editing and distribution across every platform your audience is on.',
-        img: '/assets/images/videopro.jpg',
+        img: '/assets/images/videocreation.jpg',
         pts: ['Brand Films & Corporate Videos', 'Reels, Shorts & Ad Creatives', 'Testimonial & Product Videos'],
         subServices: [
             {
@@ -139,17 +167,45 @@ export const servicesData: Service[] = [
         ]
     },
     {
-        id: 'event-organization',
-        t: 'Event Organization',
-        d: 'End-to-end event planning and management to engage your audience.',
-        img: '/assets/images/event.jpg',
-        pts: ['Event planning & management', 'Brand activations & partnerships', 'Audience engagement & insights']
+        id: 'event-management',
+        t: 'Event Management',
+        d: 'End-to-end event planning and management designed to create impactful experiences for businesses, brands, and communities. From corporate events to product launches and large-scale gatherings, we handle every detail to ensure seamless execution and unforgettable moments.',
+        img: '/assets/images/eventmanagement.jpg',
+        pts: ['Corporate & Product Launch Events', 'Brand Promotion & Brand Activations', 'Event Design, Production & Promotion'],
+        subServices: [
+            {
+                title: 'Corporate Event Management',
+                description: 'Planning and execution of corporate conferences, seminars, business meetings, annual celebrations, award ceremonies, and networking events with professional coordination and brand-focused presentation.',
+            },
+            {
+                title: 'Product Launch Events',
+                description: 'Strategic planning and creative execution for product launch events, including venue selection, stage design, brand storytelling, media coverage, live demonstrations, and audience engagement activities.',
+            },
+            {
+                title: 'Brand Promotion Events',
+                description: 'Experiential marketing events, promotional campaigns, roadshows, brand activation events, influencer collaborations, and audience engagement programs designed to increase brand visibility.',
+            },
+            {
+                title: 'Social & Community Events',
+                description: 'Planning and coordination of social gatherings, cultural events, charity events, college events, and community festivals with complete event logistics and management support.',
+            },
+            {
+                title: 'Event Design & Production',
+                description: 'Stage design, lighting setup, sound system management, visual branding, digital screens, creative decor, and event theme development to create immersive and visually appealing event environments.',
+                subItems: 'Stage Design, Lighting, Sound Systems, Branding, Event Themes'
+            },
+            {
+                title: 'Event Promotion & Digital Coverage',
+                description: 'Event promotion strategies including social media marketing, promotional campaigns, live streaming, photography, videography, highlight videos, and post-event content creation.',
+                subItems: 'Social Media Promotion, Live Streaming, Event Photography, Video Coverage'
+            }
+        ]
     },
     {
         id: 'brand-registration',
         t: 'Brand Registration & Business Setup',
         d: 'One of the most unique offerings in the industry — we handle the legal and government registration side of launching and formalising your business, so you can focus on building it.',
-        img: '/assets/images/logo.jpg',
+        img: '/assets/images/brandservice.jpg',
         pts: ['Trademark & GST Registration', 'Company & MSME Incorporation', 'FSSAI, IEC, GeM & Startup India'],
         subServices: [
             {

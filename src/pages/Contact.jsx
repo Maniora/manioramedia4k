@@ -43,7 +43,7 @@ const SocialCard = ({ platform, handle, href, icon }) => (
 );
 
 const Contact = () => (
-  <main className="relative min-h-screen overflow-hidden" style={{ background: 'linear-gradient(135deg, #11181f 0%, #0d1117 100%)' }}>
+  <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #11181f 0%, #0d1117 100%)' }}>
     <AnimatedIllustrations />
 
     {/* Hero Section */}
@@ -77,7 +77,7 @@ const Contact = () => (
           {/* Contact Form */}
           <Reveal as="div" className="space-y-8">
             <div className='mb-8'>
-              <h2 className="text-4xl font-bold text-white mb-6">Let's Discuss <span className="bg-gradient-to-r from-[#f7e839] to-[#22d3ee] bg-clip-text text-transparent">Your Project</span></h2>
+              <h2 className="text-4xl font-bold text-white mb-6">Let's Discuss <span className="text-[#f7e839]">Your Project</span></h2>
               <p className="text-white/70 leading-relaxed">
                 Share your vision with our experts. We'll provide strategic insights and a customized roadmap within 24 hours.
               </p>
@@ -103,7 +103,7 @@ const Contact = () => (
         </div>
       </div>
     </section>
-  </main>
+  </div>
 );
 
 export default Contact;

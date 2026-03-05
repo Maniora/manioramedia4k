@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import Toast from "./Toast";
 import emailjs from "@emailjs/browser";
+import { servicesData } from "../constants/servicesData";
 
 // Validation helpers
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -24,6 +25,8 @@ const ContactForm = () => {
   const [submitStatus, setSubmitStatus] = useState(null);
   const [toast, setToast] = useState({ open: false, message: "", variant: "success" });
   const [fieldErrors, setFieldErrors] = useState({});
+  const [selectedServiceId, setSelectedServiceId] = useState("");
+  const [selectedSubServiceTitle, setSelectedSubServiceTitle] = useState("");
 
   const sanitizePhoneInput = (e) => {
     const digitsOnly = e.target.value.replace(/\D/g, "").slice(0, 10);
@@ -59,6 +62,8 @@ const ContactForm = () => {
     // service
     const service = form.service.value;
     if (!service) errors.service = "Please select a service.";
+
+    // sub-service and detailed_service are now entirely optional
 
     // message
     const message = form.message.value.trim();
@@ -135,6 +140,7 @@ const ContactForm = () => {
 
       {/* Recipient for EmailJS pulled from env */}
       <input type="hidden" name="to_email" value={process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'team@4kmedia.in'} />
+      <input type="hidden" name="time" value={new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' })} />
 
       {/* Name */}
       <div className="flex flex-col gap-2">
@@ -207,29 +213,62 @@ const ContactForm = () => {
       </div>
 
       {/* Service */}
-      <div className="flex flex-col gap-2 md:col-span-2">
+      <div className={`flex flex-col gap-2 ${selectedServiceId && servicesData.find(s => s.id === selectedServiceId)?.subServices?.length > 0 ? '' : 'md:col-span-2'}`}>
         <label className="text-sm text-white/70">Service Interested *</label>
         <select
           name="service"
           required
-          defaultValue=""
+          value={selectedServiceId}
+          onChange={(e) => {
+            setSelectedServiceId(e.target.value);
+            setSelectedSubServiceTitle("");
+            // Clear sub-service error when primary service changes
+            setFieldErrors(prev => ({ ...prev, sub_service: undefined, detailed_service: undefined }));
+          }}
           className={`p-3 rounded-lg bg-white/10 text-white border focus:outline-none focus:ring-2 transition ${getFieldErrorClass("service")}`}
         >
           <option value="" disabled className="bg-[#1a1f26] text-white">
             Select a service
           </option>
-          <option className="bg-[#1a1f26] text-white">
-            Social Media Marketing
+          {servicesData.map((s) => (
+            <option key={s.id} value={s.id} className="bg-[#1a1f26] text-white">
+              {s.t}
+            </option>
+          ))}
+          <option value="other" className="bg-[#1a1f26] text-white">
+            Other
           </option>
-          <option className="bg-[#1a1f26] text-white">Website Development</option>
-          <option className="bg-[#1a1f26] text-white">UI/UX Design</option>
-          <option className="bg-[#1a1f26] text-white">Video Production</option>
-          <option className="bg-[#1a1f26] text-white">Logo Design</option>
-          <option className="bg-[#1a1f26] text-white">Event Organization</option>
-          <option className="bg-[#1a1f26] text-white">Other</option>
         </select>
         {fieldErrors.service && <span className="text-xs text-red-500">{fieldErrors.service}</span>}
       </div>
+
+      {/* Sub-Service (Dynamic) */}
+      {selectedServiceId && servicesData.find(s => s.id === selectedServiceId)?.subServices?.length > 0 && (
+        <div className="flex flex-col gap-2">
+          <label className="text-sm text-white/70">Specific Requirement </label>
+          <select
+            name="sub_service"
+            value={selectedSubServiceTitle}
+            onChange={(e) => {
+              setSelectedSubServiceTitle(e.target.value);
+              setFieldErrors(prev => ({ ...prev, detailed_service: undefined }));
+            }}
+            className={`p-3 rounded-lg bg-white/10 text-white border focus:outline-none focus:ring-2 transition ${getFieldErrorClass("sub_service")}`}
+          >
+            <option value="" disabled className="bg-[#1a1f26] text-white">
+              Select specific requirement
+            </option>
+            {servicesData.find(s => s.id === selectedServiceId).subServices.map((sub, idx) => (
+              <option key={idx} value={sub.title} className="bg-[#1a1f26] text-white">
+                {sub.title}
+              </option>
+            ))}
+          </select>
+          {fieldErrors.sub_service && <span className="text-xs text-red-500">{fieldErrors.sub_service}</span>}
+        </div>
+      )}
+
+
 
       {/* Message */}
       <div className="md:col-span-2 flex flex-col gap-2">

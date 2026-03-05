@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "a43aa3a80ca6a112efc597d3b2603628",
-    "previewModeSigningKey": "47d5f88913124ef9b6efa7116255701c099f5a1a66ee3563f7814fa522b7942a",
-    "previewModeEncryptionKey": "619edc013d3a690a2d38076a4c0bfd92b84dd49cea7851d0f8e5a2d7ff88db21"
-  }
-}
+{"version":4,"routes":{"/services/digital-marketing":{},"/services/website-development":{},"/services/ui-ux":{},"/services/video-production":{},"/services/event-management":{},"/services/brand-registration":{}},"dynamicRoutes":{"/services/[id]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/services/[id]","routeRegex":"^\\/services\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"d7e45a9bb31b3143c7bde9468701fb22","previewModeSigningKey":"f3ddb89a611d2e491ecf4b7ba01d40be866ec0a82e5d2bc05f6817966643386d","previewModeEncryptionKey":"8647ca23c47648974b2aa32ffe11e5a1afdb2f39bab5c0562edaab870ec6b61c"}}

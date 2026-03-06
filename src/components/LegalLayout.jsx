@@ -235,12 +235,7 @@ const LegalLayout = ({ children, activeNav = 'tnc', sections = [] }) => {
         @media (max-width: 1024px) {
           .layout { grid-template-columns: 1fr; }
           .sidebar { 
-            position: relative; 
-            top: 0; 
-            height: auto; 
-            border-right: none; 
-            border-bottom: 1px solid var(--border); 
-            padding: 40px 24px;
+            display: none;
           }
           .content { padding: 48px 24px; }
           .page-hero { padding: 60px 24px 60px; }

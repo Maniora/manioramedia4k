@@ -367,7 +367,7 @@ const Careers = () => {
 
       {/* CTA Section */}
       {/* CTA Section */}
-      <section className="py-15 bg-[#0a0f15]">
+      {/* <section className="py-15 bg-[#0a0f15]">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <Reveal>
@@ -424,7 +424,7 @@ const Careers = () => {
             </Reveal>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Hiring Process Section */}
       <section className="py-15 bg-[#06060a]">

@@ -427,7 +427,7 @@ const Careers = () => {
       </section> */}
 
       {/* Our Hiring Process Section */}
-      <section className="py-15 bg-[#06060a]">
+      <section className="py-15 bg-[#0a0f15]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">

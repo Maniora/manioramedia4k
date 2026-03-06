@@ -26,7 +26,7 @@ const LegalLayout = ({ children, activeNav = 'tnc', sections = [] }) => {
   }, [])
 
   return (
-    <div className="legal-hub-wrapper min-h-screen bg-[#11181f] text-[#dddde8] selection:bg-[#f7e839] selection:text-[#000]">
+    <div className="legal-hub-wrapper min-h-screen bg-[#06060a] text-[#dddde8] selection:bg-[#f7e839] selection:text-[#000]">
       <style dangerouslySetInnerHTML={{
         __html: `
         :root {

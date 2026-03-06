@@ -135,7 +135,7 @@ const Header = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 translate-x-[-100%] group-hover/cta:translate-x-[100%] transition-transform duration-700" />
 
                 <span className="relative flex items-center gap-2">
-                  Book a stargy call
+                  Book a strategy call
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover/cta:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>

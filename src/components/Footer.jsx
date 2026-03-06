@@ -184,7 +184,7 @@ const Footer = () => (
 
         <div className="lg:col-span-2">
           <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Services</h4>
-          <ul className="space-y-2">
+          <ul className="space-y-3 relative z-30">
             <FooterServiceItem
               service={{
                 id: 'digital-marketing',

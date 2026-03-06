@@ -6,72 +6,72 @@ import Reveal from '../components/Reveal'
 import AnimatedIllustrations from '../components/AnimatedIllustrations'
 import Lottie from 'lottie-react'
 import { servicesData } from '../constants/servicesData'
+import * as LucideIcons from 'lucide-react'
 
-const ServiceCard = ({ id, title, description, image, points, index }) => (
-  <Reveal as="div" className="group relative overflow-hidden rounded-3xl border border-white/10 hover:border-[#f7e839]/40 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)] cursor-pointer">
-    {/* Full-bleed image */}
-    <div className="relative h-[420px] overflow-hidden">
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover transition-transform duration-700 ease-out md:group-hover:scale-110"
-      />
-      {/* Base gradient — stronger on mobile so text is always readable */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0d12] via-[#0a0d12]/70 to-[#0a0d12]/10 md:via-[#0a0d12]/60 md:to-transparent" />
-      {/* Hover tint (desktop only) */}
-      <div className="absolute inset-0 bg-[#f7e839]/0 md:group-hover:bg-[#f7e839]/5 transition-colors duration-500" />
-    </div>
+const ServiceCard = ({ id, title, description, iconName, points, index }) => {
+  const Icon = LucideIcons[iconName] || LucideIcons.CircleHelp;
 
-    {/* Number badge */}
-    <div className="absolute top-5 left-5">
-      <span className="text-xs font-bold px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/20 text-white/70">
-        {String(index + 1).padStart(2, '0')}
-      </span>
-    </div>
+  return (
+    <Reveal as="div" className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#0a0d12]/40 hover:bg-[#0a0d12]/80 hover:border-[#f7e839]/40 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(247,232,57,0.1)] cursor-pointer flex flex-col justify-between min-h-[440px] p-8">
 
-    {/* Content overlay */}
-    <div className="absolute bottom-0 left-0 right-0 p-6">
-      {/* Feature tags — visible on mobile, fade out on desktop hover */}
-      <div className="flex flex-wrap gap-2 mb-3 transition-all duration-300 md:group-hover:opacity-0 md:group-hover:-translate-y-2">
-        {points.slice(0, 2).map((point, idx) => (
-          <span key={idx} className="text-xs text-white/60 bg-white/10 backdrop-blur-sm px-2.5 py-1 rounded-full">
-            {point}
-          </span>
-        ))}
+      {/* Top area: Badge and Icon */}
+      <div className="flex justify-between items-start mb-8">
+        {/* Number badge */}
+        <span className="text-xl font-bold text-white/20 group-hover:text-[#f7e839]/40 transition-colors duration-300">
+          {String(index + 1).padStart(2, '0')}
+        </span>
+
+        {/* Icon container */}
+        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1a1f26] to-[#0a0d12] border border-white/10 flex items-center justify-center text-white/80 group-hover:from-[#f7e839] group-hover:to-[#f5d428] group-hover:text-black group-hover:border-[#f7e839] transition-all duration-500 shadow-lg group-hover:shadow-[0_0_30px_rgba(247,232,57,0.4)] group-hover:-rotate-3 group-hover:scale-110">
+          <Icon strokeWidth={1.5} size={32} />
+        </div>
       </div>
 
-      <h3 className="text-white font-bold text-2xl leading-tight mb-2 drop-shadow-lg">
-        {title}
-      </h3>
+      {/* Content area */}
+      <div className="flex-grow">
+        <h3 className="text-white font-bold text-2xl leading-tight mb-4 group-hover:text-[#f7e839] transition-colors duration-300">
+          {title}
+        </h3>
 
-      {/* Description — always visible on mobile, slides in on desktop hover */}
-      <p className="text-white/70 text-sm leading-relaxed max-w-sm mb-4 md:text-white/0 md:group-hover:text-white/75 md:max-h-0 md:group-hover:max-h-20 md:overflow-hidden md:mb-0 md:group-hover:mb-4 transition-all duration-400 ease-out">
-        {description}
-      </p>
+        <p className="text-white/60 text-sm leading-relaxed mb-6 group-hover:text-white/80 transition-colors duration-300">
+          {description}
+        </p>
 
-      {/* Action buttons — always visible on mobile, animate in on desktop */}
-      <div className="flex gap-3 md:translate-y-4 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-300 ease-out">
+        {/* Feature tags */}
+        <div className="flex flex-wrap gap-2 mb-8">
+          {points.slice(0, 2).map((point, idx) => (
+            <span key={idx} className="text-xs text-white/50 bg-white/5 border border-white/5 px-3 py-1.5 rounded-full group-hover:text-white/80 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300">
+              {point}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Action buttons */}
+      <div className="flex gap-3 mt-auto">
         <Link
           href={`/services/${id}`}
-          className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#f7e839] text-[#0a0d12] text-sm font-bold hover:bg-white transition-colors duration-200"
+          className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/5 text-white/80 text-sm font-semibold hover:bg-[#f7e839] hover:text-[#0a0d12] transition-colors duration-300 border border-white/10 hover:border-[#f7e839]"
           onClick={e => e.stopPropagation()}
         >
           Explore Service
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
             <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
           </svg>
         </Link>
         <a
           href="/contact"
-          className="px-4 py-3 rounded-xl border border-white/30 text-white text-sm font-semibold hover:bg-white/10 transition-colors duration-200 whitespace-nowrap"
+          className="px-4 py-3 rounded-xl border border-white/10 text-white/80 text-sm font-semibold hover:bg-white/10 hover:text-white transition-colors duration-300 whitespace-nowrap"
           onClick={e => e.stopPropagation()}
         >
           Get Quote
         </a>
       </div>
-    </div>
-  </Reveal>
-)
+    </Reveal>
+  );
+};
+
+
 
 
 
@@ -184,7 +184,7 @@ const Services = () => {
                   id={service.id}
                   title={service.t}
                   description={service.d}
-                  image={service.img}
+                  iconName={service.iconName}
                   points={service.pts}
                   index={index}
                 />

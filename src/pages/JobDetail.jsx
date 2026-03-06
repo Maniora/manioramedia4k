@@ -35,9 +35,12 @@ const JobDetail = ({ job }) => {
 
                     <a
                         href="/careers#apply"
-                        className="inline-block bg-[#f7e839] text-[#11181f] px-6 py-2.5 rounded text-sm font-bold hover:bg-[#f5d428] transition-colors"
+                        className="inline-flex items-center gap-2 bg-[#f7e839] text-[#11181f] px-6 py-2.5 rounded text-sm font-bold hover:bg-[#f5d428] transition-colors"
                     >
-                        Apply for this role ↗
+                        Apply for this role
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                     </a>
                 </div>
 
@@ -135,10 +138,7 @@ const JobDetail = ({ job }) => {
                         <h2 className="text-[15px] font-semibold text-white mb-3">Learn More About 4KMEDIA</h2>
                         <ul className="space-y-2">
                             <li>
-                                <a href="/about" className="text-[#f7e839]/80 hover:underline hover:text-[#f7e839] text-sm">Life at 4KMEDIA</a>
-                            </li>
-                            <li>
-                                <a href="/services" className="text-[#f7e839]/80 hover:underline hover:text-[#f7e839] text-sm">Explore Our Services</a>
+                                <a href="/careers" className="text-[#f7e839]/80 hover:underline hover:text-[#f7e839] text-sm">Life at 4KMEDIA</a>
                             </li>
                         </ul>
                     </section>

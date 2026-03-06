@@ -53,6 +53,8 @@ const CareersForm = () => {
   const [submitStatus, setSubmitStatus] = useState(null)
   const [toast, setToast] = useState({ open: false, message: '', variant: 'success' })
   const [fieldErrors, setFieldErrors] = useState({})
+  const [selectedRole, setSelectedRole] = useState('')
+
 
   const sanitizePhoneInput = (e) => {
     const digitsOnly = e.target.value.replace(/\D/g, '').slice(0, 10)
@@ -80,7 +82,13 @@ const CareersForm = () => {
 
     // role
     const role = form.role.value
-    if (!role) errors.role = 'Please select a role.'
+    if (!role) {
+      errors.role = 'Please select a role.'
+    } else if (role === 'Other') {
+      const otherRole = form.other_role.value.trim()
+      if (!otherRole) errors.other_role = 'Please specify the role you are applying for.'
+    }
+
 
     // resume
     const resume = form.resume.value.trim()
@@ -217,7 +225,8 @@ const CareersForm = () => {
           name="role"
           className={`w-full p-3 border bg-transparent text-white rounded-lg focus:outline-none focus:ring-2 dark-select ${getFieldErrorClass('role')}`}
           required
-          defaultValue=""
+          value={selectedRole}
+          onChange={(e) => setSelectedRole(e.target.value)}
         >
           <option value="" disabled className="bg-[#1a1f26] text-white">
             Select a role
@@ -230,6 +239,23 @@ const CareersForm = () => {
         </select>
         {fieldErrors.role && <span className="text-xs text-red-500">{fieldErrors.role}</span>}
       </label>
+
+      {selectedRole === 'Other' && (
+        <label className="space-y-1 block w-full animate-fadeIn">
+          <span className="text-xs text-white/80 tracking-wide">
+            PLEASE SPECIFY ROLE <span className="text-[#f7e839]">*</span>
+          </span>
+          <input
+            name="other_role"
+            type="text"
+            placeholder="e.g. Marketing Manager"
+            className={`w-full p-3 border bg-transparent text-white rounded-lg focus:outline-none focus:ring-2 ${getFieldErrorClass('other_role')}`}
+            required
+          />
+          {fieldErrors.other_role && <span className="text-xs text-red-500">{fieldErrors.other_role}</span>}
+        </label>
+      )}
+
       <label className="space-y-1 block w-full">
         <span className="text-xs text-white/80 tracking-wide">
           RESUME LINK (Google Drive/Dropbox) <span className="text-[#f7e839]">*</span>

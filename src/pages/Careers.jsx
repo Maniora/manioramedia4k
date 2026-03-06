@@ -10,10 +10,8 @@ import HealthAnimation from '../components/HealthAnimation'
 import LearningAnimation from '../components/LearningAnimation'
 import OutdoorAnimation from '../components/OutdoorAnimation'
 import FoodAnimation from '../components/FoodAnimation'
-import WorklifeAnimation from '../components/WorklifeAnimation'
-import TermInsuranceAnimation from '../components/TermInsuranceAnimation'
-import FlexibleAsyncAnimation from '../components/FlexibleAsyncAnimation'
 import HolidaysAnimation from '../components/HolidaysAnimation'
+import FlexibleAsyncAnimation from '../components/FlexibleAsyncAnimation'
 import Link from 'next/link'
 import { jobsData } from '../constants/jobsData'
 
@@ -109,55 +107,31 @@ const Careers = () => {
           <div className="py-2">
             <div className="space-y-6 md:space-y-7 max-w-6xl mx-auto">
 
-              {/* 1. 100% Remote Work — illustration left */}
+              {/* 1 & 2. 100% Remote & 5-Day Work Week — illustration right */}
               <Reveal>
-                <div className="grid lg:grid-cols-2 gap-4 md:gap-6 items-center bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-2xl overflow-hidden">
-                  <div className="relative flex justify-center items-center h-52 sm:h-60 md:h-64 lg:h-64 xl:h-72 bg-transparent order-1">
-                    <div className="w-[60%] sm:w-[70%] md:w-[75%] lg:w-[80%] xl:w-[85%] max-w-[420px]">
-                      <WorklifeAnimation />
-                    </div>
-                  </div>
-                  <div className="p-5 md:p-6 order-2">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-[#1a1f26] to-[#2d3748] border border-white/10 flex items-center justify-center">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                          <circle cx="12" cy="12" r="9" stroke="#f7e839" strokeWidth="1.8" />
-                          <path d="M12 3c-2.4 2.8-3.5 5.6-3.5 9s1.1 6.2 3.5 9" stroke="#f7e839" strokeWidth="1.8" />
-                          <path d="M12 3c2.4 2.8 3.5 5.6 3.5 9s-1.1 6.2-3.5 9" stroke="#f7e839" strokeWidth="1.8" />
-                          <path d="M3 12h18" stroke="#f7e839" strokeWidth="1.8" />
-                        </svg>
+                <div className="grid lg:grid-cols-2 gap-4 md:gap-8 items-center bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-2xl overflow-hidden shadow-lg">
+                  <div className="p-6 md:p-8 lg:p-10 order-1 flex flex-col justify-center">
+                    <div>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-[#1a1f26] to-[#2d3748] border border-white/10 flex items-center justify-center flex-shrink-0">
+                          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="9" stroke="#f7e839" strokeWidth="1.8" />
+                            <path d="M12 3c-2.4 2.8-3.5 5.6-3.5 9s1.1 6.2 3.5 9" stroke="#f7e839" strokeWidth="1.8" />
+                            <path d="M12 3c2.4 2.8 3.5 5.6 3.5 9s-1.1 6.2-3.5 9" stroke="#f7e839" strokeWidth="1.8" />
+                            <path d="M3 12h18" stroke="#f7e839" strokeWidth="1.8" />
+                          </svg>
+                        </div>
+                        <h3 className="text-2xl font-bold text-white">100% Remote & 5-Day Work Week</h3>
                       </div>
-                      <h3 className="text-2xl font-bold text-white">100% Remote Work</h3>
-                    </div>
-                    <p className="text-white/80 text-lg leading-relaxed">
-                      Work from anywhere without compromising responsibility or performance. We believe great work is not tied to a physical office.
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* 2. 5-Day Work Week — illustration right */}
-              <Reveal>
-                <div className="grid lg:grid-cols-2 gap-4 md:gap-6 items-center bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-2xl overflow-hidden">
-                  <div className="p-5 md:p-6 order-2 lg:order-1">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-[#1a1f26] to-[#2d3748] border border-white/10 flex items-center justify-center">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                          <rect x="3" y="4" width="18" height="17" rx="2" stroke="#f7e839" strokeWidth="1.8" />
-                          <path d="M3 9h18" stroke="#f7e839" strokeWidth="1.8" />
-                          <path d="M8 2v3M16 2v3" stroke="#f7e839" strokeWidth="1.8" strokeLinecap="round" />
-                          <rect x="7" y="13" width="3" height="3" rx="0.5" fill="#f7e839" />
-                          <rect x="11" y="13" width="3" height="3" rx="0.5" fill="#f7e839" />
-                        </svg>
+                      <div className="text-white/80 text-lg leading-relaxed pl-0 md:pl-[60px]">
+                        <p>
+                          Work from anywhere on a structured five-day model focused on sustainable performance. We believe great work is not tied to a physical office, and rest is treated as a productivity tool, not a luxury.
+                        </p>
                       </div>
-                      <h3 className="text-2xl font-bold text-white">5‑Day Work Week</h3>
                     </div>
-                    <p className="text-white/80 text-lg leading-relaxed">
-                      We operate on a structured five‑day work model focused on sustainable performance. Rest is treated as a productivity tool, not a luxury.
-                    </p>
                   </div>
-                  <div className="relative flex justify-center items-center h-52 sm:h-60 md:h-64 lg:h-64 xl:h-72 bg-transparent order-1 lg:order-2">
-                    <div className="w-[60%] sm:w-[70%] md:w-[75%] lg:w-[80%] xl:w-[85%] max-w-[420px]">
+                  <div className="relative flex justify-center items-center h-52 sm:h-60 md:h-64 lg:min-h-[350px] bg-transparent order-2">
+                    <div className="w-[60%] sm:w-[70%] md:w-[75%] lg:w-[85%] xl:w-[90%] max-w-[420px]">
                       <SalaryAnimation />
                     </div>
                   </div>
@@ -189,7 +163,7 @@ const Careers = () => {
                 </div>
               </Reveal>
 
-              {/* 4. Health Insurance — illustration right */}
+              {/* 4. Health & Term Insurance — illustration right */}
               <Reveal>
                 <div className="grid lg:grid-cols-2 gap-4 md:gap-6 items-center bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-2xl overflow-hidden">
                   <div className="p-5 md:p-6 order-2 lg:order-1">
@@ -200,10 +174,10 @@ const Careers = () => {
                           <path d="M9 12h6M12 9v6" stroke="#f7e839" strokeWidth="1.8" strokeLinecap="round" />
                         </svg>
                       </div>
-                      <h3 className="text-2xl font-bold text-white">Health Insurance Coverage</h3>
+                      <h3 className="text-2xl font-bold text-white">Health & Term Insurance</h3>
                     </div>
                     <p className="text-white/80 text-lg leading-relaxed">
-                      We provide group health insurance to protect you against unexpected medical expenses. Dependent coverage is available as per policy terms.
+                      We provide group health insurance and term life insurance up to ₹1 Crore to protect you and your family against unexpected medical and financial needs.
                     </p>
                   </div>
                   <div className="relative flex justify-center items-center h-52 sm:h-60 md:h-64 lg:h-64 xl:h-72 bg-transparent order-1 lg:order-2">
@@ -214,62 +188,12 @@ const Careers = () => {
                 </div>
               </Reveal>
 
-              {/* 5. Term Life Insurance — TermInsuranceAnimation (left) */}
+              {/* 6. Paid Leaves & Public Holidays — illustration left */}
               <Reveal>
                 <div className="grid lg:grid-cols-2 gap-4 md:gap-6 items-center bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-2xl overflow-hidden">
                   <div className="relative flex justify-center items-center h-52 sm:h-60 md:h-64 lg:h-64 xl:h-72 bg-transparent order-1">
-                    <div className="w-[60%] sm:w-[70%] md:w-[75%] lg:w-[80%] xl:w-[85%] max-w-[420px]">
-                      <TermInsuranceAnimation />
-                    </div>
-                  </div>
-                  <div className="p-5 md:p-6 order-2">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-[#1a1f26] to-[#2d3748] border border-white/10 flex items-center justify-center">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                          <path d="M12 2l6 3v5c0 5-3.5 9-6 12-2.5-3-6-7-6-12V5l6-3z" stroke="#f7e839" strokeWidth="1.8" strokeLinejoin="round" />
-                          <path d="M9 12l2 2 4-4" stroke="#f7e839" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </div>
-                      <h3 className="text-2xl font-bold text-white">Term Life Insurance up to ₹1 Crore</h3>
-                    </div>
-                    <p className="text-white/80 text-lg leading-relaxed">
-                      Your family's financial security matters to us. Eligible employees receive term insurance coverage subject to policy conditions.
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* 6. 30 Paid Leave Days — illustration right */}
-              <Reveal>
-                <div className="grid lg:grid-cols-2 gap-4 md:gap-6 items-center bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-2xl overflow-hidden">
-                  <div className="p-5 md:p-6 order-2 lg:order-1">
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-[#1a1f26] to-[#2d3748] border border-white/10 flex items-center justify-center">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                          <path d="M12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9 4.03 9 9 9z" stroke="#f7e839" strokeWidth="1.8" />
-                          <path d="M12 7v5l3 3" stroke="#f7e839" strokeWidth="1.8" strokeLinecap="round" />
-                        </svg>
-                      </div>
-                      <h3 className="text-2xl font-bold text-white">30 Paid Leave Days Annually</h3>
-                    </div>
-                    <p className="text-white/80 text-lg leading-relaxed">
-                      Take time off to recharge, reset, and avoid burnout. We encourage planned breaks, not guilt‑driven overwork.
-                    </p>
-                  </div>
-                  <div className="relative flex justify-center items-center h-52 sm:h-60 md:h-64 lg:h-64 xl:h-72 bg-transparent order-1 lg:order-2">
                     <div className="w-[60%] sm:w-[70%] md:w-[75%] lg:w-[80%] xl:w-[85%] max-w-[420px]">
                       <OutdoorAnimation />
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-
-              {/* 7. Paid Public & Festival Holidays — FoodAnimation (festive celebrations) */}
-              <Reveal>
-                <div className="grid lg:grid-cols-2 gap-4 md:gap-6 items-center bg-gradient-to-br from-white/5 to-white/10 border border-white/10 rounded-2xl overflow-hidden">
-                  <div className="relative flex justify-center items-center h-52 sm:h-60 md:h-64 lg:h-64 xl:h-72 bg-transparent order-1">
-                    <div className="w-[60%] sm:w-[70%] md:w-[75%] lg:w-[80%] xl:w-[85%] max-w-[420px]">
-                      <HolidaysAnimation />
                     </div>
                   </div>
                   <div className="p-5 md:p-6 order-2">
@@ -279,10 +203,10 @@ const Careers = () => {
                           <path d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke="#f7e839" strokeWidth="1.8" strokeLinecap="round" />
                         </svg>
                       </div>
-                      <h3 className="text-2xl font-bold text-white">Paid Public & Festival Holidays</h3>
+                      <h3 className="text-2xl font-bold text-white">Paid Leaves & Public Holidays</h3>
                     </div>
                     <p className="text-white/80 text-lg leading-relaxed">
-                      In addition to annual leave, national and festival holidays are fully paid. We respect cultural and personal time.
+                      We offer 30 paid leave days annually plus all national and festival holidays. We encourage planned breaks and respect your cultural and personal time.
                     </p>
                   </div>
                 </div>
@@ -367,15 +291,11 @@ const Careers = () => {
                 {jobsData.map((job, index) => (
                   <div
                     key={job.title}
-                    className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-6 py-5 transition-colors duration-200 hover:bg-white/5 ${index !== jobsData.length - 1 ? 'border-b border-white/10' : ''}`}
+                    className={`flex items-center justify-between gap-3 px-4 sm:px-6 py-5 transition-colors duration-200 hover:bg-white/5 ${index !== jobsData.length - 1 ? 'border-b border-white/10' : ''}`}
                   >
-                    {/* Left — title + badges */}
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                      <span className="text-white font-semibold text-base">{job.title}</span>
-                      <div className="flex gap-2">
-                        <span className="text-xs bg-white/10 text-white/70 px-2.5 py-1 rounded-full">{job.type}</span>
-                        <span className="text-xs bg-white/10 text-white/70 px-2.5 py-1 rounded-full">{job.location}</span>
-                      </div>
+                    {/* Left — title */}
+                    <div className="flex-grow min-w-0">
+                      <span className="text-white font-semibold text-sm sm:text-base truncate block sm:inline">{job.title}</span>
                     </div>
 
                     {/* Right — actions */}

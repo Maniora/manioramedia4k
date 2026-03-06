@@ -3,6 +3,7 @@ export interface Service {
     t: string;
     d: string;
     img: string;
+    iconName?: string;
     pts: string[];
     subServices?: {
         title: string;
@@ -17,6 +18,7 @@ export const servicesData: Service[] = [
         t: 'Digital Marketing',
         d: 'Comprehensive performance-driven digital marketing solutions to rapidly accelerate your brand growth, visibility, and acquisition.',
         img: '/assets/images/smm.jpg',
+        iconName: 'TrendingUp',
         pts: ['Search Engine Optimization (SEO)', 'Performance Marketing', 'Email & WhatsApp Automation'],
         subServices: [
             {
@@ -69,6 +71,7 @@ export const servicesData: Service[] = [
         t: 'Website Development',
         d: 'Performance-first, SEO-optimised websites and digital experiences built on modern technology stacks — from business websites to full e-commerce platforms.',
         img: '/assets/images/webdevelopment.jpg',
+        iconName: 'MonitorSmartphone',
         pts: ['Business & E-commerce Websites', 'CMS & Landing Pages', 'UI/UX & Ongoing Support'],
         subServices: [
             {
@@ -105,6 +108,7 @@ export const servicesData: Service[] = [
         t: 'UI/UX Design',
         d: 'User-focused, visually engaging, and conversion-driven digital experiences designed to improve usability, increase engagement, and help businesses achieve measurable growth across web and mobile platforms.',
         img: '/assets/images/uiux.jpg',
+        iconName: 'LayoutTemplate',
         pts: ['User Research & UI Design', 'Interactive Prototyping', 'Design Systems & Testing'],
         subServices: [
             {
@@ -140,6 +144,7 @@ export const servicesData: Service[] = [
         t: 'Video Production',
         d: 'End-to-end video production — from concept and scripting to professional editing and distribution across every platform your audience is on.',
         img: '/assets/images/videocreation.jpg',
+        iconName: 'Video',
         pts: ['Brand Films & Corporate Videos', 'Reels, Shorts & Ad Creatives', 'Testimonial & Product Videos'],
         subServices: [
             {
@@ -171,6 +176,7 @@ export const servicesData: Service[] = [
         t: 'Event Management',
         d: 'End-to-end event planning and management designed to create impactful experiences for businesses, brands, and communities. From corporate events to product launches and large-scale gatherings, we handle every detail to ensure seamless execution and unforgettable moments.',
         img: '/assets/images/eventmanagement.jpg',
+        iconName: 'CalendarHeart',
         pts: ['Corporate & Product Launch Events', 'Brand Promotion & Brand Activations', 'Event Design, Production & Promotion'],
         subServices: [
             {
@@ -206,6 +212,7 @@ export const servicesData: Service[] = [
         t: 'Brand Registration & Business Setup',
         d: 'One of the most unique offerings in the industry — we handle the legal and government registration side of launching and formalising your business, so you can focus on building it.',
         img: '/assets/images/brandservice.jpg',
+        iconName: 'ShieldCheck',
         pts: ['Trademark & GST Registration', 'Company & MSME Incorporation', 'FSSAI, IEC, GeM & Startup India'],
         subServices: [
             {

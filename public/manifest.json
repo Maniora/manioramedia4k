@@ -1,7 +1,7 @@
 {
   "name": "4kMedia",
   "short_name": "4kMedia",
-  "description": "Zero to viral, we make it happen",
+  "description": "AI-Powered Marketing for Predictable Growth",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#11181f",
@@ -18,7 +18,11 @@
       "type": "image/png"
     }
   ],
-  "categories": ["business", "marketing", "digital"],
+  "categories": [
+    "business",
+    "marketing",
+    "digital"
+  ],
   "lang": "en",
   "scope": "/",
   "orientation": "portrait-primary"

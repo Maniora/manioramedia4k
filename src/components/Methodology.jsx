@@ -7,55 +7,51 @@ const Methodology = () => {
     const steps = [
         {
             step: '01',
-            time: 'Week 1 – 2',
-            title: 'Discovery &\nDeep Audit',
-            desc: 'We dig into your business, competitors, audience and current digital gaps — before spending a single rupee.',
+            title: 'Discovery &\nAudit',
+            desc: 'We analyze your business, audience, competitors, and current marketing performance to identify growth opportunities.',
             svg: 'M21 21l-4-4M3 11a8 8 0 1116 0 8 8 0 01-16 0z',
             color: '#f7e839',
             colorClass: 'text-[#f7e839]',
             bgClass: 'bg-[#f7e839]/10',
             borderClass: 'border-[#f7e839]/30',
             gradient: 'from-[#f7e839]',
-            deliverables: ['Full digital presence audit', 'Competitor gap analysis', 'Target audience mapping', 'Goal & KPI alignment', 'Budget & channel strategy']
+            deliverables: ['Business & competitor analysis', 'Audience & funnel audit', 'Growth opportunity mapping']
         },
         {
             step: '02',
-            time: 'Week 2 – 3',
-            title: 'Strategy &\nRoadmap',
-            desc: 'Custom growth roadmap with clear KPIs, timelines and spend plans. You approve everything — zero surprises.',
+            title: 'Strategy &\nPlanning',
+            desc: 'We create a data-driven marketing roadmap including channel strategy, budget allocation, and campaign goals.',
             svg: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',
             color: '#f7e839',
             colorClass: 'text-[#f7e839]',
             bgClass: 'bg-[#f7e839]/10',
             borderClass: 'border-[#f7e839]/30',
             gradient: 'from-[#f7e839]',
-            deliverables: ['30/60/90 day growth plan', 'Content & channel calendar', 'Ad budget allocation', 'Milestone targets', 'Zoho project setup']
+            deliverables: ['Channel & budget allocation', 'KPI & campaign roadmap', 'Tracking & analytics setup']
         },
         {
             step: '03',
-            time: 'Week 3 – 6',
-            title: 'Execution &\nLaunch',
-            desc: 'AI-accelerated build and launch. Our Zoho workflow means any team member covers seamlessly — zero delivery gaps.',
+            title: 'Campaign\nExecution',
+            desc: 'We launch and manage high-performance campaigns across Google, Meta, and other digital channels.',
             svg: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
             color: '#f7e839',
             colorClass: 'text-[#f7e839]',
             bgClass: 'bg-[#f7e839]/10',
             borderClass: 'border-[#f7e839]/30',
             gradient: 'from-[#f7e839]',
-            deliverables: ['Website / landing page live', 'Campaigns activated', 'Content publishing begins', 'Tracking & pixels live', 'Quality assurance checks']
+            deliverables: ['Google & Meta campaigns', 'Landing page optimization', 'Creative & content rollout']
         },
         {
             step: '04',
-            time: 'Month 2 onwards',
-            title: 'Optimise &\nScale',
-            desc: "We don't stop at launch. Weekly data review, monthly strategy calls, continuous improvement — your growth compounds.",
+            title: 'Optimization &\nScaling',
+            desc: 'We continuously optimize campaigns, test new strategies, and scale the channels that drive the best ROI.',
             svg: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
             color: '#f7e839',
             colorClass: 'text-[#f7e839]',
             bgClass: 'bg-[#f7e839]/10',
             borderClass: 'border-[#f7e839]/30',
             gradient: 'from-[#f7e839]',
-            deliverables: ['Weekly performance report', 'A/B testing & iteration', 'Monthly strategy call', 'Scaling winning campaigns', 'Quarterly growth review']
+            deliverables: ['Weekly performance analysis', 'A/B testing', 'Scaling profitable campaigns']
         }
     ];
 
@@ -64,13 +60,13 @@ const Methodology = () => {
             <Reveal as="div" className="container mx-auto px-4 relative z-10 max-w-7xl">
                 <div className="text-center mb-20 relative z-20">
                     <span className="inline-block text-sm uppercase tracking-wider bg-white/10 border border-white/20 px-4 py-2 rounded-full mb-6">
-                        Our Methodology
+                        How We Scale Brands
                     </span>
                     <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
                         How We Turn Your Vision<br className="hidden md:block" />Into <span className="text-[#f7e839]">Measurable Growth</span>
                     </h2>
                     <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed font-light">
-                        A structured 4-step system built for transparency, accountability, and results — so you always know exactly where your project stands and what's coming next.
+                        A proven process focused on strategy, execution, and continuous optimization for measurable growth.
                     </p>
                 </div>
 
@@ -124,11 +120,6 @@ const Methodology = () => {
                                     {/* Decorator glow inside */}
                                     <div className={`absolute pointer-events-none -inset-2 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-br ${stage.gradient} to-transparent rounded-2xl blur-xl`}></div>
 
-                                    {/* Time chip */}
-                                    <div className={`inline-flex self-start items-center gap-1.5 px-3 py-1.5 rounded-md text-[11px] font-mono tracking-wider uppercase mb-5 border ${stage.colorClass} ${stage.bgClass} ${stage.borderClass}`}>
-                                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                        {stage.time}
-                                    </div>
 
                                     <h3 className="text-xl md:text-2xl font-bold text-white mb-3 whitespace-pre-line leading-tight tracking-tight">{stage.title}</h3>
                                     <p className="text-white/70 text-sm leading-relaxed mb-6 font-light">{stage.desc}</p>

@@ -21,7 +21,7 @@ const Home = () => (
           <h2 className="text-4xl font-bold text-white mb-6 leading-tight">
             Strategic Digital <span className="text-[#f7e839]">Growth Partners</span>
           </h2>
-          <p className="text-xl text-white/70 mb-4 font-light">Zero to viral, we make it happen.</p>
+          <p className="text-xl text-white/70 mb-4 font-light">Performance marketing strategies designed to drive leads, sales, and measurable ROI.</p>
           <p className="text-lg text-white/70 max-w-4xl mx-auto leading-relaxed mb-8">
             At 4KMEDIA, we blend creativity and strategy to help brands shine in a noisy world. We're young, bold, and obsessed with results that matter..We specialize in performance-driven digital solutions that deliver measurable results
             and sustainable growth for forward-thinking brands.
@@ -42,49 +42,44 @@ const Home = () => (
             Our Expertise
           </span>
           <h2 className="text-4xl font-bold text-white mb-6">
-            Comprehensive <span className="text-[#f7e839]">Digital Solutions</span>
+            Performance Marketing & <span className="text-[#f7e839]">Digital Growth Services</span>
           </h2>
           <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            End-to-end services designed to elevate your digital presence and drive measurable business growth
+            We help brands acquire customers, increase conversions, and scale revenue through data-driven digital marketing.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {[
             {
+              title: "Google Ads Management",
+              description: "High-performance Google Ads campaigns designed to generate qualified leads, drive conversions, and maximize return on ad spend.",
+              icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" // Search icon
+            },
+            {
+              title: "Meta Ads (Facebook & Instagram)",
+              description: "Strategic ad campaigns on Facebook and Instagram that help brands reach the right audience and scale customer acquisition.",
+              icon: "M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" // File/Document icon (closest for 'ads')
+            },
+            {
+              title: "Search Engine Optimization (SEO)",
+              description: "Long-term organic growth through technical SEO, content strategy, and search visibility optimization.",
+              icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" // Growth graph icon
+            },
+            {
+              title: "Conversion Rate Optimization",
+              description: "Turn website visitors into paying customers with optimized landing pages and performance-focused design.",
+              icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" // Checkmark circle
+            },
+            {
               title: "Social Media Marketing",
-              description: "Content strategy, community management, and paid amplification across social platforms.",
-              icon: "M20 12a8 8 0 11-8-8 M22 2l-8.5 8.5"
+              description: "Build brand presence and engagement through strategic content and targeted campaigns across social platforms.",
+              icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" // Users icon
             },
             {
               title: "Website Development",
-              description: "Fast, accessible, SEO-friendly websites with modern stacks and CMS options.",
-              icon: "M3 10h18M3 14h18M5 6h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z"
-            },
-            {
-              title: "UI/UX Design",
-              description: "Human-centered product design—research, prototypes, and design systems that convert.",
-              icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-            },
-            {
-              title: "Video Production",
-              description: "Brand films, reels, and ad creatives from scripting to distribution.",
-              icon: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-            },
-            {
-              title: "Logo Design",
-              description: "Distinctive brand identities with scalable logo systems and guidelines.",
-              icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-            },
-            // {
-            //   title: "SEO Optimization", 
-            //   description: "Search engine optimization to increase visibility and organic traffic.",
-            //   icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            // },
-            {
-              title: "Event Organization",
-              description: "Complete event planning and management for engaging brand experiences.",
-              icon: "M8 7V3h8v4M3 11h18M5 11v10a2 2 0 002 2h10a2 2 0 002-2V11"
+              description: "Fast, SEO-optimized websites built to support marketing campaigns and improve user experience.",
+              icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" // Code icon
             }
           ].map((service, index) => (
             <div key={index} className="group relative">
@@ -120,7 +115,7 @@ const Home = () => (
 
         <div className="text-center">
           <a href="/services" className="group inline-flex items-center px-8 py-4 rounded-xl border border-white/20 text-white hover:border-[#f7e839] hover:bg-[#f7e839]/10 transition-all duration-300 font-medium relative overflow-hidden">
-            <span className="relative z-10">Explore All Services</span>
+            <span className="relative z-10">See Our Marketing Solutions</span>
             <svg className="ml-3 w-4 h-4 relative z-10 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>

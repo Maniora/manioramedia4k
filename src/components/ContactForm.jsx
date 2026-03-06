@@ -174,7 +174,7 @@ const ContactForm = () => {
         <input
           type="tel"
           name="user_phone"
-          placeholder="9989958238"
+          placeholder="9876543210"
           className={`p-3 rounded-lg bg-white/10 text-white border placeholder-white/50 focus:outline-none focus:ring-2 transition ${getFieldErrorClass("user_phone")}`}
           inputMode="numeric"
           autoComplete="tel"

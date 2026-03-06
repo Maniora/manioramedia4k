@@ -1,5 +1,5 @@
 {
-  "name": "4kMedia - Zero to viral, we make it happen",
+  "name": "4kMedia - AI-Powered Marketing for Predictable Growth",
   "short_name": "4kMedia",
   "description": "Performance-driven digital marketing partner delivering predictable growth through integrated SEO, paid media, and content strategies.",
   "start_url": "/",
@@ -18,7 +18,11 @@
       "type": "image/png"
     }
   ],
-  "categories": ["business", "marketing", "digital"],
+  "categories": [
+    "business",
+    "marketing",
+    "digital"
+  ],
   "lang": "en",
   "scope": "/",
   "orientation": "portrait-primary"

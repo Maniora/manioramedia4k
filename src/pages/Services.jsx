@@ -298,7 +298,7 @@ const Services = () => {
             <Reveal>
               <div className="text-center">
                 <p className="text-white/50 text-sm mb-5">Have something specific in mind? Let's have a conversation.</p>
-                <a
+                <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-gradient-to-r from-[#f7e839] to-[#f5d428] text-[#11181f] font-semibold hover:shadow-[0_0_20px_rgba(247,232,57,0.4)] transition-all duration-300"
                 >
@@ -306,7 +306,7 @@ const Services = () => {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </Reveal>
           </div>
@@ -323,12 +323,12 @@ const Services = () => {
                 Let's discuss your objectives and create a customized strategy that aligns with your business goals and delivers tangible results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-gradient-to-r from-[#f7e839] to-[#f5d428] text-[#11181f] font-semibold hover:shadow-lg transition-all duration-200">
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-gradient-to-r from-[#f7e839] to-[#f5d428] text-[#11181f] font-semibold hover:shadow-lg transition-all duration-200">
                   Get Custom Proposal
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </Reveal>

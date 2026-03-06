@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Reveal from '../components/Reveal'
 import AnimatedIllustrations from '../components/AnimatedIllustrations'
 import { servicesData, Service } from '../constants/servicesData'
@@ -54,11 +55,13 @@ const ServiceDetail = ({ service }: { service: Service }) => {
             {/* Full-bleed Hero with image overlay */}
             <section className="relative h-[50vh] min-h-[400px] lg:h-[65vh] overflow-hidden">
                 {/* Background image */}
-                <img
+                <Image
                     src={service.img}
                     alt={service.t}
-                    className="absolute inset-0 w-full h-full object-cover scale-105"
+                    fill
+                    className="object-cover scale-105"
                     style={{ filter: 'brightness(0.35)' }}
+                    priority
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-[#0a0d12] pointer-events-none" />
@@ -228,7 +231,7 @@ const ServiceDetail = ({ service }: { service: Service }) => {
                                 Our team is ready to craft a custom {service.t} strategy that drives real, measurable results for your business.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <a
+                                <Link
                                     href="/contact"
                                     className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-xl bg-gradient-to-r from-[#f7e839] to-[#f0d800] text-[#0a0d12] font-bold text-lg hover:shadow-[0_0_40px_rgba(247,232,57,0.35)] transition-all duration-300 hover:-translate-y-0.5"
                                 >
@@ -236,7 +239,7 @@ const ServiceDetail = ({ service }: { service: Service }) => {
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                         <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
-                                </a>
+                                </Link>
                                 <Link
                                     href="/services"
                                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/5 transition-all duration-200"

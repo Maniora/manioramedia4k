@@ -68,17 +68,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/assets/favicons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/assets/favicons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/logo1.png', type: 'image/png' },
     ],
     apple: [
-      { url: '/assets/favicons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-    other: [
-      {
-        rel: 'manifest',
-        url: '/assets/favicons/site.webmanifest',
-      },
+      { url: '/logo1.png', sizes: '180x180', type: 'image/png' },
     ],
   },
 };
@@ -125,7 +118,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Header />
-        <main className="flex-1 pt-16 lg:pt-20 overflow-x-hidden overflow-y-clip">{children}</main>
+        <main className="flex-1 pt-16 lg:pt-20 overflow-clip overflow-y-visible">{children}</main>
         <Footer />
 
       </body>

@@ -33,7 +33,7 @@ const JobDetail = ({ job }) => {
                         <span>{job.type}</span>
                     </div>
 
-                    <a
+                    <Link
                         href="/careers#apply"
                         className="inline-flex items-center gap-2 bg-[#f7e839] text-[#11181f] px-6 py-2.5 rounded text-sm font-bold hover:bg-[#f5d428] transition-colors"
                     >
@@ -41,7 +41,7 @@ const JobDetail = ({ job }) => {
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Content Sections */}

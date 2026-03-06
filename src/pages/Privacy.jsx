@@ -1,6 +1,5 @@
-'use client'
-
-import { useState, useEffect } from 'react'
+"use client"
+import LegalLayout from '@/components/LegalLayout'
 import Reveal from '@/components/Reveal'
 
 /* ─── Shared UI Primitives ─── */
@@ -12,13 +11,13 @@ const SectionLabel = ({ n }) => (
 )
 
 const H2 = ({ children }) => (
-  <h2 className="font-syne text-2xl lg:text-3xl font-extrabold text-white mb-4 leading-tight">
+  <h2 className="text-2xl lg:text-3xl font-extrabold text-white mb-4 leading-tight">
     {children}
   </h2>
 )
 
 const H3 = ({ children }) => (
-  <h3 className="font-syne text-lg font-bold text-white/90 mt-6 mb-2.5">
+  <h3 className="text-lg font-bold text-white/90 mt-6 mb-2.5">
     {children}
   </h3>
 )
@@ -102,8 +101,8 @@ const IconClock = () => (
 )
 
 const ContactCard = ({ title, rows }) => (
-  <div className="bg-[#111118] border border-white/10 rounded-2xl p-8 mt-8 shadow-2xl">
-    <h4 className="font-syne text-lg font-extrabold text-white mb-6 uppercase tracking-tight">{title}</h4>
+  <div className="bg-[#111118] border border-white/10 rounded-2xl p-8 mt-4 shadow-2xl">
+    <h4 className="text-lg font-extrabold text-white mb-6 uppercase tracking-tight">{title}</h4>
     <div className="space-y-4">
       {rows.map((row, i) => (
         <div key={i} className="flex items-start gap-4 text-sm border-b border-white/5 pb-4 last:border-0 last:pb-0">
@@ -116,7 +115,7 @@ const ContactCard = ({ title, rows }) => (
                 {row[3] || row[1]}
               </a>
             ) : (
-              <span className="text-white/80 font-medium">{row[1]}</span>
+              <span className="text-white/80 font-medium">{row[3] || row[1]}</span>
             )}
           </div>
         </div>
@@ -126,289 +125,189 @@ const ContactCard = ({ title, rows }) => (
 )
 
 const DocSection = ({ id, num, title, children }) => (
-  <Reveal as="section" id={id} className="mb-16 pb-16 border-b border-white/5 last:border-0 last:mb-0 last:pb-0">
-    <SectionLabel n={num} />
-    <H2>{title}</H2>
-    {children}
-  </Reveal>
+  <section id={id} className="doc-section mb-16 pb-16 border-b border-white/5 last:border-0 last:mb-0 last:pb-0">
+    <Reveal>
+      <SectionLabel n={num} />
+      <H2>{title}</H2>
+      {children}
+    </Reveal>
+  </section>
 )
 
 /* ═══════════════════════════════════════════
    PRIVACY POLICY CONTENT
+   Refactored for LegalLayout
 ═══════════════════════════════════════════ */
 
 export default function Privacy() {
-  const [activeHash, setActiveHash] = useState('')
-
-  const PP_LINKS = [
-    { href: '#pp-intro', label: '1. Introduction' },
-    { href: '#pp-collect', label: '2. Data We Collect' },
-    { href: '#pp-how', label: '3. How We Collect' },
-    { href: '#pp-purpose', label: '4. Purpose of Use' },
-    { href: '#pp-share', label: '5. Data Sharing' },
-    { href: '#pp-retention', label: '6. Data Retention' },
-    { href: '#pp-rights', label: '7. Your Rights (DPDP Act)' },
-    { href: '#pp-security', label: '8. Data Security' },
-    { href: '#pp-cookies', label: '9. Cookies' },
-    { href: '#pp-third', label: '10. Third-Party Links' },
-    { href: '#pp-children', label: '11. Children\'s Privacy' },
-    { href: '#pp-grievance', label: '12. Grievance Officer' },
-    { href: '#pp-changes', label: '13. Policy Changes' },
-    { href: '#pp-contact', label: '14. Contact Us' },
+  const PP_SECTIONS = [
+    { id: 'pp-intro', label: '1. Introduction' },
+    { id: 'pp-collect', label: '2. Data We Collect' },
+    { id: 'pp-how', label: '3. How We Collect' },
+    { id: 'pp-purpose', label: '4. Purpose of Use' },
+    { id: 'pp-share', label: '5. Data Sharing' },
+    { id: 'pp-retention', label: '6. Data Retention' },
+    { id: 'pp-rights', label: '7. Your Rights (DPDP Act)' },
+    { id: 'pp-security', label: '8. Data Security' },
+    { id: 'pp-cookies', label: '9. Cookies' },
+    { id: 'pp-third', label: '10. Third-Party Links' },
+    { id: 'pp-children', label: '11. Children\'s Privacy' },
+    { id: 'pp-grievance', label: '12. Grievance Officer' },
+    { id: 'pp-changes', label: '13. Policy Changes' },
   ]
 
-  useEffect(() => {
-    const handler = () => {
-      const sections = document.querySelectorAll('section[id]')
-      let current = ''
-      sections.forEach(sec => {
-        if (window.scrollY >= sec.offsetTop - 150) current = sec.id
-      })
-      setActiveHash(current)
-    }
-    window.addEventListener('scroll', handler)
-    return () => window.removeEventListener('scroll', handler)
-  }, [])
-
   return (
-    <div className="bg-[#0f141a] text-white/90 selection:bg-brand selection:text-ink">
-      {/* Background Decorative Element */}
-      <div className="fixed inset-0 pointer-events-none opacity-20">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-brand/5 blur-[120px]" />
-        <div className="absolute inset-0 bg-grid bg-[size:40px_40px]" />
+    <LegalLayout activeNav="pp" sections={PP_SECTIONS}>
+      <div className="relative min-w-0">
+
+        <DocSection id="pp-intro" num="01" title="Introduction">
+          <P>This Privacy Policy ("Policy") describes how <strong className="text-white">4KMedia LLP</strong> ("4KMedia," "we," "us," or "our"), registered at 3-13-745, Bharath Nagar, Mansoorabad, LB Nagar, Hyderabad, Telangana – 500074, India, collects, uses, processes, stores, and protects your personal data when you visit <strong className="text-white">www.4kmedia.in</strong> or engage with our services.</P>
+          <P>This Policy is published in compliance with:</P>
+          <DocList items={[
+            'The Digital Personal Data Protection Act, 2023 (DPDP Act)',
+            'The Information Technology Act, 2000 and IT (Amendment) Act, 2008',
+            'The Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011',
+            'The Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021',
+          ]} />
+          <Box variant="yellow">By using our Platform or engaging our services, you acknowledge that you have read and understood this Policy and consent to the collection and use of your data as described herein. If you do not agree, please do not use our Platform or services.</Box>
+        </DocSection>
+
+        <DocSection id="pp-collect" num="02" title="Personal Data We Collect">
+          <H3>2.1 Data You Provide Directly</H3>
+          <DocTable
+            headers={['Category', 'Examples', 'When Collected']}
+            rows={[
+              ['Identity Data', 'Full name, business name', 'Contact forms, service onboarding'],
+              ['Contact Data', 'Email address, mobile number, WhatsApp number', 'Enquiry forms, service agreements'],
+              ['Business Data', 'Company name, GSTIN, business type, industry', 'Client onboarding, invoicing'],
+              ['Financial Data', 'Bank account details, UPI ID (for payment processing only)', 'Invoice and payment processing'],
+              ['Content Data', 'Images, videos, brand assets, copy provided by you', 'Project delivery'],
+              ['Communication Data', 'Emails, WhatsApp messages, call records', 'Ongoing client communication'],
+            ]}
+          />
+          <H3>2.2 Data Collected Automatically</H3>
+          <DocList items={[
+            'IP address and approximate geographic location',
+            'Browser type, version, and device information',
+            'Pages visited, time spent, links clicked, and referral source',
+            'Cookie identifiers and session data',
+          ]} />
+          <H3>2.3 Sensitive Personal Data</H3>
+          <P>Under the IT Rules 2011, Sensitive Personal Data or Information (SPDI) includes financial information, biometric data, passwords, and health data. 4KMedia does not intentionally collect SPDI beyond what is strictly necessary for service delivery. Where SPDI is collected, explicit consent is obtained.</P>
+        </DocSection>
+
+        <DocSection id="pp-how" num="03" title="How We Collect Your Data">
+          <DocList items={[
+            'Directly from you — when you fill a contact form, send us an email or WhatsApp message, book a consultation, or enter a service agreement',
+            'Automatically — via cookies, Google Analytics, and similar tracking technologies',
+            'From third parties — Meta Business Suite, Google Ads Manager, LinkedIn Campaign Manager',
+            'Social media platforms — when you interact with our accounts or pages',
+          ]} />
+        </DocSection>
+
+        <DocSection id="pp-purpose" num="04" title="Purpose & Legal Basis">
+          <DocTable
+            headers={['Purpose', 'Legal Basis']}
+            rows={[
+              ['Providing and delivering our services', 'Contractual necessity / Consent'],
+              ['Sending invoices and processing payments', 'Contractual necessity / Legal obligation'],
+              ['Responding to your enquiries and communications', 'Legitimate interest / Consent'],
+              ['Analysing website usage to improve our Platform', 'Legitimate interest'],
+              ['Complying with legal and regulatory obligations', 'Legal obligation'],
+              ['Portfolio and case study usage (with consent)', 'Consent'],
+            ]}
+          />
+          <Box variant="cyan">Under the DPDP Act 2023, we process your personal data only for purposes that are necessary, specific, and for which your consent has been obtained.</Box>
+        </DocSection>
+
+        <DocSection id="pp-share" num="05" title="Data Sharing & Disclosure">
+          <P>4KMedia does not sell, rent, or trade your personal data to any third party. We may share your data in limited circumstances:</P>
+          <H3>5.1 Service Providers (Data Processors)</H3>
+          <DocList items={[
+            'Zoho Corporation — CRM, project management, email campaigns',
+            'Google LLC — Analytics, Google Ads, Gmail',
+            'Meta Platforms Inc. — Ad management',
+            'Payment Processors — RBI-regulated payment gateways',
+          ]} />
+          <H3>5.2 Legal Disclosure</H3>
+          <P>We may disclose your data if required by law, court order, or government authority under the IT Act 2000 or any other applicable Indian law.</P>
+          <Box variant="red">Where your data is processed outside India, we ensure appropriate safeguards are in place as required under the DPDP Act, 2023.</Box>
+        </DocSection>
+
+        <DocSection id="pp-retention" num="06" title="Data Retention">
+          <DocTable
+            headers={['Data Type', 'Retention Period']}
+            rows={[
+              ['Client service and project data', '7 years (GST/tax compliance)'],
+              ['Financial records and invoices', '8 years (Income Tax Act, 1961)'],
+              ['Communication records', '3 years from last interaction'],
+              ['Website analytics data', '26 months'],
+            ]}
+          />
+        </DocSection>
+
+        <DocSection id="pp-rights" num="07" title="Your Rights (DPDP Act 2023)">
+          <DocList items={[
+            'Right to Information — Know what data we hold and how it is processed',
+            'Right to Correction — Request correction of inaccurate data',
+            'Right to Erasure — Request deletion of data no longer necessary',
+            'Right to Withdraw Consent — Withdraw processing consent at any time',
+            'Right to Grievance Redressal — Raise concerns with our Grievance Officer',
+          ]} />
+          <P>To exercise these rights, send a request to <strong className="text-white">team@4kmedia.in</strong>. We will respond within <strong className="text-white">30 days</strong>.</P>
+        </DocSection>
+
+        <DocSection id="pp-security" num="08" title="Data Security">
+          <P>4KMedia implements reasonable technical and organisational security measures in accordance with the IT Rules, 2011.</P>
+          <DocList items={[
+            'SSL/TLS encryption for all data transmitted',
+            'Access controls limiting data to authorised team members only',
+            'Secure password policies and two-factor authentication',
+          ]} />
+          <Box variant="red">No method of transmission over the internet is 100% secure. In the event of a breach, we will notify affected individuals and authorities as required by law.</Box>
+        </DocSection>
+
+        <DocSection id="pp-cookies" num="09" title="Cookies & Tracking">
+          <DocTable
+            headers={['Cookie Type', 'Purpose', 'Duration']}
+            rows={[
+              ['Essential Cookies', 'Platform functionality', 'Session'],
+              ['Analytics Cookies', 'Google Analytics', 'Up to 2 years'],
+              ['Marketing Cookies', 'Meta Pixel, Google Ads', 'Up to 90 days'],
+            ]}
+          />
+        </DocSection>
+
+        <DocSection id="pp-third" num="10" title="Third-Party Links">
+          <P>Our Platform may contain links to third-party sites. 4KMedia accepts no responsibility or liability for their privacy policies. We encourage you to review their policies.</P>
+        </DocSection>
+
+        <DocSection id="pp-children" num="11" title="Children's Privacy">
+          <P>Our services are not directed at individuals under 18 years. If we become aware that a minor has provided data without consent, we will delete it promptly.</P>
+        </DocSection>
+
+        <DocSection id="pp-grievance" num="12" title="Grievance Officer">
+          <P>In accordance with the Information Technology Act, 2000, the IT (Intermediary Guidelines) Rules 2021, and the Digital Personal Data Protection Act, 2023, 4KMedia has designated a Grievance Officer to address complaints regarding data processing and privacy concerns.</P>
+          <ContactCard
+            title="Grievance Officer — 4KMedia LLP"
+            rows={[
+              [<IconUser />, 'Name', null, 'Dabbikar Krishnakanth'],
+              [<IconSuitcase />, 'Designation', null, 'Director & Grievance Officer'],
+              [<IconEmail />, 'Email', 'mailto:team@4kmedia.in', 'team@4kmedia.in'],
+              [<IconPhone />, 'Phone', null, '+91 99899 58238'],
+              [<IconLocation />, 'Address', null, '3-13-745, Bharath Nagar, Mansoorabad, LB Nagar, Hyderabad, Telangana – 500074'],
+              [<IconClock />, 'Resolution Time', null, 'Within 30 days of receipt of complaint'],
+            ]}
+          />
+          <P>If you are not satisfied with our response, you may escalate to the Data Protection Board of India (once constituted under the DPDP Act, 2023) or approach the adjudicating officer under the IT Act, 2000.</P>
+        </DocSection>
+
+        <DocSection id="pp-changes" num="13" title="Policy Changes">
+          <P>We may update this Policy periodically. Material changes will be notified via email or a prominent notice on our Platform at least 14 days before taking effect.</P>
+        </DocSection>
+
+
       </div>
-
-      {/* ── HERO ── */}
-      <section className="relative pt-32 pb-20 border-b border-white/5 overflow-hidden">
-        <div className="container mx-auto px-6 text-center">
-          <Reveal className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 border border-brand/20 mb-8 backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
-            <span className="font-mono text-[10px] tracking-[0.2em] text-brand uppercase font-bold">Privacy Matters</span>
-          </Reveal>
-
-          <Reveal>
-            <h1 className="font-syne text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[0.9]">
-              Privacy <span className="text-brand">Policy</span>
-            </h1>
-          </Reveal>
-
-          <Reveal>
-            <p className="max-w-2xl mx-auto text-white/50 text-lg leading-relaxed">
-              Your trust is our most valuable asset. This policy outlines how 4KMedia LLP safeguards your digital identity and personal data.
-            </p>
-          </Reveal>
-
-          <Reveal className="mt-10 flex flex-center gap-2 justify-center">
-            <div className="font-mono text-[11px] text-white/30 tracking-widest uppercase flex items-center gap-3 bg-white/5 px-6 py-2.5 rounded-xl border border-white/10">
-              Last Updated: Feb 25, 2026
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── CONTENT GRID ── */}
-      <div className="container mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-12 lg:gap-20 relative">
-
-          {/* SIDEBAR */}
-          <aside className="lg:sticky lg:top-32 h-fit space-y-8 z-20">
-            {/* Navigation Links */}
-            <nav className="hidden lg:block">
-              <h5 className="font-mono text-[9px] text-white/30 uppercase tracking-[0.2em] mb-6 px-4">Sections</h5>
-              <ul className="space-y-1">
-                {PP_LINKS.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      className={`block px-4 py-2.5 rounded-xl text-xs font-medium transition-all ${activeHash === link.href.slice(1)
-                        ? 'bg-brand/10 text-brand border-l-2 border-brand'
-                        : 'text-white/40 hover:bg-white/5 hover:text-white'
-                        }`}
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            {/* Help Callout */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-brand/20 to-brand/5 border border-brand/20 text-center">
-              <p className="text-xs text-white/80 font-medium mb-4 italic">Questions about your data?</p>
-              <a href="mailto:team@4kmedia.in" className="inline-block text-[10px] font-bold uppercase tracking-widest text-ink bg-brand px-6 py-2.5 rounded-lg hover:scale-105 transition-transform">
-                Email DPO
-              </a>
-            </div>
-          </aside>
-
-          {/* DOCUMENT BODY */}
-          <main className="relative min-w-0">
-
-            <DocSection id="pp-intro" num="01" title="Introduction">
-              <P>This Privacy Policy ("Policy") describes how <strong className="text-white">4KMedia LLP</strong> ("4KMedia," "we," "us," or "our"), registered at 3-13-745, Bharath Nagar, Mansoorabad, LB Nagar, Hyderabad, Telangana – 500074, India, collects, uses, processes, stores, and protects your personal data when you visit <strong className="text-white">www.4kmedia.in</strong> or engage with our services.</P>
-              <P>This Policy is published in compliance with:</P>
-              <DocList items={[
-                'The Digital Personal Data Protection Act, 2023 (DPDP Act)',
-                'The Information Technology Act, 2000 and IT (Amendment) Act, 2008',
-                'The Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011',
-                'The Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021',
-              ]} />
-              <Box variant="yellow">By using our Platform or engaging our services, you acknowledge that you have read and understood this Policy and consent to the collection and use of your data as described herein. If you do not agree, please do not use our Platform or services.</Box>
-            </DocSection>
-
-            <DocSection id="pp-collect" num="02" title="Personal Data We Collect">
-              <H3>2.1 Data You Provide Directly</H3>
-              <DocTable
-                headers={['Category', 'Examples', 'When Collected']}
-                rows={[
-                  ['Identity Data', 'Full name, business name', 'Contact forms, service onboarding'],
-                  ['Contact Data', 'Email address, mobile number, WhatsApp number', 'Enquiry forms, service agreements'],
-                  ['Business Data', 'Company name, GSTIN, business type, industry', 'Client onboarding, invoicing'],
-                  ['Financial Data', 'Bank account details, UPI ID (for payment processing only)', 'Invoice and payment processing'],
-                  ['Content Data', 'Images, videos, brand assets, copy provided by you', 'Project delivery'],
-                  ['Communication Data', 'Emails, WhatsApp messages, call records', 'Ongoing client communication'],
-                ]}
-              />
-              <H3>2.2 Data Collected Automatically</H3>
-              <DocList items={[
-                'IP address and approximate geographic location',
-                'Browser type, version, and device information',
-                'Pages visited, time spent, links clicked, and referral source',
-                'Cookie identifiers and session data',
-              ]} />
-              <H3>2.3 Sensitive Personal Data</H3>
-              <P>Under the IT Rules 2011, Sensitive Personal Data or Information (SPDI) includes financial information, biometric data, passwords, and health data. 4KMedia does not intentionally collect SPDI beyond what is strictly necessary for service delivery. Where SPDI is collected, explicit consent is obtained.</P>
-            </DocSection>
-
-            <DocSection id="pp-how" num="03" title="How We Collect Your Data">
-              <DocList items={[
-                'Directly from you — when you fill a contact form, send us an email or WhatsApp message, book a consultation, or enter a service agreement',
-                'Automatically — via cookies, Google Analytics, and similar tracking technologies',
-                'From third parties — Meta Business Suite, Google Ads Manager, LinkedIn Campaign Manager',
-                'Social media platforms — when you interact with our accounts or pages',
-              ]} />
-            </DocSection>
-
-            <DocSection id="pp-purpose" num="04" title="Purpose & Legal Basis">
-              <DocTable
-                headers={['Purpose', 'Legal Basis']}
-                rows={[
-                  ['Providing and delivering our services', 'Contractual necessity / Consent'],
-                  ['Sending invoices and processing payments', 'Contractual necessity / Legal obligation'],
-                  ['Responding to your enquiries and communications', 'Legitimate interest / Consent'],
-                  ['Analysing website usage to improve our Platform', 'Legitimate interest'],
-                  ['Complying with legal and regulatory obligations', 'Legal obligation'],
-                  ['Portfolio and case study usage (with consent)', 'Consent'],
-                ]}
-              />
-              <Box variant="cyan">Under the DPDP Act 2023, we process your personal data only for purposes that are necessary, specific, and for which your consent has been obtained.</Box>
-            </DocSection>
-
-            <DocSection id="pp-share" num="05" title="Data Sharing & Disclosure">
-              <P>4KMedia does not sell, rent, or trade your personal data to any third party. We may share your data in limited circumstances:</P>
-              <H3>5.1 Service Providers (Data Processors)</H3>
-              <DocList items={[
-                'Zoho Corporation — CRM, project management, email campaigns',
-                'Google LLC — Analytics, Google Ads, Gmail',
-                'Meta Platforms Inc. — Ad management',
-                'Payment Processors — RBI-regulated payment gateways',
-              ]} />
-              <H3>5.2 Legal Disclosure</H3>
-              <P>We may disclose your data if required by law, court order, or government authority under the IT Act 2000 or any other applicable Indian law.</P>
-              <Box variant="red">Where your data is processed outside India, we ensure appropriate safeguards are in place as required under the DPDP Act, 2023.</Box>
-            </DocSection>
-
-            <DocSection id="pp-retention" num="06" title="Data Retention">
-              <DocTable
-                headers={['Data Type', 'Retention Period']}
-                rows={[
-                  ['Client service and project data', '7 years (GST/tax compliance)'],
-                  ['Financial records and invoices', '8 years (Income Tax Act, 1961)'],
-                  ['Communication records', '3 years from last interaction'],
-                  ['Website analytics data', '26 months'],
-                ]}
-              />
-            </DocSection>
-
-            <DocSection id="pp-rights" num="07" title="Your Rights (DPDP Act 2023)">
-              <DocList items={[
-                'Right to Information — Know what data we hold and how it is processed',
-                'Right to Correction — Request correction of inaccurate data',
-                'Right to Erasure — Request deletion of data no longer necessary',
-                'Right to Withdraw Consent — Withdraw processing consent at any time',
-                'Right to Grievance Redressal — Raise concerns with our Grievance Officer',
-              ]} />
-              <P>To exercise these rights, send a request to <strong className="text-white">team@4kmedia.in</strong>. We will respond within <strong className="text-white">30 days</strong>.</P>
-            </DocSection>
-
-            <DocSection id="pp-security" num="08" title="Data Security">
-              <P>4KMedia implements reasonable technical and organisational security measures in accordance with the IT Rules, 2011.</P>
-              <DocList items={[
-                'SSL/TLS encryption for all data transmitted',
-                'Access controls limiting data to authorised team members only',
-                'Secure password policies and two-factor authentication',
-              ]} />
-              <Box variant="red">No method of transmission over the internet is 100% secure. In the event of a breach, we will notify affected individuals and authorities as required by law.</Box>
-            </DocSection>
-
-            <DocSection id="pp-cookies" num="09" title="Cookies & Tracking">
-              <DocTable
-                headers={['Cookie Type', 'Purpose', 'Duration']}
-                rows={[
-                  ['Essential Cookies', 'Platform functionality', 'Session'],
-                  ['Analytics Cookies', 'Google Analytics', 'Up to 2 years'],
-                  ['Marketing Cookies', 'Meta Pixel, Google Ads', 'Up to 90 days'],
-                ]}
-              />
-            </DocSection>
-
-            <DocSection id="pp-third" num="10" title="Third-Party Links">
-              <P>Our Platform may contain links to third-party sites. 4KMedia accepts no responsibility or liability for their privacy policies. We encourage you to review their policies.</P>
-            </DocSection>
-
-            <DocSection id="pp-children" num="11" title="Children's Privacy">
-              <P>Our services are not directed at individuals under 18 years. If we become aware that a minor has provided data without consent, we will delete it promptly.</P>
-            </DocSection>
-
-            <DocSection id="pp-grievance" num="12" title="Grievance Officer">
-              <ContactCard
-                title="Grievance Officer — 4KMedia LLP"
-                rows={[
-                  [<IconUser />, 'Contact Name', null, 'Dabbikar Krishnakanth'],
-                  [<IconSuitcase />, 'Designation', null, 'Director & Grievance Officer'],
-                  [<IconEmail />, 'Privacy Desk', 'mailto:team@4kmedia.in', 'team@4kmedia.in'],
-                  [<IconPhone />, 'Phone Support', null, '+91 99899 58238'],
-                  [<IconLocation />, 'Registered Office', null, '3-13-745, Mansoorabad, Hyderabad'],
-                ]}
-              />
-            </DocSection>
-
-            <DocSection id="pp-changes" num="13" title="Policy Changes">
-              <P>We may update this Policy periodically. Material changes will be notified via email or a prominent notice on our Platform at least 14 days before taking effect.</P>
-            </DocSection>
-
-            <DocSection id="pp-contact" num="14" title="Contact Us">
-              <ContactCard
-                title="4KMedia LLP — Privacy Contact"
-                rows={[
-                  [<IconEmail />, 'Direct Email', 'mailto:team@4kmedia.in', 'team@4kmedia.in'],
-                  [<IconPhone />, 'Phone', null, '+91 99899 58238'],
-                  [<IconGlobe />, 'Agency Website', 'https://www.4kmedia.in', 'www.4kmedia.in'],
-                ]}
-              />
-            </DocSection>
-
-            {/* Back to top */}
-            <div className="mt-20 pt-10 border-t border-white/5 text-center">
-              <button
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="group flex items-center gap-3 mx-auto text-white/40 hover:text-brand transition-colors font-mono text-xs uppercase tracking-widest"
-              >
-                <span className="group-hover:-translate-y-1 transition-transform">↑</span> Back to the top
-              </button>
-            </div>
-          </main>
-        </div>
-      </div>
-    </div>
+    </LegalLayout>
   )
 }

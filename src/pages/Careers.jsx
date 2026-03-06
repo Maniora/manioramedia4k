@@ -71,7 +71,7 @@ const Careers = () => {
               </p>
             </Reveal>
             <Reveal>
-              <a
+              <Link
                 href="#open-positions"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-[#f7e839] to-[#f5d428] text-[#11181f] font-semibold text-lg hover:shadow-[0_0_24px_rgba(247,232,57,0.4)] transition-all duration-300"
               >
@@ -79,7 +79,7 @@ const Careers = () => {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                 </svg>
-              </a>
+              </Link>
             </Reveal>
           </div>
         </div>
@@ -275,51 +275,71 @@ const Careers = () => {
 
             {/* Heading */}
             <Reveal>
-              <h2 className="text-4xl font-bold text-white mb-4">
+              <h2 className="text-4xl font-bold text-white mb-4 text-center">
                 Open Roles <span className="text-[#f7e839]">(Always Hiring)</span>
               </h2>
             </Reveal>
             <Reveal>
-              <p className="text-white/80 text-lg font-medium leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/80 text-lg font-medium leading-relaxed mb-10 max-w-2xl mx-auto text-center">
                 We are continuously hiring for the following roles. If you meet the expectations, we are open to conversations year-round.
               </p>
             </Reveal>
 
             {/* Jobs Table */}
-            <Reveal>
-              <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
-                {jobsData.map((job, index) => (
-                  <div
-                    key={job.title}
-                    className={`flex items-center justify-between gap-3 px-4 sm:px-6 py-5 transition-colors duration-200 hover:bg-white/5 ${index !== jobsData.length - 1 ? 'border-b border-white/10' : ''}`}
-                  >
-                    {/* Left — title */}
-                    <div className="flex-grow min-w-0">
-                      <span className="text-white font-semibold text-sm sm:text-base truncate block sm:inline">{job.title}</span>
-                    </div>
-
-                    {/* Right — actions */}
-                    <div className="flex items-center gap-3 flex-shrink-0">
-                      <Link
-                        href={`/careers/${job.id}`}
-                        className="text-sm text-white/60 hover:text-white transition-colors duration-200 underline-offset-4 hover:underline"
-                      >
-                        Read More
-                      </Link>
-                      <a
-                        href="#apply"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#f7e839] text-[#11181f] text-sm font-bold hover:bg-[#f5d428] hover:shadow-[0_0_16px_rgba(247,232,57,0.35)] transition-all duration-200"
-                      >
-                        Apply Now
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                          <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                        </svg>
-                      </a>
-                    </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+              {jobsData.map((job, index) => (
+                <div
+                  key={job.id}
+                  className={`flex items-center justify-between gap-3 px-4 sm:px-6 py-5 transition-colors duration-200 hover:bg-white/5 border-b border-white/10`}
+                >
+                  {/* Left — title */}
+                  <div className="flex-grow min-w-0">
+                    <span className="text-white font-semibold text-sm sm:text-base truncate block sm:inline">{job.title}</span>
                   </div>
-                ))}
+
+                  {/* Right — actions */}
+                  <div className="flex items-center gap-3 flex-shrink-0">
+                    <Link
+                      href={`/careers/${job.id}`}
+                      className="text-sm text-white/60 hover:text-white transition-colors duration-200 underline-offset-4 hover:underline"
+                    >
+                      Read More
+                    </Link>
+                    <Link
+                      href="#apply"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#f7e839] text-[#11181f] text-sm font-bold hover:bg-[#f5d428] hover:shadow-[0_0_16px_rgba(247,232,57,0.35)] transition-all duration-200"
+                    >
+                      Apply Now
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                      </svg>
+                    </Link>
+                  </div>
+
+                </div>
+              ))}
+
+              {/* Special Row: Don't see a perfect role? */}
+              <div
+                className="flex items-center justify-between gap-3 px-4 sm:px-6 py-5 transition-colors duration-200 hover:bg-white/5"
+              >
+                <div className="flex-grow min-w-0">
+                  <span className="text-white font-semibold text-sm sm:text-base truncate block sm:inline">Don't see a perfect role?</span>
+                </div>
+                <div className="flex items-center gap-3 flex-shrink-0">
+                  <Link
+                    href="#apply"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#f7e839] text-[#11181f] text-sm font-bold hover:bg-[#f5d428] hover:shadow-[0_0_16px_rgba(247,232,57,0.35)] transition-all duration-200"
+                  >
+                    Apply Now
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
-            </Reveal>
+            </div>
+
 
           </div>
         </div>

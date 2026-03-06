@@ -1,27 +1,39 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link' // Added Link import
 import ContactForm from '../components/ContactForm'
 import Reveal from '../components/Reveal'
 import AnimatedIllustrations from '../components/AnimatedIllustrations'
 import ContactAnimation from '../components/ContactAnimation'
 
-const ContactCard = ({ icon, title, value, description, delay, href, bgColor = "bg-[#1a1f26]" }) => (
-  <Reveal as="div" className={`${bgColor} border border-white/10 rounded-xl p-8 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 hover:border-[#f7e839]/30 group`} delay={delay}>
-    <div className="flex items-start gap-6">
-      <div className={`h-14 w-14 rounded-xl ${bgColor} border border-white/10 grid place-items-center flex-shrink-0 group-hover:bg-[#f7e839]/10 transition-all duration-300`}>
-        {icon}
+const ContactCard = ({ icon, title, value, description, delay, href, bgColor = "bg-[#1a1f26]" }) => {
+  const isExternal = href.startsWith('tel:') || href.startsWith('mailto:') || href.startsWith('http://') || href.startsWith('https://');
+  const linkClasses = "text-[#f7e839] hover:text-[#f5d428] font-semibold text-lg transition-colors duration-200 block mb-2";
+
+  return (
+    <Reveal as="div" className={`${bgColor} border border-white/10 rounded-xl p-8 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 hover:border-[#f7e839]/30 group`} delay={delay}>
+      <div className="flex items-start gap-6">
+        <div className={`h-14 w-14 rounded-xl ${bgColor} border border-white/10 grid place-items-center flex-shrink-0 group-hover:bg-[#f7e839]/10 transition-all duration-300`}>
+          {icon}
+        </div>
+        <div className="flex-1">
+          <h3 className="text-white font-bold text-xl mb-3">{title}</h3>
+          {isExternal ? (
+            <a href={href} className={linkClasses}>
+              {value}
+            </a>
+          ) : (
+            <Link href={href} className={linkClasses}>
+              {value}
+            </Link>
+          )}
+          <div className="text-white/60 text-sm leading-relaxed">{description}</div>
+        </div>
       </div>
-      <div className="flex-1">
-        <h3 className="text-white font-bold text-xl mb-3">{title}</h3>
-        <a href={href} className="text-[#f7e839] hover:text-[#f5d428] font-semibold text-lg transition-colors duration-200 block mb-2">
-          {value}
-        </a>
-        <div className="text-white/60 text-sm leading-relaxed">{description}</div>
-      </div>
-    </div>
-  </Reveal>
-);
+    </Reveal>
+  );
+};
 
 const SocialCard = ({ platform, handle, href, icon }) => (
   <Reveal as="a"
@@ -71,19 +83,21 @@ const Contact = () => (
     </section>
 
     {/* Contact Section */}
-    <section className="py-15 bg-[#06060a]">
+    <section className="py-20 bg-[#06060a]">
       <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <Reveal>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Discuss <span className="text-[#f7e839]">Your Project</span></h2>
+            <p className="text-white/80 text-lg leading-relaxed">
+              Share your vision with our experts. We'll provide strategic insights and a customized roadmap within 24 hours.
+            </p>
+          </Reveal>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto items-stretch">
           {/* Contact Form */}
           <Reveal as="div" className="space-y-8">
-            <div className='mb-8'>
-              <h2 className="text-4xl font-bold text-white mb-6">Let's Discuss <span className="text-[#f7e839]">Your Project</span></h2>
-              <p className="text-white/70 leading-relaxed">
-                Share your vision with our experts. We'll provide strategic insights and a customized roadmap within 24 hours.
-              </p>
-            </div>
             <ContactForm />
-
           </Reveal>
 
           {/* Contact Information */}

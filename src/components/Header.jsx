@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 const Header = () => {
@@ -79,9 +80,11 @@ const Header = () => {
                 <div className={`absolute -inset-2 bg-[#f7e839]/20 rounded-xl blur-lg transition-all duration-500 ${isHoveringLogo ? 'opacity-100 scale-110' : 'opacity-0 scale-95'
                   }`} />
 
-                <img
+                <Image // Replaced img with Image
                   src="/assets/logo2.png"
                   alt="4KMEDIA - Premium Digital Agency"
+                  width={56} // Added width
+                  height={56} // Added height
                   className="relative h-12 w-auto px-2 lg:h-14 lg:w-auto rounded-xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 border-2 border-[#f7e839]/20"
                 />
 
@@ -178,9 +181,11 @@ const Header = () => {
             onClick={() => setOpen(false)}
             className="flex items-center gap-3"
           >
-            <img
+            <Image
               src="/assets/logo2.png"
               alt="4KMEDIA"
+              width={40}
+              height={40}
               className="h-10 w-auto px-2 rounded-xl border-2 border-[#f7e839]/30"
             />
             <span className="text-xl font-bold text-white tracking-tight">4KMEDIA</span>

@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+import Image from 'next/image'
 import Hero from '../components/Hero'
 import ServicesCard from '../components/ServicesCard'
 import Testimonial from '../components/Testimonial'
@@ -27,9 +29,9 @@ const Home = () => (
             and sustainable growth for forward-thinking brands.
           </p>
 
-          <a href="/about" className="px-8 py-4 rounded-xl border border-white/20 text-white hover:border-[#f7e839] hover:bg-[#f7e839]/10 transition-all duration-300 font-medium text-center">
+          <Link href="/about" className="px-8 py-4 rounded-xl border border-white/20 text-white hover:border-[#f7e839] hover:bg-[#f7e839]/10 transition-all duration-300 font-medium text-center">
             Know More About Us
-          </a>
+          </Link>
         </div>
       </Reveal>
     </section>
@@ -93,20 +95,15 @@ const Home = () => (
                 <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
                 <p className="text-white/70 leading-7">{service.description}</p>
                 <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a
+                  <Link
                     href="/services"
                     className="text-[#f7e839] text-sm font-medium flex items-center gap-2 hover:underline transition-colors"
-                    onClick={e => {
-                      e.preventDefault();
-                      window.history.pushState({}, '', '/services');
-                      window.dispatchEvent(new PopStateEvent('popstate'));
-                    }}
                   >
                     Learn more
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -114,13 +111,13 @@ const Home = () => (
         </div>
 
         <div className="text-center">
-          <a href="/services" className="group inline-flex items-center px-8 py-4 rounded-xl border border-white/20 text-white hover:border-[#f7e839] hover:bg-[#f7e839]/10 transition-all duration-300 font-medium relative overflow-hidden">
+          <Link href="/services" className="group inline-flex items-center px-8 py-4 rounded-xl border border-white/20 text-white hover:border-[#f7e839] hover:bg-[#f7e839]/10 transition-all duration-300 font-medium relative overflow-hidden">
             <span className="relative z-10">See Our Marketing Solutions</span>
             <svg className="ml-3 w-4 h-4 relative z-10 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
             <div className="absolute inset-0 bg-gradient-to-r from-[#f7e839]/0 to-[#f7e839]/5 transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500"></div>
-          </a>
+          </Link>
         </div>
       </Reveal>
     </section>
@@ -182,10 +179,12 @@ const Home = () => (
                 alt: "Brand 4"
               }
             ]).map((logo, idx) => (
-              <img
+              <Image
                 key={idx}
                 src={logo.src}
                 alt={logo.alt}
+                width={200}
+                height={80}
                 className="h-20 w-auto object-contain opacity-80 transition"
                 draggable="false"
               />
@@ -227,18 +226,18 @@ const Home = () => (
             performance and outline a customized roadmap for success.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a
+            <Link
               href="/contact"
-              className="px-10 py-5 rounded-2xl bg-gradient-to-r from-[#f7e839] to-[#f7e839]/90 text-black transition-all duration-300 font-semibold text-lg min-w-[200px] hover:shadow-2xl hover:shadow-[#f7e839]/30 transform hover:scale-105"
+              className="px-10 py-5 rounded-2xl bg-gradient-to-r from-[#f7e839] to-[#f7e839]/90 text-black transition-all duration-300 font-semibold text-lg min-w-[200px] hover:shadow-2xl hover:shadow-[#f7e839]/30 transform hover:scale-105 text-center"
             >
               Schedule Strategy Call
-            </a>
-            <a
+            </Link>
+            <Link
               href="/services"
-              className="px-10 py-5 rounded-2xl border border-white/20 text-white hover:border-[#f7e839] hover:bg-[#f7e839]/10 transition-all duration-300 font-semibold text-lg min-w-[200px]"
+              className="px-10 py-5 rounded-2xl border border-white/20 text-white hover:border-[#f7e839] hover:bg-[#f7e839]/10 transition-all duration-300 font-semibold text-lg min-w-[200px] text-center"
             >
               View Our Services
-            </a>
+            </Link>
           </div>
           <p className="text-white/50 text-sm mt-6">No obligation, just actionable insights</p>
         </div>

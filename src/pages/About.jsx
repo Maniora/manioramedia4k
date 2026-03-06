@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import Reveal from '../components/Reveal';
 import AnimatedIllustrations from '../components/AnimatedIllustrations';
 import FaqItem from '../components/FaqItem';
@@ -394,10 +396,12 @@ const About = () => {
                   alt: "Brand 4"
                 }
               ]).map((logo, idx) => (
-                <img
+                <Image
                   key={idx}
                   src={logo.src}
                   alt={logo.alt}
+                  width={200}
+                  height={80}
                   className="h-20 w-auto object-contain opacity-80 transition"
                   draggable="false"
                 />
@@ -617,15 +621,15 @@ const About = () => {
                 Let's discuss your goals and create a tailored strategy that drives measurable results for your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-gradient-to-r from-[#f7e839] to-[#f5d428] text-[#11181f] font-semibold hover:shadow-lg transition-all duration-200">
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-gradient-to-r from-[#f7e839] to-[#f5d428] text-[#11181f] font-semibold hover:shadow-lg transition-all duration-200">
                   Start Your Project
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                   </svg>
-                </a>
-                <a href="/careers" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/10 transition-all duration-200">
+                </Link>
+                <Link href="/careers" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/10 transition-all duration-200">
                   Work with us...
-                </a>
+                </Link>
               </div>
             </div>
           </Reveal>

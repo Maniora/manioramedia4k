@@ -132,7 +132,7 @@ const Hero = () => {
           </div>
 
           <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed font-medium animate-fade-in delay-300">
-            Building AI-Enabled Performance Marketing Systems for Indian SMEs
+            Empowering Indian SMEs with AI-driven performance marketing systems designed for predictable, scalable growth.
           </p>
 
           {/* Interactive Stat Cards */}

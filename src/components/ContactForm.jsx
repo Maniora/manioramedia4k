@@ -77,6 +77,28 @@ const ContactForm = () => {
       ? "border-red-500 focus:ring-red-400"
       : "border-white/20 focus:ring-[#f7e839]/50";
 
+  const submitToSheet = async (payload) => {
+    try {
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ formType: 'contact', data: payload }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => null);
+        throw new Error(errorData?.error || 'Google Sheets submission failed');
+      }
+
+      return true;
+    } catch (error) {
+      console.error('Google Sheets submit error (contact):', error);
+      return false;
+    }
+  };
+
   const sendEmail = async (e) => {
     e.preventDefault();
     if (!formRef.current) return;
@@ -91,39 +113,63 @@ const ContactForm = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
+    const sheetPayload = {
+      name: formRef.current.user_name.value.trim(),
+      email: formRef.current.user_email.value.trim(),
+      phone: formRef.current.user_phone.value.trim(),
+      location: formRef.current.user_location.value.trim(),
+      website: formRef.current.user_website.value.trim(),
+      service: selectedServiceId === 'other'
+        ? 'Other'
+        : servicesData.find((s) => s.id === selectedServiceId)?.t || selectedServiceId,
+      sub_service: selectedSubServiceTitle,
+      message: formRef.current.message.value.trim(),
+      submitted_at: new Date().toISOString(),
+    };
+
     // Validate required EmailJS env variables at runtime
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT;
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-    if (!serviceId || !templateId || !publicKey) {
-      console.error("Missing EmailJS configuration. Check .env variables.", {
-        serviceIdPresent: !!serviceId,
-        templateIdPresent: !!templateId,
-        publicKeyPresent: !!publicKey,
-      });
-      setToast({ open: true, message: "Email service not configured. Please try later.", variant: "error" });
-      setIsSubmitting(false);
-      return;
+    const emailConfigured = !!serviceId && !!templateId && !!publicKey;
+
+    let emailSent = false;
+    if (emailConfigured) {
+      try {
+        await emailjs.sendForm(
+          serviceId,
+          templateId,
+          formRef.current,
+          { publicKey }
+        );
+        emailSent = true;
+        setSubmitStatus("success");
+      } catch (err) {
+        console.error("EmailJS Error:", err);
+        setSubmitStatus("error");
+      }
+    } else {
+      console.warn("EmailJS not configured. Skipping email send and continuing with Google Sheets submission.");
     }
 
-    try {
-      await emailjs.sendForm(
-        serviceId,
-        templateId,
-        formRef.current,
-        { publicKey }
-      );
-      setSubmitStatus("success");
+    const sheetSaved = await submitToSheet(sheetPayload);
+    if (sheetSaved) {
+      if (emailConfigured && emailSent) {
+        setToast({ open: true, message: "Message sent successfully!", variant: "success" });
+      } else if (emailConfigured && !emailSent) {
+        setToast({ open: true, message: "Google Sheets record saved, but email failed to send.", variant: "error" });
+      } else {
+        setToast({ open: true, message: "Message stored successfully. Email was skipped because EmailJS is not configured.", variant: "success" });
+      }
       formRef.current.reset();
-      setToast({ open: true, message: "Message sent successfully!", variant: "success" });
+      setSelectedServiceId("");
+      setSelectedSubServiceTitle("");
       setFieldErrors({});
-    } catch (err) {
-      console.error("EmailJS Error:", err);
-      setSubmitStatus("error");
-      setToast({ open: true, message: "Failed to send message. Please try again.", variant: "error" });
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      setToast({ open: true, message: "Failed to save to Google Sheets. Please try again.", variant: "error" });
     }
+
+    setIsSubmitting(false);
   };
 
   return (

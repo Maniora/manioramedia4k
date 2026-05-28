@@ -55,6 +55,27 @@ const CareersForm = () => {
   const [fieldErrors, setFieldErrors] = useState({})
   const [selectedRole, setSelectedRole] = useState('')
 
+  const submitToSheet = async (payload) => {
+    try {
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ formType: 'careers', data: payload }),
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => null)
+        throw new Error(errorData?.error || 'Google Sheets submission failed')
+      }
+
+      return true
+    } catch (error) {
+      console.error('Google Sheets submit error (careers):', error)
+      return false
+    }
+  }
 
   const sanitizePhoneInput = (e) => {
     const digitsOnly = e.target.value.replace(/\D/g, '').slice(0, 10)
@@ -111,39 +132,59 @@ const CareersForm = () => {
     setIsSubmitting(true)
     setSubmitStatus(null)
 
+    const roleValue = formRef.current.role.value
+    const sheetPayload = {
+      full_name: formRef.current.full_name.value.trim(),
+      email: formRef.current.email.value.trim(),
+      phone: formRef.current.phone.value.trim(),
+      portfolio: formRef.current.portfolio.value.trim(),
+      role: roleValue === 'Other' ? formRef.current.other_role.value.trim() : roleValue,
+      resume: formRef.current.resume.value.trim(),
+      submitted_at: new Date().toISOString(),
+    }
+
     // Validate required EmailJS env variables at runtime
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CAREERS
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-    if (!serviceId || !templateId || !publicKey) {
-      console.error('Missing EmailJS configuration. Check .env variables.', {
-        serviceIdPresent: !!serviceId,
-        templateIdPresent: !!templateId,
-        publicKeyPresent: !!publicKey,
-      })
-      setToast({ open: true, message: 'Email service not configured. Please try later.', variant: 'error' })
-      setIsSubmitting(false)
-      return
+    const emailConfigured = !!serviceId && !!templateId && !!publicKey
+
+    let emailSent = false
+    if (emailConfigured) {
+      try {
+        await emailjs.sendForm(
+          serviceId,
+          templateId,
+          formRef.current,
+          { publicKey }
+        )
+        emailSent = true
+        setSubmitStatus('success')
+      } catch (err) {
+        console.error('EmailJS Error:', err)
+        setSubmitStatus('error')
+      }
+    } else {
+      console.warn('EmailJS not configured. Skipping email send and continuing with Google Sheets submission.')
     }
 
-    try {
-      await emailjs.sendForm(
-        serviceId,
-        templateId,
-        formRef.current,
-        { publicKey }
-      )
-      setSubmitStatus('success')
+    const sheetSaved = await submitToSheet(sheetPayload)
+    if (sheetSaved) {
+      if (emailConfigured && emailSent) {
+        setToast({ open: true, message: 'Application submitted successfully!', variant: 'success' })
+      } else if (emailConfigured && !emailSent) {
+        setToast({ open: true, message: 'Google Sheets record saved, but email failed to send.', variant: 'error' })
+      } else {
+        setToast({ open: true, message: 'Application stored successfully. Email was skipped because EmailJS is not configured.', variant: 'success' })
+      }
       formRef.current.reset()
-      setToast({ open: true, message: 'Application submitted successfully!', variant: 'success' })
+      setSelectedRole('')
       setFieldErrors({})
-    } catch (err) {
-      console.error('EmailJS Error:', err)
-      setSubmitStatus('error')
-      setToast({ open: true, message: 'Failed to submit application. Please try again.', variant: 'error' })
-    } finally {
-      setIsSubmitting(false)
+    } else {
+      setToast({ open: true, message: 'Failed to save to Google Sheets. Please try again.', variant: 'error' })
     }
+
+    setIsSubmitting(false)
   }
 
   const getFieldErrorClass = (field) =>

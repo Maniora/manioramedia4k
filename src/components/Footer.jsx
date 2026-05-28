@@ -158,7 +158,7 @@ const Footer = () => (
           <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
             Your dedicated digital growth partner. We combine creative strategies with data-driven insights to help your brand thrive in the digital landscape.
           </p>
-          <div className="flex gap-3">
+          <div className="flex gap-3 mb-6">
             <SocialIcon href="https://instagram.com/4kmediax" icon={<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" strokeWidth="1.6" /><circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.6" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" /></svg>} label="Instagram" />
             <SocialIcon href="https://www.linkedin.com/company/4kmedia-in" icon={<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM6 9H2v12h4V9zM4 6a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" strokeWidth="1.6" /></svg>} label="LinkedIn" />
             <SocialIcon href="https://youtube.com/@4kmediax" icon={<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="3" stroke="currentColor" strokeWidth="1.6" /><path d="M10 9l5 3-5 3V9z" fill="currentColor" /></svg>} label="YouTube" />
@@ -171,6 +171,17 @@ const Footer = () => (
               }
               label="WhatsApp"
             />
+          </div>
+          <div className="w-full relative z-20 border border-white/10 rounded-xl overflow-hidden mt-6">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5601696825306!2d78.3844893!3d17.4328829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91a5f7b98d5b%3A0x45c77a58621d9d09!2s4KMEDIA!5e0!3m2!1sen!2sin!4v1779939416512!5m2!1sen!2sin" 
+              width="100%" 
+              height="150" 
+              style={{border: 0, width: '100%', height: '150px'}} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
 
@@ -232,12 +243,14 @@ const Footer = () => (
             </li>
             <li>
               <span className="block text-white font-bold text-base mb-1">Hyderabad, India</span>
-              <span className="text-white/50">Based in India, Serving Globally</span>
+              <span className="text-white/50">WeWork RMZ Spire, 5th, 100, Silpa Gram Craft Village, HITEC City, Hyderabad, Telangana 500081</span>
             </li>
           </ul>
         </div>
       </div>
     </div>
+
+
 
     <div className="border-t border-white/10 relative z-30">
       <div className="container mx-auto px-4 py-6">

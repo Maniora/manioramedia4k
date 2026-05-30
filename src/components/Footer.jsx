@@ -231,8 +231,15 @@ const Footer = () => (
               <span className="text-white/50">Mon-Fri, 9AM-6PM IST</span>
             </li>
             <li>
-              <span className="block text-white font-bold text-base mb-1">Hyderabad, India</span>
-              <span className="text-white/50">Based in India, Serving Globally</span>
+              <span className="block text-white font-bold text-base mb-1">Office</span>
+              <a 
+                href="https://maps.app.goo.gl/mhWYxQuozGBcxZ7G9" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white/50 hover:text-[#f7e839] transition-colors block"
+              >
+                4KMEDIA, WeWork RMZ Spire, 5th, 100, Silpa Gram Craft Village, HITEC City, Hyderabad, Telangana 500081
+              </a>
             </li>
           </ul>
         </div>

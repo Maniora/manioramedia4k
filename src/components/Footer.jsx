@@ -239,9 +239,14 @@ const Footer = () => (
               >
                 Office
               </a>
-              <span className="text-white/50 block">
+              <a 
+                href="https://maps.app.goo.gl/mhWYxQuozGBcxZ7G9" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white/50 block hover:text-white/70 transition-colors"
+              >
                 4KMEDIA, WeWork RMZ Spire, 5th, 100, Silpa Gram Craft Village, HITEC City, Hyderabad, Telangana 500081
-              </span>
+              </a>
             </li>
           </ul>
         </div>

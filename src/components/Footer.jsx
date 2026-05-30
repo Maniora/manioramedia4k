@@ -231,15 +231,17 @@ const Footer = () => (
               <span className="text-white/50">Mon-Fri, 9AM-6PM IST</span>
             </li>
             <li>
-              <span className="block text-white font-bold text-base mb-1">Office</span>
               <a 
                 href="https://maps.app.goo.gl/mhWYxQuozGBcxZ7G9" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-white/50 hover:text-[#f7e839] transition-colors block"
+                className="block text-white font-bold text-base hover:text-[#f7e839] transition-colors mb-1"
               >
-                4KMEDIA, WeWork RMZ Spire, 5th, 100, Silpa Gram Craft Village, HITEC City, Hyderabad, Telangana 500081
+                Office
               </a>
+              <span className="text-white/50 block">
+                4KMEDIA, WeWork RMZ Spire, 5th, 100, Silpa Gram Craft Village, HITEC City, Hyderabad, Telangana 500081
+              </span>
             </li>
           </ul>
         </div>

@@ -128,19 +128,22 @@ const CareersForm = () => {
     }
 
     try {
-      const response = await fetch('/api/apply', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      })
-
-      const result = await response.json()
-
-      if (!response.ok || result.status !== 'success') {
-        throw new Error(result.message || 'Submission failed')
+      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL
+      if (!scriptUrl) {
+        throw new Error('Google Apps Script URL is not defined.')
       }
+
+      await fetch(scriptUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain',
+        },
+        body: JSON.stringify({
+          type: 'careers',
+          ...payload
+        }),
+      })
 
       setSubmitStatus('success')
       formRef.current.reset()

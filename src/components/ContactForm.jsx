@@ -144,19 +144,20 @@ const ContactForm = () => {
         message
       };
 
-      const response = await fetch('/api/contact/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        if (result.status === 'success') {
-          sheetSuccess = true;
-        }
+      const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+      if (scriptUrl) {
+        await fetch(scriptUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'text/plain',
+          },
+          body: JSON.stringify({
+            type: 'contact',
+            ...payload
+          }),
+        });
+        sheetSuccess = true;
       }
     } catch (err) {
       console.error("Google Sheets Submission Error:", err);

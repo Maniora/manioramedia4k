@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react'
 import Toast from './Toast'
-import emailjs from '@emailjs/browser'
 
 const ROLES = [
   "Social Media Manager",
@@ -111,34 +110,45 @@ const CareersForm = () => {
     setIsSubmitting(true)
     setSubmitStatus(null)
 
-    // Validate required EmailJS env variables at runtime
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CAREERS
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-    if (!serviceId || !templateId || !publicKey) {
-      console.error('Missing EmailJS configuration. Check .env variables.', {
-        serviceIdPresent: !!serviceId,
-        templateIdPresent: !!templateId,
-        publicKeyPresent: !!publicKey,
-      })
-      setToast({ open: true, message: 'Email service not configured. Please try later.', variant: 'error' })
-      setIsSubmitting(false)
-      return
+    const fullName = formRef.current.full_name.value.trim()
+    const email = formRef.current.email.value.trim()
+    const phone = formRef.current.phone.value.trim()
+    const portfolio = formRef.current.portfolio.value.trim()
+    const role = formRef.current.role.value
+    const actualRole = role === 'Other' ? formRef.current.other_role.value.trim() : role
+    const resume = formRef.current.resume.value.trim()
+
+    const payload = {
+      fullName,
+      email,
+      phone,
+      portfolio,
+      role: actualRole,
+      resume
     }
 
     try {
-      await emailjs.sendForm(
-        serviceId,
-        templateId,
-        formRef.current,
-        { publicKey }
-      )
+      const response = await fetch('/api/apply', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok || result.status !== 'success') {
+        throw new Error(result.message || 'Submission failed')
+      }
+
       setSubmitStatus('success')
       formRef.current.reset()
+      setSelectedRole('')
       setToast({ open: true, message: 'Application submitted successfully!', variant: 'success' })
       setFieldErrors({})
     } catch (err) {
-      console.error('EmailJS Error:', err)
+      console.error('Submission Error:', err)
       setSubmitStatus('error')
       setToast({ open: true, message: 'Failed to submit application. Please try again.', variant: 'error' })
     } finally {
@@ -153,9 +163,6 @@ const CareersForm = () => {
 
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="space-y-5" noValidate>
-      {/* Recipient for EmailJS pulled from env */}
-      <input type="hidden" name="to_email" value={process.env.NEXT_PUBLIC_CAREERS_EMAIL || 'team@4kmedia.in'} />
-      <input type="hidden" name="time" value={new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' })} />
       <label className="space-y-1 block w-full">
         <span className="text-xs text-white/80 tracking-wide">
           FULL NAME <span className="text-[#f7e839]">*</span>
@@ -269,6 +276,8 @@ const CareersForm = () => {
         />
         {fieldErrors.resume && <span className="text-xs text-red-500">{fieldErrors.resume}</span>}
       </label>
+      <Toast open={toast.open} onClose={() => setToast((t) => ({ ...t, open: false }))} message={toast.message} variant={toast.variant} className="mb-4" />
+      
       <div className="pt-1">
         <button
           type="submit"
@@ -288,8 +297,6 @@ const CareersForm = () => {
           )}
         </button>
       </div>
-
-      <Toast open={toast.open} onClose={() => setToast((t) => ({ ...t, open: false }))} message={toast.message} variant={toast.variant} />
     </form>
   )
 }

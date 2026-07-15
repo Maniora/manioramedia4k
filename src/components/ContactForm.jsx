@@ -106,6 +106,10 @@ const ContactForm = () => {
       return;
     }
 
+    let emailJsSuccess = false;
+    let sheetSuccess = false;
+
+    // 1. Try sending via EmailJS
     try {
       await emailjs.sendForm(
         serviceId,
@@ -113,17 +117,69 @@ const ContactForm = () => {
         formRef.current,
         { publicKey }
       );
+      emailJsSuccess = true;
+    } catch (err) {
+      console.error("EmailJS Error (might have hit free tier limits):", err);
+    }
+
+    // 2. Try recording in Google Sheets
+    try {
+      const name = formRef.current.user_name.value.trim();
+      const email = formRef.current.user_email.value.trim();
+      const phone = formRef.current.user_phone.value.trim();
+      const location = formRef.current.user_location.value.trim();
+      const website = formRef.current.user_website ? formRef.current.user_website.value.trim() : "";
+      const service = formRef.current.service.value;
+      const subService = formRef.current.sub_service ? formRef.current.sub_service.value : "";
+      const message = formRef.current.message.value.trim();
+
+      const payload = {
+        name,
+        email,
+        phone,
+        location,
+        website,
+        service,
+        subService,
+        message
+      };
+
+      const response = await fetch('/api/contact/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        if (result.status === 'success') {
+          sheetSuccess = true;
+        }
+      }
+    } catch (err) {
+      console.error("Google Sheets Submission Error:", err);
+    }
+
+    // 3. Determine overall success (succeeds if either works)
+    if (emailJsSuccess || sheetSuccess) {
       setSubmitStatus("success");
       formRef.current.reset();
-      setToast({ open: true, message: "Message sent successfully!", variant: "success" });
+      setSelectedServiceId("");
+      setSelectedSubServiceTitle("");
+      
+      let successMsg = "Message sent successfully!";
+      if (sheetSuccess && !emailJsSuccess) {
+        successMsg = "Message recorded successfully (saved to backup sheet)!";
+      }
+      setToast({ open: true, message: successMsg, variant: "success" });
       setFieldErrors({});
-    } catch (err) {
-      console.error("EmailJS Error:", err);
+    } else {
       setSubmitStatus("error");
       setToast({ open: true, message: "Failed to send message. Please try again.", variant: "error" });
-    } finally {
-      setIsSubmitting(false);
     }
+    setIsSubmitting(false);
   };
 
   return (
@@ -283,6 +339,14 @@ const ContactForm = () => {
         {fieldErrors.message && <span className="text-xs text-red-500">{fieldErrors.message}</span>}
       </div>
 
+      <Toast
+        open={toast.open}
+        onClose={() => setToast((t) => ({ ...t, open: false }))}
+        message={toast.message}
+        variant={toast.variant}
+        className="md:col-span-2 mb-2"
+      />
+
       {/* Submit Button */}
       <div className="md:col-span-2 flex justify-center">
         <button
@@ -332,13 +396,6 @@ const ContactForm = () => {
           )}
         </button>
       </div>
-
-      <Toast
-        open={toast.open}
-        onClose={() => setToast((t) => ({ ...t, open: false }))}
-        message={toast.message}
-        variant={toast.variant}
-      />
     </form>
   );
 };

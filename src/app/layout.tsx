@@ -88,7 +88,7 @@ export default function RootLayout({
     "url": "https://4kmedia.in",
     "logo": "https://4kmedia.in/assets/logo2.png",
     "sameAs": [
-      "https://www.linkedin.com/company/4kmedia-in",
+      "https://www.linkedin.com/company/4kmediax",
       "https://instagram.com/4kmediax",
       "https://youtube.com/@4kmediax"
     ],
